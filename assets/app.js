@@ -159,29 +159,66 @@ function renderGrid() {
   $('count').textContent = `顯示 ${shown} / ${D.length}`;
 }
 
+/* --------------------------------------------------------------- 資料載入 */
+async function loadData() {
+  const [ind, latest] = await Promise.all([
+    fetch('data/indicators.json', {cache: 'no-store'}).then(r => r.json()),
+    fetch('data/latest.json',     {cache: 'no-store'}).then(r => r.json())
+  ]);
+  D = ind;
+  V = latest.cards || {};
+  const changed = BUILD && BUILD !== latest.build_time;
+  BUILD = latest.build_time || '';
+  $('buildtime').textContent = `上次自動更新：${BUILD}`;
+
+  const srcs = new Set(Object.values(V).map(c => c.source_label).filter(Boolean));
+  $('footer-sources').innerHTML = `<b>本次資料來源</b>　${[...srcs].join('、')}`;
+  return changed;
+}
+
+function repaint() { renderChips(); renderStatusBar(); renderGrid(); }
+
+/* 重新載入：只重抓 latest.json，不重整頁面，篩選與搜尋條件都保留 */
+async function reload(auto = false) {
+  const btn = $('reload'), hint = $('reloadhint');
+  if (btn) { btn.disabled = true; btn.textContent = '↻ 載入中…'; }
+  try {
+    const changed = await loadData();
+    repaint();
+    if (hint) hint.textContent = changed
+      ? '✓ 已載入新資料'
+      : (auto ? '' : `✓ 已是最新（${BUILD}）`);
+  } catch (e) {
+    if (hint) hint.textContent = '✗ 載入失敗';
+    console.error(e);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '↻ 重新載入'; }
+    if (hint) setTimeout(() => { hint.textContent = ''; }, 6000);
+  }
+}
+
 /* --------------------------------------------------------------- 啟動 */
 async function init() {
   try {
-    const [ind, latest] = await Promise.all([
-      fetch('data/indicators.json', {cache: 'no-store'}).then(r => r.json()),
-      fetch('data/latest.json',     {cache: 'no-store'}).then(r => r.json())
-    ]);
-    D = ind;
-    V = latest.cards || {};
-    BUILD = latest.build_time || '';
-    $('buildtime').textContent = `上次自動更新：${BUILD}`;
-
-    const srcs = new Set(Object.values(V).map(c => c.source_label).filter(Boolean));
-    $('footer-sources').innerHTML = `<b>本次資料來源</b>　${[...srcs].join('、')}`;
+    await loadData();
   } catch (e) {
     $('buildtime').textContent = '資料載入失敗，請稍後重新整理';
     console.error(e);
     return;
   }
-  renderChips();
-  renderStatusBar();
-  renderGrid();
+  repaint();
   $('q').addEventListener('input', e => { q = e.target.value.toLowerCase(); renderGrid(); });
+  $('reload').addEventListener('click', () => reload());
+
+  // 從 GitHub Actions 分頁按完 Run workflow 切回來時，自動抓一次新資料。
+  // 節流 20 秒，避免在分頁間來回切換時狂打。
+  let lastAuto = 0;
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return;
+    if (Date.now() - lastAuto < 20000) return;
+    lastAuto = Date.now();
+    reload(true);
+  });
 }
 
 init();

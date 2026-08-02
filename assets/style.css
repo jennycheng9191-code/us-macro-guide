@@ -16,6 +16,15 @@ h1{font-size:22px;font-weight:700}
 .sub{color:var(--text2);font-size:13px;margin-top:2px}
 h2{font-size:15px;color:var(--text2);font-weight:600;margin:22px 0 10px;letter-spacing:.5px}
 
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:9px}
+.btn{background:var(--card2);border:1px solid var(--border);color:var(--text2);
+  font-size:12.5px;padding:7px 13px;border-radius:8px;cursor:pointer;white-space:nowrap;
+  text-decoration:none;display:inline-flex;align-items:center;min-height:34px;font-family:inherit}
+.btn:hover{color:var(--text);border-color:var(--text3)}
+.btn-primary{color:var(--text);border-color:var(--fin)}
+.btn:disabled{opacity:.5;cursor:default}
+.hint{font-size:11.5px;color:var(--text3)}
+
 .statusbar{display:flex;gap:6px;flex-wrap:wrap}
 .stat{background:var(--card2);border:1px solid var(--border);color:var(--text2);
   font-size:12px;padding:7px 12px;border-radius:8px;white-space:nowrap;cursor:pointer;user-select:none}

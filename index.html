@@ -14,6 +14,16 @@
   <div>
     <h1>美國總經指標手冊</h1>
     <div class="sub">47 個指標 · 資料每日自動更新 · <span id="buildtime">載入中…</span></div>
+    <div class="actions">
+      <a class="btn btn-primary"
+         href="https://github.com/jennycheng9191-code/us-macro-guide/actions/workflows/update.yml"
+         target="_blank" rel="noopener"
+         title="開啟 GitHub Actions，按 Run workflow 立刻重抓一次；跑完切回本頁會自動載入新資料">
+        立即更新 ↗
+      </a>
+      <button class="btn" id="reload" title="不重整頁面，直接重抓 latest.json">↻ 重新載入</button>
+      <span class="hint" id="reloadhint"></span>
+    </div>
   </div>
   <div class="statusbar" id="statusbar"></div>
 </header>
