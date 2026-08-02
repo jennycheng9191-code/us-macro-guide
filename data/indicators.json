@@ -1,0 +1,780 @@
+[
+ {
+  "id": "consumer_price_index",
+  "order": 0,
+  "n": "CPI 總指數",
+  "e": "Consumer Price Index",
+  "f": [
+   "inf"
+  ],
+  "mom": "CPI報告",
+  "org": "BLS",
+  "t": "月 · 約每月10–13日 08:30 ET",
+  "read": "單月看MoM與3個月/6個月年化動能,YoY受基期干擾。總指數被能源主導,市場定價反應以核心為主;戰時油價環境下總指數與核心的裂口本身就是訊號。",
+  "bond": "高於預期→前端重定價(降息延後/再升息)、曲線熊平。當前Warsh框架下通膨路徑主導前端beta。",
+  "rel": "管線領先:PPI、ISM物價分項;方法論對照:PCE(權重固定、OER占比較高,通常高於PCE 0.3–0.5pp)。",
+  "src": "https://www.bls.gov/cpi/",
+  "sn": "BLS CPI"
+ },
+ {
+  "id": "core_cpi_ex_food_energy",
+  "order": 1,
+  "n": "核心CPI",
+  "e": "Core CPI (ex Food & Energy)",
+  "f": [
+   "inf"
+  ],
+  "p": "CPI報告",
+  "org": "BLS",
+  "t": "月 · 隨CPI報告",
+  "read": "剔除食品能源。觀察3個月年化是否回落至與2%目標相容區(考慮CPI-PCE楔差約需2.4%以下)。商品/服務拆解:商品通縮是否延續、服務黏性是否鬆動。",
+  "bond": "Fed溝通最高頻引用的單一數字;黏性偏高時長端通膨風險溢價難壓縮。",
+  "rel": "子項:Super Core、OER;驗證:Trimmed Mean PCE。",
+  "src": "https://www.bls.gov/cpi/",
+  "sn": "BLS CPI"
+ },
+ {
+  "id": "core_services_ex_housing",
+  "order": 2,
+  "n": "Super Core(核心服務ex住房)",
+  "e": "Core Services ex Housing",
+  "f": [
+   "inf"
+  ],
+  "p": "CPI報告",
+  "org": "BLS(衍生計算)",
+  "t": "月 · 隨CPI報告",
+  "read": "Fed觀察「薪資→服務通膨」傳導的代理變數,對應勞動市場緊俏度。單月波動大(機票、醫療干擾),看3個月趨勢。",
+  "bond": "黏性=前端鷹派定價的燃料;與時薪、ECI互為驗證鏈。",
+  "rel": "上游:平均時薪、ECI、Atlanta Wage Tracker。",
+  "src": "https://www.bls.gov/cpi/",
+  "sn": "BLS CPI"
+ },
+ {
+  "id": "owners_equivalent_rent_rent",
+  "order": 3,
+  "n": "OER / 房租分項",
+  "e": "Owners' Equivalent Rent & Rent",
+  "f": [
+   "inf",
+   "hou"
+  ],
+  "p": "CPI報告",
+  "org": "BLS",
+  "t": "月 · 隨CPI報告",
+  "read": "權重約占CPI四分之一;滯後市場租金12–18個月,方向看BLS新租約指數(NTRR)與Zillow等市場租金領先指標。",
+  "bond": "OER降溫是核心通膨回落的機械性主力,決定去通膨末段的速度與Fed耐心。",
+  "rel": "領先指標:房價YoY(Case-Shiller)、市場租金;同屬:房市面向。",
+  "src": "https://www.bls.gov/cpi/",
+  "sn": "BLS CPI"
+ },
+ {
+  "id": "pce_price_index",
+  "order": 4,
+  "n": "PCE / 核心PCE物價",
+  "e": "PCE Price Index",
+  "f": [
+   "inf"
+  ],
+  "org": "BEA",
+  "t": "月 · 月底(隨個人所得與支出報告)",
+  "read": "Fed法定2%目標的對象。權重動態調整、醫療占比高,通常低於CPI。CPI與PPI公布後市場已能高精度預估,意外空間小。",
+  "bond": "注意:Warsh公開質疑PCE作為通膨量尺的精確度,其通膨框架工作小組正檢視多元指標——PCE的政策訊號權重在新框架下待觀察,追蹤工作小組產出。",
+  "rel": "預估鏈:CPI+PPI分項→PCE;截尾版:Trimmed Mean PCE。",
+  "src": "https://www.bea.gov/data/personal-consumption-expenditures-price-index",
+  "sn": "BEA"
+ },
+ {
+  "id": "dallas_fed_trimmed_mean_pce",
+  "order": 5,
+  "n": "Trimmed Mean PCE",
+  "e": "Dallas Fed Trimmed Mean PCE",
+  "f": [
+   "inf"
+  ],
+  "org": "Dallas Fed",
+  "t": "月 · PCE公布後數日",
+  "read": "截尾均值濾除極端漲跌項,衡量底層通膨趨勢;與核心PCE背離時提示通膨成分過度集中(訊號質量問題)。",
+  "bond": "趨勢訊號較單月核心PCE穩定;Fed監控月更清單成員。",
+  "rel": "對照:核心PCE、Cleveland Median CPI。",
+  "src": "https://www.dallasfed.org/research/pce",
+  "sn": "Dallas Fed"
+ },
+ {
+  "id": "producer_price_index",
+  "order": 6,
+  "n": "PPI 生產者物價",
+  "e": "Producer Price Index",
+  "f": [
+   "inf"
+  ],
+  "org": "BLS",
+  "t": "月 · 約每月13日 08:30 ET",
+  "read": "重點不在總指數,在直接投入PCE計算的分項:醫療服務、機票、投資組合管理費。關稅與油價的管線傳導在此先現形。",
+  "bond": "CPI→PPI→PCE預估鏈的中繼;市場反應通常小於CPI,但會即時修正月底PCE預期。",
+  "rel": "下游:PCE;上游:ISM物價分項、進口物價。",
+  "src": "https://www.bls.gov/ppi/",
+  "sn": "BLS PPI"
+ },
+ {
+  "id": "5_year_5_year_forward_inflation_expectat",
+  "order": 7,
+  "n": "5y5y 通膨預期(遠期損益兩平)",
+  "e": "5-Year, 5-Year Forward Inflation Expectation",
+  "f": [
+   "inf",
+   "fin"
+  ],
+  "org": "FRED(T5YIFR)",
+  "t": "日頻",
+  "read": "長期通膨預期是否錨定的市場定價指標;持續站上2.5%=去錨疑慮。油價/地緣(荷莫茲)衝擊主要打短端breakeven,看5y5y可濾掉能源噪音。",
+  "bond": "去錨=長端期限溢價擴張、Fed被迫更鷹;是「戰爭通膨是否長期化」的市場裁決。",
+  "rel": "對照:密大5–10年預期、NY Fed SCE 3年;成分:名目-TIPS利差。",
+  "src": "https://fred.stlouisfed.org/series/T5YIFR",
+  "sn": "FRED T5YIFR"
+ },
+ {
+  "id": "survey_of_consumer_expectations",
+  "order": 8,
+  "n": "NY Fed 消費者通膨預期",
+  "e": "Survey of Consumer Expectations",
+  "f": [
+   "inf"
+  ],
+  "org": "NY Fed",
+  "t": "月 · 月中",
+  "read": "1年/3年/5年期中位數;3年期最受Fed引用(短端受油價汽油價干擾)。樣本設計較密大穩定。",
+  "bond": "預期中樞上移直接限制降息空間;與密大交叉驗證,兩者同向跳升才是強訊號。",
+  "rel": "對照:密大通膨預期、5y5y breakeven。",
+  "src": "https://www.newyorkfed.org/microeconomics/sce",
+  "sn": "NY Fed SCE"
+ },
+ {
+  "id": "umich_inflation_expectations",
+  "order": 9,
+  "n": "密大通膨預期",
+  "e": "UMich Inflation Expectations",
+  "f": [
+   "inf",
+   "con"
+  ],
+  "p": "密大消費者調查",
+  "org": "University of Michigan",
+  "t": "月 · 初值月中/終值月底",
+  "read": "1年與5–10年;初值市場反應最大。樣本小、對政治與油價敏感、黨派分裂明顯——看趨勢不看單月。",
+  "bond": "5–10年預期跳升曾直接觸發Fed轉鷹(2022/06前例);戰爭油價環境下權重升高。",
+  "rel": "母報告:密大消費者調查;對照:NY Fed SCE。",
+  "src": "https://www.sca.isr.umich.edu/",
+  "sn": "UMich Surveys"
+ },
+ {
+  "id": "nonfarm_payrolls",
+  "order": 10,
+  "n": "非農就業 NFP",
+  "e": "Nonfarm Payrolls",
+  "f": [
+   "lab"
+  ],
+  "mom": "僱傭情勢報告",
+  "org": "BLS",
+  "t": "月 · 第1個週五 08:30 ET",
+  "read": "三位一體:就業增量(必看前兩月修正)、失業率(家庭調查)、時薪。盈虧平衡增量隨移民與勞參變動,近年估約10–15萬。機構vs家庭調查背離時看趨勢。",
+  "bond": "全月波動最大的單一事件;修正值常翻轉初值敘事,勿只交易頭條數字。",
+  "rel": "子項:失業率、勞參率、時薪;前置拼圖:ADP、claims、ISM兩就業分項、JOLTS。",
+  "src": "https://www.bls.gov/ces/",
+  "sn": "BLS Employment Situation"
+ },
+ {
+  "id": "unemployment_rate_u_3",
+  "order": 11,
+  "n": "失業率",
+  "e": "Unemployment Rate (U-3)",
+  "f": [
+   "lab"
+  ],
+  "p": "僱傭情勢報告",
+  "org": "BLS",
+  "t": "月 · 隨NFP",
+  "read": "出自家庭調查。Sahm Rule:3個月均值較過去12個月低點上升0.5pp=歷史上可靠的衰退開端訊號;同時看U-6與兼職原因結構。",
+  "bond": "觸發Sahm→前端急速定價降息、曲線牛陡,是「勞動市場非線性惡化」的定價開關。",
+  "rel": "領先:CB信心的labor differential、續領失業金。",
+  "src": "https://www.bls.gov/cps/",
+  "sn": "BLS CPS"
+ },
+ {
+  "id": "labor_force_participation_rate",
+  "order": 12,
+  "n": "勞動參與率",
+  "e": "Labor Force Participation Rate",
+  "f": [
+   "lab"
+  ],
+  "p": "僱傭情勢報告",
+  "org": "BLS",
+  "t": "月 · 隨NFP",
+  "read": "供給面變數,重點看25–54歲主力年齡層(prime-age)。勞參上升可容納就業增長而不推升薪資。",
+  "bond": "供給改善=軟著陸敘事,壓低薪資通膨風險溢價;移民政策收緊時此項承壓。",
+  "rel": "搭配:時薪(供給↑應對應薪資動能↓)。",
+  "src": "https://www.bls.gov/cps/",
+  "sn": "BLS CPS"
+ },
+ {
+  "id": "average_hourly_earnings",
+  "order": 13,
+  "n": "平均時薪 AHE",
+  "e": "Average Hourly Earnings",
+  "f": [
+   "lab",
+   "wag"
+  ],
+  "p": "僱傭情勢報告",
+  "org": "BLS",
+  "t": "月 · 隨NFP",
+  "read": "MoM與YoY並看;受組成效應干擾(低薪就業占比變動會扭曲),需以ECI、Atlanta Tracker驗證。與2%通膨相容區間約3.0–3.5% YoY(視生產力)。",
+  "bond": "服務通膨的源頭變數,Super Core的上游;時薪意外常主導NFP日的尾盤方向。",
+  "rel": "驗證:ECI(季)、Atlanta Wage Tracker(月);下游:Super Core。",
+  "src": "https://www.bls.gov/ces/",
+  "sn": "BLS CES"
+ },
+ {
+  "id": "job_openings_and_labor_turnover_survey",
+  "order": 14,
+  "n": "JOLTS 職缺",
+  "e": "Job Openings and Labor Turnover Survey",
+  "f": [
+   "lab"
+  ],
+  "org": "BLS",
+  "t": "月 · 月初(數據滯後2個月)",
+  "read": "核心是職缺/失業人數比(V/U)與離職率(quits,自願離職=議價力)。Waller-Figura論點:職缺率可沿貝弗里奇曲線垂直段下行而不推升失業率。",
+  "bond": "V/U回落至1.0附近以下=勞動市場鬆弛確認,支持降息定價;quits率領先薪資動能。",
+  "rel": "下游:時薪、ECI;對照:Indeed職缺(更即時)。",
+  "src": "https://www.bls.gov/jlt/",
+  "sn": "BLS JOLTS"
+ },
+ {
+  "id": "initial_jobless_claims",
+  "order": 15,
+  "n": "初領失業金",
+  "e": "Initial Jobless Claims",
+  "f": [
+   "lab"
+  ],
+  "org": "DOL",
+  "t": "週 · 每週四 08:30 ET",
+  "read": "看4週移動均線去噪;續領(continuing claims)反映再就業難度,兩者背離=裁員未增但補位變慢。假期與季調因子常製造假訊號。",
+  "bond": "最高頻的勞動數據;連續數週突破既有區間會先於NFP改變市場定價,是衰退交易的第一觸發器。",
+  "rel": "下游:失業率;搭配:WARN通知、Challenger裁員。",
+  "src": "https://www.dol.gov/ui/data.pdf",
+  "sn": "DOL UI Claims"
+ },
+ {
+  "id": "adp_national_employment_report",
+  "order": 16,
+  "n": "ADP 民間就業",
+  "e": "ADP National Employment Report",
+  "f": [
+   "lab"
+  ],
+  "org": "ADP Research",
+  "t": "月 · NFP前的週三",
+  "read": "與NFP單月相關性低,方向參考即可;附加價值在分規模/行業拆解與同工薪資中位數(留任者vs跳槽者)。",
+  "bond": "市場反應有限,主要用於NFP前的部位微調,勿過度交易。",
+  "rel": "對照:NFP;薪資欄位對照Atlanta Tracker。",
+  "src": "https://adpemploymentreport.com/",
+  "sn": "ADP"
+ },
+ {
+  "id": "ism_manufacturing_employment",
+  "order": 17,
+  "n": "ISM製造業就業分項",
+  "e": "ISM Manufacturing Employment",
+  "f": [
+   "lab",
+   "act"
+  ],
+  "p": "ISM製造業報告",
+  "org": "ISM",
+  "t": "月 · 隨ISM製造",
+  "read": "低於50不必然對應製造就業負增長(製造占總就業比重低);連續深度收縮(<47)才有實質訊號。",
+  "bond": "NFP前拼圖之一,單獨訊號權重低。",
+  "rel": "母報告:ISM製造業;搭配:ISM服務就業(權重更高)。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "ism_services_employment",
+  "order": 18,
+  "n": "ISM服務業就業分項",
+  "e": "ISM Services Employment",
+  "f": [
+   "lab",
+   "act"
+  ],
+  "p": "ISM服務業報告",
+  "org": "ISM",
+  "t": "月 · 隨ISM服務",
+  "read": "服務業占總就業約85%,對NFP方向的指示性明顯高於製造分項;與商業活動分項背離時以就業分項為準判斷勞動面。",
+  "bond": "NFP前權重最高的調查類前瞻。",
+  "rel": "母報告:ISM服務業;對照:ADP服務業欄。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "employment_cost_index",
+  "order": 19,
+  "n": "ECI 僱傭成本指數",
+  "e": "Employment Cost Index",
+  "f": [
+   "wag"
+  ],
+  "org": "BLS",
+  "t": "季 · 1/4/7/10月底",
+  "read": "固定職位權重、控制組成效應,是最乾淨的薪資量尺,Fed明示偏好。核心看私部門工資薪金、以及剔除激勵薪酬的分項。",
+  "bond": "季頻但單次意外足以改寫整季薪資敘事(2021Q3前例);與2%相容約3.5%(生產力1.5%假設)。",
+  "rel": "月頻橋接:Atlanta Tracker;粗訊號:時薪。",
+  "src": "https://www.bls.gov/eci/",
+  "sn": "BLS ECI"
+ },
+ {
+  "id": "wage_growth_tracker",
+  "order": 20,
+  "n": "Atlanta Fed 薪資追蹤",
+  "e": "Wage Growth Tracker",
+  "f": [
+   "wag"
+  ],
+  "org": "Atlanta Fed",
+  "t": "月 · 約第2個週五後",
+  "read": "同一人跨期追蹤的中位數薪資增速,免疫組成效應;跳槽者vs留任者利差收斂=勞動市場議價力降溫。",
+  "bond": "ECI季度空窗期的月頻替代;Fed監控月更清單成員。",
+  "rel": "驗證:ECI;上游:quits率(JOLTS)。",
+  "src": "https://www.atlantafed.org/chcs/wage-growth-tracker",
+  "sn": "Atlanta Fed"
+ },
+ {
+  "id": "ism_manufacturing_pmi",
+  "order": 21,
+  "n": "ISM製造業PMI",
+  "e": "ISM Manufacturing PMI",
+  "f": [
+   "act"
+  ],
+  "mom": "ISM製造業報告",
+  "org": "ISM",
+  "t": "月 · 第1個營業日 10:00 ET",
+  "read": "50=榮枯線,但對應整體經濟衰退的門檻約45以下(製造占GDP僅~11%)。「新訂單-客戶庫存」差=未來產出動能;受訪者評論區是關稅/供應鏈的一手材料。",
+  "bond": "月初風向標,意外時帶動長端;物價分項可單獨牽動通膨定價。",
+  "rel": "子項:新訂單、就業、物價;對照:S&P Global PMI、地區聯儲調查。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "ism_mfg_new_orders",
+  "order": 22,
+  "n": "ISM製造新訂單",
+  "e": "ISM Mfg New Orders",
+  "f": [
+   "act"
+  ],
+  "p": "ISM製造業報告",
+  "org": "ISM",
+  "t": "月 · 隨ISM製造",
+  "read": "最具領先性的分項;與客戶庫存的剪刀差指向未來2–3個月生產方向。",
+  "bond": "領先性使其邊際變動的資訊量高於整體指數。",
+  "rel": "母報告:ISM製造業;下游:工業生產、耐久財。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "ism_mfg_prices_paid",
+  "order": 23,
+  "n": "ISM製造物價分項",
+  "e": "ISM Mfg Prices Paid",
+  "f": [
+   "act",
+   "inf"
+  ],
+  "p": "ISM製造業報告",
+  "org": "ISM",
+  "t": "月 · 隨ISM製造",
+  "read": "衡量投入價格上漲的「廣度」而非幅度;對關稅、油價、運費高度敏感,是戰時通膨管線的最早溫度計。",
+  "bond": "跳升時通膨掉期與breakeven先動;與PPI互為印證。",
+  "rel": "下游:PPI→CPI商品項;搭配:ISM服務物價。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "ism_services_pmi",
+  "order": 24,
+  "n": "ISM服務業PMI",
+  "e": "ISM Services PMI",
+  "f": [
+   "act"
+  ],
+  "mom": "ISM服務業報告",
+  "org": "ISM",
+  "t": "月 · 第3個營業日 10:00 ET",
+  "read": "服務占經濟約三分之二,整體代表性高於製造ISM。主看商業活動與新訂單;物價分項對應服務通膨黏性。",
+  "bond": "近年美債對服務ISM的敏感度高於製造ISM;榮枯線意外(跌破/站回50)反應最烈。",
+  "rel": "子項:就業、物價;下游:Super Core(經物價分項)。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "retail_sales_advance",
+  "order": 25,
+  "n": "零售銷售",
+  "e": "Retail Sales (Advance)",
+  "f": [
+   "act"
+  ],
+  "org": "Census Bureau",
+  "t": "月 · 約每月15日 08:30 ET",
+  "read": "名目值,需扣通膨看實質;核心是控制組(control group,剔除汽車/加油/建材/餐飲)——直接進GDP消費項。單月修正大。",
+  "bond": "消費韌性=「不著陸」敘事=長端承壓;與消費信心軟數據背離時,硬數據為準。",
+  "rel": "交叉:密大/CB信心(軟)、實質所得;下游:GDPNow消費項。",
+  "src": "https://www.census.gov/retail/",
+  "sn": "Census MARTS"
+ },
+ {
+  "id": "industrial_production",
+  "order": 26,
+  "n": "工業生產",
+  "e": "Industrial Production",
+  "f": [
+   "act"
+  ],
+  "org": "Federal Reserve (G.17)",
+  "t": "月 · 約每月15–17日 09:15 ET",
+  "read": "實質產出硬數據,附產能利用率;製造業細項扣除公用事業(天氣干擾)較乾淨。",
+  "bond": "市場即時反應小,主要作GDP追蹤與製造週期確認。",
+  "rel": "上游:ISM新訂單;同類:耐久財出貨。",
+  "src": "https://www.federalreserve.gov/releases/g17/current/",
+  "sn": "Fed G.17"
+ },
+ {
+  "id": "atlanta_fed_gdpnow",
+  "order": 27,
+  "n": "GDPNow",
+  "e": "Atlanta Fed GDPNow",
+  "f": [
+   "act"
+  ],
+  "org": "Atlanta Fed",
+  "t": "隨數據發布滾動更新",
+  "read": "純機械nowcast、無人工判斷;季初估計波動極大勿過度解讀,隨數據累積於季末收斂。看逐次更新的「貢獻拆解」比看總數有用。",
+  "bond": "與市場共識落差大時,提示GDP公布日的意外方向;Fed監控月更清單成員。",
+  "rel": "對照:NY Fed Nowcast;輸入:零售、貿易、開工等硬數據。",
+  "src": "https://www.atlantafed.org/cqer/research/gdpnow",
+  "sn": "Atlanta Fed"
+ },
+ {
+  "id": "durable_goods_orders",
+  "order": 28,
+  "n": "耐久財訂單",
+  "e": "Durable Goods Orders",
+  "f": [
+   "act"
+  ],
+  "org": "Census Bureau",
+  "t": "月 · 約每月26日 08:30 ET",
+  "read": "頭條被飛機訂單綁架,只看核心資本財(非國防、除飛機)訂單與出貨=企業資本支出的領先與同步指標。",
+  "bond": "投資週期訊號,牽動中性利率(r*)與長端敘事;戰時國防訂單項可另看。",
+  "rel": "上游:ISM新訂單;下游:GDP設備投資項。",
+  "src": "https://www.census.gov/manufacturing/m3/",
+  "sn": "Census M3"
+ },
+ {
+  "id": "umich_consumer_sentiment",
+  "order": 29,
+  "n": "密大消費者信心",
+  "e": "UMich Consumer Sentiment",
+  "f": [
+   "con"
+  ],
+  "mom": "密大消費者調查",
+  "org": "University of Michigan",
+  "t": "月 · 初值月中/終值月底 10:00 ET",
+  "read": "對通膨與政治高度敏感,黨派分裂使絕對水位失真——看邊際變動與現況/預期差。雷達圖美國消信固定採用本指標(非CB)。",
+  "bond": "信心崩+通膨預期升=停滯性通膨定價的最毒組合(戰時情境要特別盯);單獨的信心下滑訊號弱。",
+  "rel": "子項:通膨預期(1年/5–10年);對照:CB信心。",
+  "src": "https://www.sca.isr.umich.edu/",
+  "sn": "UMich Surveys"
+ },
+ {
+  "id": "conference_board_consumer_confidence",
+  "order": 30,
+  "n": "CB 消費者信心",
+  "e": "Conference Board Consumer Confidence",
+  "f": [
+   "con",
+   "lab"
+  ],
+  "org": "Conference Board",
+  "t": "月 · 最後一個週二 10:00 ET",
+  "read": "相對密大更貼勞動市場。必看「工作充足-工作難找」差值(labor differential)——歷史上是失業率的可靠領先指標。",
+  "bond": "labor differential趨勢惡化先於失業率上行,是勞動面轉弱的早期警報。",
+  "rel": "下游:失業率;對照:密大(通膨敏感)vs CB(就業敏感)。",
+  "src": "https://www.conference-board.org/topics/consumer-confidence",
+  "sn": "Conference Board"
+ },
+ {
+  "id": "nahb_housing_market_index",
+  "order": 31,
+  "n": "NAHB 建商信心",
+  "e": "NAHB Housing Market Index",
+  "f": [
+   "hou"
+  ],
+  "org": "NAHB/Wells Fargo",
+  "t": "月 · 約每月16日 10:00 ET",
+  "read": "領先新屋開工約6個月;分現售/未來6個月銷售/客流三分項,另看降價建商占比與讓利(buydown)占比。",
+  "bond": "房市是利率傳導第一站,NAHB是全體系利率敏感度最高的景氣調查——政策鬆緊的即時體感。",
+  "rel": "下游:新屋開工、新屋銷售;上游:30Y房貸利率。",
+  "src": "https://www.nahb.org/news-and-economics/housing-economics/indices/housing-market-index",
+  "sn": "NAHB"
+ },
+ {
+  "id": "housing_starts_building_permits",
+  "order": 32,
+  "n": "新屋開工 / 建照",
+  "e": "Housing Starts & Building Permits",
+  "f": [
+   "hou"
+  ],
+  "org": "Census Bureau",
+  "t": "月 · 約每月17日 08:30 ET",
+  "read": "建照領先開工;單戶與多戶必須分開看(多戶波動巨大且受融資環境主導)。單戶建照是房市最乾淨的趨勢指標。",
+  "bond": "住宅投資直接進GDP;供給增加中期壓制市場租金→OER→核心通膨。",
+  "rel": "上游:NAHB;下游:OER(12–18個月後)。",
+  "src": "https://www.census.gov/construction/nrc/",
+  "sn": "Census NRC"
+ },
+ {
+  "id": "existing_home_sales",
+  "order": 33,
+  "n": "成屋銷售",
+  "e": "Existing Home Sales",
+  "f": [
+   "hou"
+  ],
+  "org": "NAR",
+  "t": "月 · 約每月20日 10:00 ET",
+  "read": "占住宅交易約九成;以過戶計,滯後簽約1–2個月。庫存月數<4=供不應求;中位數價格受組成干擾,價格看Case-Shiller。",
+  "bond": "成交量凍結反映低利房貸鎖定效應(lock-in)——利率下行至臨界點才解凍,量的回升是降息傳導的證據。",
+  "rel": "領先:成屋簽約(Pending Home Sales);價格:Case-Shiller。",
+  "src": "https://www.nar.realtor/research-and-statistics/housing-statistics/existing-home-sales",
+  "sn": "NAR"
+ },
+ {
+  "id": "new_home_sales",
+  "order": 34,
+  "n": "新屋銷售",
+  "e": "New Home Sales",
+  "f": [
+   "hou"
+  ],
+  "org": "Census Bureau",
+  "t": "月 · 約每月25日 10:00 ET",
+  "read": "以簽約計,較成屋領先;但建商讓利(利率buydown、贈品)使價格與量的訊號雙雙失真,搭配NAHB讓利占比解讀。",
+  "bond": "對利率變化反應最快的銷售端數據。",
+  "rel": "上游:NAHB、房貸利率;對照:成屋銷售。",
+  "src": "https://www.census.gov/construction/nrs/",
+  "sn": "Census NRS"
+ },
+ {
+  "id": "s_p_corelogic_case_shiller_hpi",
+  "order": 35,
+  "n": "Case-Shiller 房價",
+  "e": "S&P CoreLogic Case-Shiller HPI",
+  "f": [
+   "hou"
+  ],
+  "org": "S&P DJI",
+  "t": "月 · 月底(數據滯後2個月)",
+  "read": "重複交易法、免疫組成效應,質量最高的房價量尺;20城指數為主,滯後但趨勢可靠。",
+  "bond": "房價YoY領先OER約12–18個月,是核心通膨中期路徑的關鍵輸入。",
+  "rel": "即時對照:Zillow ZHVI、FHFA;下游:OER。",
+  "src": "https://www.spglobal.com/spdji/en/index-family/indicators/sp-corelogic-case-shiller/",
+  "sn": "S&P DJI"
+ },
+ {
+  "id": "30y_fixed_mortgage_rate_pmms",
+  "order": 36,
+  "n": "30年期房貸利率",
+  "e": "30Y Fixed Mortgage Rate (PMMS)",
+  "f": [
+   "hou",
+   "fin"
+  ],
+  "org": "Freddie Mac",
+  "t": "週 · 每週四",
+  "read": "看兩層利差:房貸-10Y公債(primary spread,含MBS利差與銀行加成);利差異常擴張=傳導超調或MBS市場承壓。",
+  "bond": "貨幣政策傳導至實體的最直觀通道;Fed MBS縮表立場(Warsh傾向被動縮減)直接影響此利差。",
+  "rel": "上游:10Y殖利率、MBS OAS;下游:NAHB、銷售全鏈。",
+  "src": "https://www.freddiemac.com/pmms",
+  "sn": "Freddie Mac PMMS"
+ },
+ {
+  "id": "quarterly_refunding_announcement",
+  "order": 37,
+  "n": "QRA 季度再融資",
+  "e": "Quarterly Refunding Announcement",
+  "f": [
+   "fis"
+  ],
+  "org": "US Treasury",
+  "t": "季 · 2/5/8/11月初(週一借款預估+週三細節)",
+  "read": "三件事:季度借款總量、coupon各期限增發配置、TBAC對bill占比與buyback的建議。財政部對加權平均到期日(WAM)的態度是政策變數。",
+  "bond": "2023/08 QRA單獨推升長端約50bp的前例——久期供給衝擊直接打期限溢價;戰時財政擴張下每季QRA都是長端事件。",
+  "rel": "子題:bill占比、拍賣規模表;背景:MTS赤字軌跡。",
+  "src": "https://home.treasury.gov/policy-issues/financing-the-government/quarterly-refunding",
+  "sn": "Treasury Refunding"
+ },
+ {
+  "id": "coupon_auction_results",
+  "order": 38,
+  "n": "附息債拍賣結果",
+  "e": "Coupon Auction Results",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "依拍賣日曆 · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "10Y/30Y的尾部是期限溢價的即時體檢;戰時「避險買盤vs通膨+供給賣壓」在拍賣上直接對決。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "treasury_general_account",
+  "order": 39,
+  "n": "TGA 財政部現金餘額",
+  "e": "Treasury General Account",
+  "f": [
+   "fis",
+   "fin"
+  ],
+  "org": "FiscalData / Fed H.4.1",
+  "t": "日(FiscalData) / 週四(H.4.1)",
+  "read": "TGA重建=從體系抽流動性(準備金或RRP下降),TGA釋放=放水;債限週期主導大波動。看重建路徑vs財政部目標水位。",
+  "bond": "決定bill淨供給節奏與前端利差;QT結束後TGA波動成為準備金的最大擾動源——對照準備金與RRP同步判讀。",
+  "rel": "鏡像:準備金、ON RRP;上游:MTS收支。",
+  "src": "https://fiscaldata.treasury.gov/datasets/daily-treasury-statement/",
+  "sn": "FiscalData DTS"
+ },
+ {
+  "id": "bills_share_of_outstanding_debt",
+  "order": 40,
+  "n": "Bill 占比",
+  "e": "Bills Share of Outstanding Debt",
+  "f": [
+   "fis"
+  ],
+  "org": "Treasury / SIFMA",
+  "t": "月度追蹤",
+  "read": "TBAC建議區間15–20%;持續超標=財政部把久期供給遞延到未來,是「借短支長」的財政選擇。",
+  "bond": "bill吸納依賴MMF需求;RRP緩衝已近歸零,增發bill將更直接牽動前端利率與準備金。追蹤你既有的發債追蹤器。",
+  "rel": "背景:QRA、TBAC報告;緩衝:ON RRP水位。",
+  "src": "https://home.treasury.gov/policy-issues/financing-the-government/quarterly-refunding",
+  "sn": "Treasury/TBAC"
+ },
+ {
+  "id": "monthly_treasury_statement",
+  "order": 41,
+  "n": "MTS 月度財政收支",
+  "e": "Monthly Treasury Statement",
+  "f": [
+   "fis"
+  ],
+  "org": "FiscalData",
+  "t": "月 · 約第8個營業日",
+  "read": "滾動12個月赤字軌跡比單月有意義;利息支出占比是新的結構性變數,戰時支出項(國防、能源)另拆。",
+  "bond": "赤字軌跡=長端供給軌跡;利息支出雪球是期限溢價敘事的核心燃料。",
+  "rel": "下游:QRA借款需求;搭配:CBO預測修正。",
+  "src": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/",
+  "sn": "FiscalData MTS"
+ },
+ {
+  "id": "chicago_fed_national_financial_condition",
+  "order": 42,
+  "n": "NFCI 金融條件指數",
+  "e": "Chicago Fed National Financial Conditions Index",
+  "f": [
+   "fin"
+  ],
+  "org": "Chicago Fed",
+  "t": "週 · 每週三",
+  "read": "105項指標合成;0=歷史均值,負值=寬鬆。調整版ANFCI剔除與景氣的相關性,判斷「純」金融條件。",
+  "bond": "金融條件過度寬鬆會被Fed視為抵銷緊縮效果——Warsh的QT-for-Cuts框架正是對此的回應;Fed監控月更清單成員。",
+  "rel": "成分對照:信用OAS、股市、美元;政策連動:Warsh框架。",
+  "src": "https://www.chicagofed.org/research/data/nfci/current-data",
+  "sn": "Chicago Fed"
+ },
+ {
+  "id": "sofr_minus_iorb",
+  "order": 43,
+  "n": "SOFR-IORB 利差",
+  "e": "SOFR minus IORB",
+  "f": [
+   "fin"
+  ],
+  "org": "NY Fed / FRED",
+  "t": "日頻",
+  "read": "SOFR持續升穿IORB=準備金逼近「充足」下限、貨幣市場開始搶錢;月末季末的暫時性尖峰屬正常,持續性偏移才是訊號。",
+  "bond": "2019/09 repo危機前車之鑑。制度更新:QT已於2025/12結束,Fed自2026/1起以RMP(準備金管理購買)維持準備金充足——此利差現在檢驗RMP規模是否跟上流動性需求。",
+  "rel": "搭配:準備金餘額、SRF使用量、repo成交分布。",
+  "src": "https://www.newyorkfed.org/markets/reference-rates/sofr",
+  "sn": "NY Fed"
+ },
+ {
+  "id": "overnight_reverse_repo_facility",
+  "order": 44,
+  "n": "ON RRP 餘額",
+  "e": "Overnight Reverse Repo Facility",
+  "f": [
+   "fin"
+  ],
+  "org": "NY Fed",
+  "t": "日 · 每日13:15 ET後",
+  "read": "體系過剩流動性的緩衝池,現已近乎歸零。QT已於2025/12結束、Fed改以RMP管理準備金——RRP低水位的解讀從「QT侵蝕倒數」轉為「常態化緊平衡」。",
+  "bond": "RRP水位決定財政部增發bill的「免費額度」;趨零後前端利差與流動性事件風險同步上升。",
+  "rel": "鏡像:TGA、準備金;需求方:MMF資產配置。",
+  "src": "https://www.newyorkfed.org/markets/desk-operations/reverse-repo",
+  "sn": "NY Fed"
+ },
+ {
+  "id": "reserve_balances_h_4_1",
+  "order": 45,
+  "n": "銀行準備金餘額",
+  "e": "Reserve Balances (H.4.1)",
+  "f": [
+   "fin"
+  ],
+  "org": "Federal Reserve",
+  "t": "週 · 每週四 16:30 ET",
+  "read": "「充足準備金」經驗值約GDP的10–11%,但真正的下限要靠SOFR行為驗證;看趨勢斜率(QT+TGA重建的合力)。",
+  "bond": "QT已於2025/12結束,2026/1起Fed以RMP維持ample水位;RMP節奏與Warsh資產負債表工作小組產出是後續政策變數。",
+  "rel": "合力項:TGA、RRP、QT節奏;驗證:SOFR-IORB。",
+  "src": "https://www.federalreserve.gov/releases/h41/",
+  "sn": "Fed H.4.1"
+ },
+ {
+  "id": "ice_bofa_credit_oas",
+  "order": 46,
+  "n": "信用OAS(IG/HY)",
+  "e": "ICE BofA Credit OAS",
+  "f": [
+   "fin"
+  ],
+  "org": "FRED(BAML系列)",
+  "t": "日 · 滯後1日",
+  "read": "IG(BAMLC0A0CM)與HY(BAMLH0A0HYM2)分看;HY/IG比值濾出風險偏好純度。門檻沿用晨報§7的WATCH/WARNING與週速度觸發。",
+  "bond": "利差走闊+利率下行=避險模式(債多);利差與利率同步走闊=流動性事件(全撤)。兩種型態的持倉應對完全不同。",
+  "rel": "同源:晨報§7;成分:NFCI信用子項;對照:Euro HY、EM Corp。",
+  "src": "https://fred.stlouisfed.org/series/BAMLC0A0CM",
+  "sn": "FRED / ICE BofA"
+ }
+]
