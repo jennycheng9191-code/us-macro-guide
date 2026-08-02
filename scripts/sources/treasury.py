@@ -1,0 +1,151 @@
+"""美國財政部資料：FiscalData（TGA / MSPD / MTS）與 TreasuryDirect 拍賣結果。皆免金鑰。"""
+from __future__ import annotations
+
+from common import get_json
+
+FD = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
+
+
+def _fd(path: str, fields: str, sort: str = "-record_date",
+        size: int = 120, filt: str | None = None) -> list[dict]:
+    params = {"fields": fields, "sort": sort, "page[size]": str(size)}
+    if filt:
+        params["filter"] = filt
+    return get_json(f"{FD}/{path}", params).get("data", [])
+
+
+def tga(m: dict) -> dict:
+    """每日財政部現金餘額（TGA），單位由百萬換算為十億美元。"""
+    rows = _fd("v1/accounting/dts/operating_cash_balance",
+               "record_date,account_type,open_today_bal", size=400)
+    hist = [{"date": r["record_date"], "value": float(r["open_today_bal"]) / 1000}
+            for r in rows
+            if "Treasury General Account (TGA) Opening Balance" in (r.get("account_type") or "")
+            and r.get("open_today_bal") not in (None, "", "null")]
+    hist.reverse()
+    if not hist:
+        return {"ok": False, "reason": "DTS 無 TGA 開盤餘額資料"}
+    return {"ok": True, "value": hist[-1]["value"], "asof": hist[-1]["date"],
+            "history": hist[-24:], "raw_latest": hist[-1]["value"], "freq": "D",
+            "extras": {}, "also": {}, "source_label": "FiscalData DTS"}
+
+
+def bills_share(m: dict) -> dict:
+    """Bill 占已發行可市場交易債務的比重（MSPD Table 1）。"""
+    rows = _fd("v1/debt/mspd/mspd_table_1",
+               "record_date,security_type_desc,security_class_desc,debt_held_public_mil_amt",
+               size=800)
+    # 實地確認的結構：Bills 掛在 (Marketable, Bills)，
+    # 但合計掛在 security_type_desc = 'Total Marketable'、class 為 '_'。
+    by_date: dict[str, dict[str, float]] = {}
+    for r in rows:
+        v = r.get("debt_held_public_mil_amt")
+        if v in (None, "", "null"):
+            continue
+        typ = (r.get("security_type_desc") or "").strip()
+        cls = (r.get("security_class_desc") or "").strip()
+        d = by_date.setdefault(r["record_date"], {})
+        if typ == "Marketable" and cls == "Bills":
+            d["bills"] = float(v)
+        elif typ == "Total Marketable":
+            d["total"] = float(v)
+
+    hist = []
+    for dt in sorted(by_date):
+        parts = by_date[dt]
+        total, bills = parts.get("total"), parts.get("bills")
+        if not total or not bills:
+            continue
+        hist.append({"date": dt, "value": bills / total * 100})
+    if not hist:
+        return {"ok": False, "reason": "MSPD 未取得 Bills / Total Marketable 分類"}
+    return {"ok": True, "value": hist[-1]["value"], "asof": hist[-1]["date"],
+            "history": hist[-24:], "raw_latest": hist[-1]["value"], "freq": "M",
+            "extras": {}, "also": {}, "source_label": "FiscalData MSPD"}
+
+
+def mts(m: dict) -> dict:
+    """月度財政收支：滾動 12 個月赤字（MTS Table 1 的當月盈餘/赤字），單位十億美元。"""
+    # MTS Table 1 以「月份名稱」當分類（同一 record_date 底下列出整個會計年度各月），
+    # 且 dfct_sur 欄位的符號慣例不直觀，因此改由收入 − 支出自行計算，單位由美元換算為十億。
+    rows = _fd("v1/accounting/mts/mts_table_1",
+               "record_date,classification_desc,current_month_gross_rcpt_amt,"
+               "current_month_gross_outly_amt", size=900)
+    MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
+                   "August", "September", "October", "November", "December"]
+
+    picked: dict[str, float] = {}
+    for r in rows:
+        dt = r["record_date"]
+        want = MONTH_NAMES[int(dt[5:7]) - 1]
+        if (r.get("classification_desc") or "").strip() != want:
+            continue
+        rcpt, outly = r.get("current_month_gross_rcpt_amt"), r.get("current_month_gross_outly_amt")
+        if rcpt in (None, "", "null") or outly in (None, "", "null"):
+            continue
+        picked.setdefault(dt, (float(rcpt) - float(outly)) / 1e9)
+
+    hist = [{"date": d, "value": v} for d, v in sorted(picked.items())]
+    if not hist:
+        return {"ok": False, "reason": "MTS 未取得當月收入/支出欄位"}
+
+    rolling = sum(h["value"] for h in hist[-12:]) if len(hist) >= 12 else None
+    return {"ok": True, "value": hist[-1]["value"], "asof": hist[-1]["date"],
+            "history": hist[-24:], "raw_latest": hist[-1]["value"], "freq": "M",
+            "extras": {"滾動12個月": rolling}, "also": {}, "source_label": "FiscalData MTS"}
+
+
+def auctions(m: dict) -> dict:
+    """最近的附息債拍賣結果（只取 Note / Bond，Bill 不列）。"""
+    rows = get_json("https://www.treasurydirect.gov/TA_WS/securities/auctioned",
+                    {"format": "json", "pagesize": "150"})
+    # 只採計「結果已公布」的拍賣：僅有公告尚未開標的紀錄 highYield 為空，
+    # 若不濾掉會抓到還沒成交的場次。
+    coupons = [r for r in rows if r.get("securityType") in ("Note", "Bond")
+               and r.get("auctionDate") and (r.get("highYield") or "").strip()]
+    if not coupons:
+        return {"ok": False, "reason": "TreasuryDirect 無附息債拍賣紀錄"}
+    coupons.sort(key=lambda r: r["auctionDate"], reverse=True)
+    latest = coupons[0]
+
+    def num(x):
+        try:
+            return float(x)
+        except (TypeError, ValueError):
+            return None
+
+    hist = []
+    for r in reversed(coupons[:24]):
+        btc = num(r.get("bidToCoverRatio"))
+        if btc is not None:
+            hist.append({"date": r["auctionDate"][:10], "value": btc})
+
+    return {"ok": True,
+            "value": num(latest.get("bidToCoverRatio")),
+            "asof": latest["auctionDate"][:10],
+            "history": hist,
+            "raw_latest": num(latest.get("bidToCoverRatio")),
+            "freq": "D",
+            "extras": {
+                "券別": f"{latest.get('securityTerm')} {latest.get('securityType')}",
+                "得標利率(%)": num(latest.get("highYield")),
+                "間接投標占比(%)": num(latest.get("indirectBidderAccepted")),
+            },
+            "also": {},
+            "source_label": "TreasuryDirect 拍賣查詢",
+            "value_label": "bid-to-cover"}
+
+
+HANDLERS = {
+    "fiscaldata_dts": tga,
+    "fiscaldata_mspd": bills_share,
+    "fiscaldata_mts": mts,
+    "treasurydirect_auctions": auctions,
+}
+
+
+def fetch(card_id: str, m: dict) -> dict:
+    h = HANDLERS.get(m.get("api", ""))
+    if not h:
+        return {"ok": False, "reason": f"未知的 Treasury API 型別 {m.get('api')}"}
+    return h(m)
