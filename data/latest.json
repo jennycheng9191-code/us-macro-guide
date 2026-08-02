@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-02 12:16",
+ "build_time": "2026-08-02 12:24",
  "summary": {
   "green": 39,
   "yellow": 0,
@@ -4088,7 +4088,7 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "利差 0bp，SOFR 低於 IORB；位於近 24 期的第 92 百分位",
+   "note": "利差 0.0bp，SOFR 低於 IORB；位於近 24 期的第 92 百分位",
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
    "display": "level"

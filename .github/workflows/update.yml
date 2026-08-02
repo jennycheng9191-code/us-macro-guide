@@ -1,0 +1,71 @@
+name: 更新總經數值
+
+on:
+  schedule:
+    # 台北時間每天 08:00（UTC 00:00）。美東前一日收盤後、台北上班前。
+    - cron: '0 0 * * *'
+  workflow_dispatch:        # 重要數據公布後想立刻更新時，手動按這個
+  push:
+    branches: [main]
+    paths:                  # 改到抓取邏輯時自動重跑一次驗證
+      - 'scripts/**'
+      - 'data/mapping.json'
+      - '.github/workflows/update.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: 安裝相依套件
+        run: pip install -r requirements.txt
+
+      - name: 新聞抽取器回歸測試
+        # 這段擋的是「抓錯數字」，測試不過就不該更新資料
+        run: python scripts/test_news_extractor.py
+
+      - name: 抓取並組裝 latest.json
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+        run: python scripts/build.py
+
+      - name: 檢查產出是否可用
+        # 防呆：如果多數卡片都掛掉（例如金鑰過期），就讓流程失敗並保留舊資料，
+        # 不要把一份幾乎全空的 latest.json 推上去
+        run: |
+          python - <<'PY'
+          import json, sys
+          d = json.load(open("data/latest.json", encoding="utf-8"))
+          s = d["summary"]
+          total = sum(s.values())
+          print(f"綠燈 {s['green']} / 黃燈 {s['yellow']} / 未取得 {s['gray']}（共 {total}）")
+          if s["green"] < 25:
+              print("::error::綠燈少於 25 張，判定抓取異常，中止更新以保留上一版資料")
+              sys.exit(1)
+          PY
+
+      - name: 提交變更
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data/latest.json; then
+            echo "數值沒有變化，不需提交"
+          else
+            git add data/latest.json
+            git commit -m "資料更新 $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
+            git push
+          fi

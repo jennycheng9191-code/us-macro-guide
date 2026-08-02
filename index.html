@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>美國總經指標手冊</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230E1116'/><path d='M5 22 L11 14 L17 18 L27 7' stroke='%233FB27F' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>美國總經指標手冊</h1>
+    <div class="sub">47 個指標 · 資料每日自動更新 · <span id="buildtime">載入中…</span></div>
+  </div>
+  <div class="statusbar" id="statusbar"></div>
+</header>
+
+<h2>每月發布節奏（何時看什麼）</h2>
+<div class="rhythm">
+  <div class="slot"><div class="when">第1個營業日</div><div class="what">ISM製造業</div></div>
+  <div class="slot"><div class="when">第3個營業日</div><div class="what">ISM服務業</div></div>
+  <div class="slot"><div class="when">第1個週五</div><div class="what">僱傭情勢(NFP)</div></div>
+  <div class="slot"><div class="when">每週三</div><div class="what">NFCI · ADP</div></div>
+  <div class="slot"><div class="when">每週四</div><div class="what">初領失業金 · H.4.1 · 房貸利率</div></div>
+  <div class="slot"><div class="when">~10–13日</div><div class="what">CPI</div></div>
+  <div class="slot"><div class="when">~13–15日</div><div class="what">PPI · 零售銷售</div></div>
+  <div class="slot"><div class="when">月中</div><div class="what">工業生產 · NAHB · 新屋開工 · 密大初值</div></div>
+  <div class="slot"><div class="when">~20日</div><div class="what">成屋銷售</div></div>
+  <div class="slot"><div class="when">最後週二</div><div class="what">CB消費者信心</div></div>
+  <div class="slot"><div class="when">~25–26日</div><div class="what">新屋銷售 · 耐久財</div></div>
+  <div class="slot"><div class="when">月底</div><div class="what">PCE · Case-Shiller</div></div>
+  <div class="slot"><div class="when">季頻</div><div class="what">ECI(1/4/7/10月底) · QRA(2/5/8/11月初)</div></div>
+</div>
+
+<div class="controls">
+  <div class="chips" id="chips"></div>
+  <div class="searchrow">
+    <input id="q" type="search" placeholder="搜尋指標名稱、機構、母報告…">
+    <span id="count"></span>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  <b>燈號語義</b>　🟢 資料在正常發布間隔內且通過三道關卡　·　🟡 資料過期、或未通過驗證而沿用前值　·　⚪ 未取得<br>
+  <b>方向箭頭</b>　▲▼ 僅表示該指標本身相對上期的變動方向與幅度，<u>不代表對債市的多空</u>（各指標與殖利率的關係方向不同，未在此編碼）。<br>
+  <b>判讀文字</b>　由量化規則自動生成（榮枯線、Sahm Rule、3個月年化、V/U比、百分位等）。需要跨指標推理的評論不自動生成，留白由人補。<br>
+  <b>資料規則</b>　一律取自官方 API 與官方網頁；ISM 與 ADP 因官網封鎖改採 CNBC＋AP 雙來源交叉驗證，未通過驗證即保留前值並亮黃燈，不顯示未經驗證的數字。<br>
+  <span id="footer-sources"></span>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

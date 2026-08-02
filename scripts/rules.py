@@ -135,8 +135,8 @@ def sofr_iorb_persistent(res: dict, **_) -> str | None:
     if len(vals) >= 5:
         above = sum(1 for x in vals[-5:] if x > 0)
         if above >= 4:
-            return f"利差 {v:.0f}bp，近 5 個交易日有 {above} 日 SOFR 升穿 IORB"
-    return f"利差 {v:.0f}bp，{'SOFR 高於' if v > 0 else 'SOFR 低於'} IORB"
+            return f"利差 {v:.1f}bp，近 5 個交易日有 {above} 日 SOFR 升穿 IORB"
+    return f"利差 {v:.1f}bp，{'SOFR 高於' if v > 0 else 'SOFR 低於'} IORB"
 
 
 RULES = {f.__name__: f for f in [
