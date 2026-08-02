@@ -95,9 +95,17 @@ function renderCard(d) {
   const asof = c.asof_label || c.asof || '期別：—';
   const age = c.age_days != null ? `${c.age_days} 天前` : '';
 
-  const extras = Object.entries(c.extras || {})
+  // also = 同一指標的其他呈現形式（MoM / 3個月年化 / 總指數 YoY…）
+  // extras = 子項與對照序列。兩者都是輔助數字，併排顯示。
+  const aux = {...(c.also || {}), ...(c.extras || {})};
+  const extras = Object.entries(aux)
     .filter(([, v]) => v != null)
-    .map(([k, v]) => `<span>${k} <b>${typeof v === 'number' ? v.toLocaleString('en-US', {maximumFractionDigits: 2}) : v}</b></span>`)
+    .map(([k, v]) => {
+      const num = typeof v === 'number'
+        ? v.toLocaleString('en-US', {maximumFractionDigits: 2}) + (c.unit === '%' && !/指數|利用率/.test(k) ? '%' : '')
+        : v;
+      return `<span>${k} <b>${num}</b></span>`;
+    })
     .join('');
 
   const warn = (c.notes && c.notes.length && c.status !== 'green')

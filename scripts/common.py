@@ -4,7 +4,8 @@ from __future__ import annotations
 import json
 import os
 import time
-from datetime import date, datetime
+from bisect import bisect_right
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import requests
@@ -57,10 +58,18 @@ def get_text(url: str, retries: int = 3) -> str:
 
 # ---------------------------------------------------------------- 序列轉換
 
-def _lag_for(freq: str, months: int) -> int:
-    """把「幾個月」換算成該頻率下要往回幾個觀測值。"""
-    per_month = {"D": 21, "W": 4.345, "BW": 2, "M": 1, "Q": 1 / 3, "SA": 1 / 6, "A": 1 / 12}
-    return max(1, round(per_month.get(freq, 1) * months))
+MONTHS_BACK = {"yoy": 12, "mom": 1, "mom_diff": 1, "ann3m": 3}
+DAYS_BACK = {"yoy": 365, "mom": 30, "mom_diff": 30, "ann3m": 91}
+_MONTHLY_FREQ = {"M", "Q", "SA", "A", "BM"}
+
+
+def _shift_months(iso: str, n: int) -> str:
+    y, m, d = int(iso[:4]), int(iso[5:7]), int(iso[8:10])
+    m -= n
+    while m <= 0:
+        m += 12
+        y -= 1
+    return f"{y:04d}-{m:02d}-{d:02d}"
 
 
 def transform(obs: list[dict], display: str, freq: str = "M") -> list[dict]:
@@ -72,27 +81,41 @@ def transform(obs: list[dict], display: str, freq: str = "M") -> list[dict]:
     mom_diff  月變動絕對量
     ann3m     3 個月年化 %
     ma4       4 期移動平均
-    """
-    vals = [o["value"] for o in obs]
-    out: list[dict] = []
 
+    ⚠️ 基期一律以「日期」對齊，不可用「往回數 N 筆」。
+    官方序列會有缺漏月份（例如 FRED 的 CPIAUCNS 缺 2025-10，
+    政府停擺期間未採集），用位置往回數會默默拿錯月份當基期，
+    算出來的年增率錯了也不會有人發現。
+    """
     if display == "level":
         return [dict(o) for o in obs]
 
+    vals = [o["value"] for o in obs]
+    out: list[dict] = []
+
     if display == "ma4":
         for i, o in enumerate(obs):
-            if i < 3:
-                continue
-            out.append({"date": o["date"], "value": sum(vals[i - 3:i + 1]) / 4})
+            if i >= 3:
+                out.append({"date": o["date"], "value": sum(vals[i - 3:i + 1]) / 4})
         return out
 
-    lag = {"yoy": _lag_for(freq, 12), "mom": _lag_for(freq, 1),
-           "mom_diff": _lag_for(freq, 1), "ann3m": _lag_for(freq, 3)}[display]
+    by_date = {o["date"]: o["value"] for o in obs}
+    dates = sorted(by_date)
+    monthly = freq in _MONTHLY_FREQ
 
-    for i, o in enumerate(obs):
-        if i < lag:
+    def base_of(iso: str):
+        if monthly:
+            return by_date.get(_shift_months(iso, MONTHS_BACK[display]))
+        # 日頻/週頻沒有整齊的日期，取「目標日之前最近的一筆」
+        target = (datetime.strptime(iso[:10], "%Y-%m-%d").date()
+                  - timedelta(days=DAYS_BACK[display])).isoformat()
+        i = bisect_right(dates, target) - 1
+        return by_date[dates[i]] if i >= 0 else None
+
+    for o in obs:
+        prev, cur = base_of(o["date"]), o["value"]
+        if prev is None:
             continue
-        prev, cur = vals[i - lag], o["value"]
         if display == "mom_diff":
             v = cur - prev
         elif prev == 0:

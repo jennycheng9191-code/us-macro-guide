@@ -77,10 +77,17 @@ def fetch(card_id: str, m: dict) -> dict:
             extras[label] = None
     res["extras"] = extras
 
-    # 額外的呈現形式（例如同時給 mom 與 3 個月年化）
+    # 額外的呈現形式（例如同時給 mom 與 3 個月年化）。
+    # 注意：CPI 這類指標的 YoY 官方頭條用未季調、但 MoM 必須用季調，
+    # 因此允許 also_series 指定另一支序列來算這些附加形式。
+    also_src = m.get("also_series", m["series"])
     also: dict[str, float] = {}
     for form in m.get("also", []):
-        if form.startswith("spread_vs_"):
+        if form.startswith("yoy:"):
+            r = _series_result(form.split(":", 1)[1], "yoy")
+            if r["ok"]:
+                also[m.get("also_labels", {}).get(form, form)] = r["value"]
+        elif form.startswith("spread_vs_"):
             other = form.replace("spread_vs_", "")
             try:
                 o = observations(other)
@@ -96,9 +103,9 @@ def fetch(card_id: str, m: dict) -> dict:
             except Exception:                       # noqa: BLE001
                 pass
         else:
-            r = _series_result(m["series"], form)
+            r = _series_result(also_src, form)
             if r["ok"]:
-                also[form] = r["value"]
+                also[m.get("also_labels", {}).get(form, form)] = r["value"]
     res["also"] = also
     return res
 

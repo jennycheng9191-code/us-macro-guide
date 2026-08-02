@@ -16,7 +16,7 @@ sys.path[:0] = [str(HERE), str(HERE / "sources")]
 from common import DATA, load_env, read_json, write_json   # noqa: E402
 import rules                                               # noqa: E402
 import validate                                            # noqa: E402
-from sources import fred, html_src, news, nyfed, treasury   # noqa: E402
+from sources import fred, html_src, news, nyfed, treasury, umich   # noqa: E402
 
 TPE = timezone(timedelta(hours=8))
 
@@ -33,6 +33,8 @@ def dispatch(card_id: str, m: dict, ctx: dict) -> dict:
         return html_src.fetch(card_id, m)
     if src == "nyfed_sce":
         return nyfed.fetch(card_id, m)
+    if src == "umich":
+        return umich.fetch(card_id, m)
     if src == "news":
         return news.fetch(card_id, m, ctx.setdefault("news_urls", news._article_urls()))
     if src == "manual":
@@ -105,6 +107,11 @@ def main() -> int:
                    "also": old.get("also", {}), "source_label": old.get("source_label", ""),
                    "raw_latest": old.get("value")}
             status = "yellow"
+
+        # GDPNow 的觀測日期是「預測的那一季」，不是資料期別，標清楚免得誤讀
+        if m.get("label_as") == "quarter" and res.get("asof"):
+            y, mo = res["asof"][:4], int(res["asof"][5:7])
+            res["value_label"] = f"{y} Q{(mo - 1) // 3 + 1} 預測值"
 
         note = rules.build_note(res, m) if res.get("ok") else ""
         tally[status] = tally.get(status, 0) + 1

@@ -14,16 +14,16 @@
     "stale_days": "超過此天數未更新即亮黃燈（含資料本身的發布滯後）"
   },
 
-  "consumer_price_index":            {"source":"fred","series":"CPIAUCSL","display":"yoy","also":["mom","ann3m"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-3,"max":20}},
-  "core_cpi_ex_food_energy":         {"source":"fred","series":"CPILFESL","display":"yoy","also":["mom","ann3m"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-2,"max":15},"rules":["core_vs_target"]},
+  "consumer_price_index":            {"source":"fred","series":"CPIAUCNS","also_series":"CPIAUCSL","display":"yoy","also":["mom","ann3m"],"also_labels":{"mom":"MoM(季調)","ann3m":"3個月年化(季調)"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-3,"max":20},"note":"YoY 用未季調（官方新聞稿頭條慣例），MoM 與年化用季調"},
+  "core_cpi_ex_food_energy":         {"source":"fred","series":"CPILFENS","also_series":"CPILFESL","display":"yoy","also":["mom","ann3m"],"also_labels":{"mom":"MoM(季調)","ann3m":"3個月年化(季調)"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-2,"max":15},"rules":["core_vs_target"],"note":"YoY 用未季調，MoM 與年化用季調"},
   "core_services_ex_housing":        {"source":"fred","series":"CUSR0000SASL2RS","display":"yoy","also":["ann3m"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-3,"max":15},"note":"FRED 官方『服務業扣除房租』序列，即 Super Core 的標準代理"},
   "owners_equivalent_rent_rent":     {"source":"fred","series":"CUSR0000SEHC","display":"yoy","also":["ann3m"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-2,"max":12}},
-  "pce_price_index":                 {"source":"fred","series":"PCEPILFE","extras":{"總指數":"PCEPI"},"display":"yoy","also":["mom","ann3m"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-2,"max":12}},
+  "pce_price_index":                 {"source":"fred","series":"PCEPILFE","display":"yoy","also":["mom","ann3m","yoy:PCEPI"],"also_labels":{"mom":"MoM","ann3m":"3個月年化","yoy:PCEPI":"總指數 YoY"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-2,"max":12},"note":"主值為核心PCE（Fed 目標對象），總指數以 YoY 併呈"},
   "dallas_fed_trimmed_mean_pce":     {"source":"fred","series":"PCETRIM12M159SFRBDAL","extras":{"單月年化":"PCETRIM1M158SFRBDAL"},"display":"level","unit":"%","decimals":2,"stale_days":50,"sanity":{"min":-2,"max":12}},
   "producer_price_index":            {"source":"fred","series":"PPIFIS","display":"yoy","also":["mom"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-8,"max":20}},
   "5_year_5_year_forward_inflation_expectat": {"source":"fred","series":"T5YIFR","display":"level","unit":"%","decimals":2,"stale_days":5,"sanity":{"min":0,"max":5},"rules":["deanchor_2_5"]},
   "survey_of_consumer_expectations":  {"source":"nyfed_sce","url":"https://www.newyorkfed.org/medialibrary/interactives/sce/sce/downloads/data/frbny-sce-data.xlsx","field":"3年期中位數","display":"level","unit":"%","decimals":2,"stale_days":45,"sanity":{"min":0,"max":10}},
-  "umich_inflation_expectations":    {"source":"fred","series":"MICH","display":"level","unit":"%","decimals":1,"stale_days":45,"sanity":{"min":0,"max":12},"note":"MICH 為 1 年期預期；5–10 年期 FRED 無對應序列"},
+  "umich_inflation_expectations":    {"source":"umich","table":"inflation_expectations","display":"level","unit":"%","decimals":1,"stale_days":45,"sanity":{"min":0,"max":12},"note":"改用密大官方 CSV：FRED 的 MICH 會落後一期，且無 5–10 年期序列"},
 
   "nonfarm_payrolls":                {"source":"fred","series":"PAYEMS","display":"mom_diff","unit":"千人","decimals":0,"stale_days":40,"sanity":{"min":-2000,"max":2000},"rules":["breakeven_100_150"]},
   "unemployment_rate_u_3":           {"source":"fred","series":"UNRATE","display":"level","unit":"%","decimals":1,"stale_days":40,"sanity":{"min":2,"max":15},"rules":["sahm_rule"]},
@@ -43,12 +43,12 @@
   "ism_mfg_prices_paid":             {"source":"news","keys":["ISM manufacturing prices paid","prices paid index"],"display":"level","unit":"","decimals":1,"stale_days":40,"sanity":{"min":20,"max":95},"rules":["pmi_50_line"]},
   "ism_services_pmi":                {"source":"news","keys":["ISM services PMI","services PMI"],"display":"level","unit":"","decimals":1,"stale_days":40,"sanity":{"min":25,"max":75},"rules":["pmi_50_line"]},
 
-  "retail_sales_advance":            {"source":"fred","series":"RSAFS","extras":{"扣除餐飲":"RSXFS"},"display":"yoy","also":["mom"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-25,"max":30}},
-  "industrial_production":           {"source":"fred","series":"INDPRO","extras":{"產能利用率":"TCU"},"display":"yoy","also":["mom"],"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-20,"max":20}},
-  "atlanta_fed_gdpnow":              {"source":"fred","series":"GDPNOW","display":"level","unit":"%","decimals":1,"stale_days":14,"sanity":{"min":-10,"max":12}},
-  "durable_goods_orders":            {"source":"fred","series":"DGORDER","extras":{"核心資本財":"NEWORDER"},"display":"yoy","also":["mom"],"unit":"%","decimals":1,"stale_days":50,"sanity":{"min":-40,"max":40}},
+  "retail_sales_advance":            {"source":"fred","series":"RSAFS","extras":{"扣除餐飲":"RSXFS"},"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-25,"max":30},"note":"主值改為 MoM——市場交易的是月變動，年增率受基期干擾"},
+  "industrial_production":           {"source":"fred","series":"INDPRO","extras":{"產能利用率":"TCU"},"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-20,"max":20},"note":"主值改為 MoM"},
+  "atlanta_fed_gdpnow":              {"source":"fred","series":"GDPNOW","display":"level","label_as":"quarter","unit":"%","decimals":1,"stale_days":14,"sanity":{"min":-10,"max":12},"note":"值對應的是預測季別，非資料期別——卡面已標示季度"},
+  "durable_goods_orders":            {"source":"fred","series":"DGORDER","extras":{"核心資本財":"NEWORDER"},"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":50,"sanity":{"min":-40,"max":40},"note":"主值改為 MoM；核心資本財訂單見附帶數值"},
 
-  "umich_consumer_sentiment":        {"source":"fred","series":"UMCSENT","display":"level","unit":"","decimals":1,"stale_days":45,"sanity":{"min":40,"max":115}},
+  "umich_consumer_sentiment":        {"source":"umich","table":"sentiment","display":"level","unit":"","decimals":1,"stale_days":45,"sanity":{"min":40,"max":115},"note":"改用密大官方 CSV：FRED 的 UMCSENT 會落後一期"},
   "conference_board_consumer_confidence": {"source":"html","url":"https://www.conference-board.org/topics/consumer-confidence","pattern":"confidence_index","extras":["現況指數","預期指數"],"display":"level","unit":"","decimals":1,"stale_days":40,"sanity":{"min":40,"max":150},"note":"2026-08-02 實測：數字直接寫在 HTML 原文段落中"},
 
   "nahb_housing_market_index":       {"source":"html","url":"https://www.nahb.org/news-and-economics/housing-economics/indices/housing-market-index","pattern":"hmi_key_findings","display":"level","unit":"","decimals":0,"stale_days":40,"sanity":{"min":5,"max":90},"rules":["pmi_50_line"],"note":"2026-08-02 實測：HMI Key Findings 段落含數字，另附 .xls 歷史檔"},
