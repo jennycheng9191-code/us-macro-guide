@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-03 20:40",
+ "build_time": "2026-08-04 06:48",
  "summary": {
   "green": 39,
   "yellow": 0,
@@ -823,17 +823,13 @@
    "display": "yoy"
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.3,
-   "value_fmt": "2.30%",
+   "value": 2.31,
+   "value_fmt": "2.31%",
    "value_label": "",
-   "asof": "2026-07-31",
+   "asof": "2026-08-03",
    "asof_label": "",
-   "age_days": 3,
+   "age_days": 0,
    "history": [
-    {
-     "date": "2026-06-29",
-     "value": 2.2
-    },
     {
      "date": "2026-06-30",
      "value": 2.22
@@ -925,13 +921,17 @@
     {
      "date": "2026-07-31",
      "value": 2.3
+    },
+    {
+     "date": "2026-08-03",
+     "value": 2.31
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.20pp；創近 24 期新高",
+   "note": "距 2.5% 去錨警戒線尚有 0.19pp；創近 24 期新高",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level"
@@ -2463,8 +2463,8 @@
    "display": "mom"
   },
   "atlanta_fed_gdpnow": {
-   "value": 4.9543,
-   "value_fmt": "5.0%",
+   "value": 6.1804,
+   "value_fmt": "6.2%",
    "value_label": "2026 Q3 預測值",
    "asof": "2026-07-01",
    "asof_label": "",
@@ -2564,14 +2564,14 @@
     },
     {
      "date": "2026-07-01",
-     "value": 4.9543
+     "value": 6.1804
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 79 百分位",
+   "note": "位於近 24 期的第 83 百分位",
    "source_label": "FRED GDPNOW",
    "unit": "%",
    "display": "level"
@@ -3368,10 +3368,10 @@
     }
    ],
    "extras": {
-    "10Y公債": 4.68
+    "10Y公債": 4.75
    },
    "also": {
-    "利差 vs DGS10": 1.9800000000000004
+    "利差 vs DGS10": 1.9100000000000001
    },
    "status": "green",
    "notes": [],
@@ -3518,17 +3518,13 @@
    "display": "table"
   },
   "treasury_general_account": {
-   "value": 970.442,
-   "value_fmt": "970十億美元",
+   "value": 997.946,
+   "value_fmt": "998十億美元",
    "value_label": "",
-   "asof": "2026-07-30",
+   "asof": "2026-07-31",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 3,
    "history": [
-    {
-     "date": "2026-06-29",
-     "value": 895.576
-    },
     {
      "date": "2026-06-30",
      "value": 876.961
@@ -3620,13 +3616,17 @@
     {
      "date": "2026-07-30",
      "value": 970.442
+    },
+    {
+     "date": "2026-07-31",
+     "value": 997.946
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "連續 5 期走升、創近 24 期新高",
+   "note": "連續 6 期走升、創近 24 期新高",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level"
@@ -4095,17 +4095,13 @@
    "display": "level"
   },
   "overnight_reverse_repo_facility": {
-   "value": 2.151,
+   "value": 2.127,
    "value_fmt": "2十億美元",
    "value_label": "",
-   "asof": "2026-07-31",
+   "asof": "2026-08-03",
    "asof_label": "",
-   "age_days": 3,
+   "age_days": 0,
    "history": [
-    {
-     "date": "2026-06-29",
-     "value": 3.546
-    },
     {
      "date": "2026-06-30",
      "value": 26.9
@@ -4197,6 +4193,10 @@
     {
      "date": "2026-07-31",
      "value": 2.151
+    },
+    {
+     "date": "2026-08-03",
+     "value": 2.127
     }
    ],
    "extras": {},
