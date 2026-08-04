@@ -179,6 +179,8 @@ def main() -> int:
             "source_label": res.get("source_label", ""),
             "unit": m.get("unit", ""),
             "display": m.get("display", "level"),
+            # 值上升對債市的意義：1=利空（殖利率上行壓力）、-1=利多、缺=語義不明確
+            "bond": m.get("bond"),
         }
         flag = {"green": "OK", "yellow": "!!", "gray": "--"}[status]
         print(f"  [{flag}] {card['n']:<22} {cards[cid]['value_fmt']:>14}  {res.get('asof', '')}")

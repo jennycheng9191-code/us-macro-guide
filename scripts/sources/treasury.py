@@ -120,6 +120,13 @@ def auctions(m: dict) -> dict:
         if btc is not None:
             hist.append({"date": r["auctionDate"][:10], "value": btc})
 
+    # indirectBidderAccepted 是「得標金額」不是占比（API 回的是美元）。
+    # 市場慣用的間接投標占比＝間接得標 ÷ 總得標，要自己算，直接拿原欄位會
+    # 在卡面顯示成 30,801,964,000%。
+    def share(field: str) -> float | None:
+        part, total = num(latest.get(field)), num(latest.get("totalAccepted"))
+        return round(part / total * 100, 1) if part and total else None
+
     return {"ok": True,
             "value": num(latest.get("bidToCoverRatio")),
             "asof": latest["auctionDate"][:10],
@@ -129,7 +136,8 @@ def auctions(m: dict) -> dict:
             "extras": {
                 "券別": f"{latest.get('securityTerm')} {latest.get('securityType')}",
                 "得標利率(%)": num(latest.get("highYield")),
-                "間接投標占比(%)": num(latest.get("indirectBidderAccepted")),
+                "間接投標占比(%)": share("indirectBidderAccepted"),
+                "一級交易商占比(%)": share("primaryDealerAccepted"),
             },
             "also": {},
             "source_label": "TreasuryDirect 拍賣查詢",

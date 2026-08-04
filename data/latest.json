@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-04 22:35",
+ "build_time": "2026-08-04 22:53",
  "summary": {
   "green": 46,
   "yellow": 0,
@@ -121,7 +121,8 @@
    "note": "位於近 24 期的第 92 百分位",
    "source_label": "FRED CPIAUCNS",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "core_cpi_ex_food_energy": {
    "value": 2.594072431813488,
@@ -238,7 +239,8 @@
    "note": "位於近 24 期的第 12 百分位",
    "source_label": "FRED CPILFENS",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "core_services_ex_housing": {
    "value": 3.145977333762784,
@@ -354,7 +356,8 @@
    "note": "創近 24 期新低",
    "source_label": "FRED CUSR0000SASL2RS",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "owners_equivalent_rent_rent": {
    "value": 3.2508011303475692,
@@ -470,7 +473,8 @@
    "note": "位於近 24 期的第 12 百分位",
    "source_label": "FRED CUSR0000SEHC",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "pce_price_index": {
    "value": 3.286526430967074,
@@ -588,7 +592,8 @@
    "note": "位於近 24 期的第 92 百分位",
    "source_label": "FRED PCEPILFE",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "dallas_fed_trimmed_mean_pce": {
    "value": 2.23,
@@ -704,7 +709,8 @@
    "note": "創近 24 期新低",
    "source_label": "FRED PCETRIM12M159SFRBDAL",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "producer_price_index": {
    "value": 5.507672194780078,
@@ -820,7 +826,8 @@
    "note": "位於近 24 期的第 92 百分位",
    "source_label": "FRED PPIFIS",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
    "value": 2.31,
@@ -934,7 +941,8 @@
    "note": "距 2.5% 去錨警戒線尚有 0.19pp；創近 24 期新高",
    "source_label": "FRED T5YIFR",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "survey_of_consumer_expectations": {
    "value": 3.336173057556152,
@@ -1050,7 +1058,8 @@
    "note": "創近 24 期新高",
    "source_label": "NY Fed SCE 官方資料檔",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "umich_inflation_expectations": {
    "value": 4.2,
@@ -1166,7 +1175,8 @@
    "note": "位於近 24 期的第 46 百分位",
    "source_label": "密大官方資料表 tbmpx1px5.csv",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "nonfarm_payrolls": {
    "value": 57.0,
@@ -1280,7 +1290,8 @@
    "note": "月增 57千人，低於 10–15 萬盈虧平衡區間；連續 3 期走降、位於近 24 期的第 54 百分位",
    "source_label": "FRED PAYEMS",
    "unit": "千人",
-   "display": "mom_diff"
+   "display": "mom_diff",
+   "bond": 1
   },
   "unemployment_rate_u_3": {
    "value": 4.2,
@@ -1394,7 +1405,8 @@
    "note": "Sahm Rule 計數 0.07pp，距 0.5pp 觸發門檻尚有 0.43pp；位於近 24 期的第 54 百分位",
    "source_label": "FRED UNRATE",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": -1
   },
   "labor_force_participation_rate": {
    "value": 61.5,
@@ -1510,7 +1522,8 @@
    "note": "創近 24 期新低",
    "source_label": "FRED CIVPART",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "average_hourly_earnings": {
    "value": 3.5203520352035333,
@@ -1626,7 +1639,8 @@
    "note": "年增 3.5%，落在與 2% 通膨相容區內；位於近 24 期的第 12 百分位",
    "source_label": "FRED CES0500000003",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "job_openings_and_labor_turnover_survey": {
    "value": 7359.0,
@@ -1743,7 +1757,8 @@
    "note": "V/U 比 1.04，尚未跌破 1.0 鬆弛門檻；位於近 24 期的第 71 百分位",
    "source_label": "FRED JTSJOL",
    "unit": "千個",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "initial_jobless_claims": {
    "value": 197000.0,
@@ -1861,7 +1876,8 @@
    "note": "仍在過去 12 週的區間內波動；位於近 24 期的第 12 百分位",
    "source_label": "FRED ICSA",
    "unit": "人",
-   "display": "level"
+   "display": "level",
+   "bond": -1
   },
   "adp_national_employment_report": {
    "value": 98.0,
@@ -1975,7 +1991,8 @@
    "note": "位於近 24 期的第 75 百分位",
    "source_label": "FRED ADPMNUSNERSA",
    "unit": "千人",
-   "display": "mom_diff"
+   "display": "mom_diff",
+   "bond": 1
   },
   "ism_manufacturing_employment": {
    "value": 52.8,
@@ -2089,7 +2106,8 @@
    "note": "高於 50 榮枯線；連續 3 期走升、創近 24 期新高",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "ism_services_employment": {
    "value": 51.2,
@@ -2203,7 +2221,8 @@
    "note": "高於 50 榮枯線；位於近 24 期的第 71 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "employment_cost_index": {
    "value": 3.3831252188119887,
@@ -2319,7 +2338,8 @@
    "note": "年增 3.4%，未超過與 2% 相容的 3.5% 參考線；位於近 24 期的第 21 百分位",
    "source_label": "FRED ECIALLCIV",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "wage_growth_tracker": {
    "value": 3.6,
@@ -2433,7 +2453,8 @@
    "note": "位於近 24 期的第 17 百分位",
    "source_label": "FRED FRBATLWGT3MMAUMHWGO",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "ism_manufacturing_pmi": {
    "value": 55.6,
@@ -2547,7 +2568,8 @@
    "note": "高於 50 榮枯線；未跌破對應整體衰退的 45 門檻；創近 24 期新高",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "ism_mfg_new_orders": {
    "value": 56.7,
@@ -2661,7 +2683,8 @@
    "note": "高於 50 榮枯線；位於近 24 期的第 92 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "ism_mfg_prices_paid": {
    "value": 71.1,
@@ -2775,7 +2798,8 @@
    "note": "高於 50 榮枯線；連續 3 期走降、位於近 24 期的第 83 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "ism_services_pmi": {
    "value": 54.0,
@@ -2889,7 +2913,8 @@
    "note": "高於 50 榮枯線；位於近 24 期的第 75 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "retail_sales_advance": {
    "value": 0.2186794214449339,
@@ -3007,7 +3032,8 @@
    "note": "位於近 24 期的第 42 百分位",
    "source_label": "FRED RSAFS",
    "unit": "%",
-   "display": "mom"
+   "display": "mom",
+   "bond": 1
   },
   "industrial_production": {
    "value": 0.0769301271638545,
@@ -3125,7 +3151,8 @@
    "note": "位於近 24 期的第 58 百分位",
    "source_label": "FRED INDPRO",
    "unit": "%",
-   "display": "mom"
+   "display": "mom",
+   "bond": 1
   },
   "atlanta_fed_gdpnow": {
    "value": 6.1804,
@@ -3239,7 +3266,8 @@
    "note": "位於近 24 期的第 83 百分位",
    "source_label": "FRED GDPNOW",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "durable_goods_orders": {
    "value": 0.472079606520448,
@@ -3357,7 +3385,8 @@
    "note": "位於近 24 期的第 54 百分位",
    "source_label": "FRED DGORDER",
    "unit": "%",
-   "display": "mom"
+   "display": "mom",
+   "bond": 1
   },
   "umich_consumer_sentiment": {
    "value": 55.2,
@@ -3471,7 +3500,8 @@
    "note": "位於近 24 期的第 46 百分位",
    "source_label": "密大官方資料表 tbmics.csv",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "conference_board_consumer_confidence": {
    "value": 90.8,
@@ -3491,7 +3521,8 @@
    "note": "",
    "source_label": "Conference Board 官網新聞稿",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "nahb_housing_market_index": {
    "value": 34.0,
@@ -3508,7 +3539,8 @@
    "note": "低於 50 榮枯線",
    "source_label": "NAHB 官網 HMI 頁",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "housing_starts_building_permits": {
    "value": 1427.0,
@@ -3625,7 +3657,8 @@
    "note": "位於近 24 期的第 83 百分位",
    "source_label": "FRED HOUST",
    "unit": "千戶(年化)",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "existing_home_sales": {
    "value": 4090.0,
@@ -3695,7 +3728,8 @@
    "note": "位於近 13 期的第 69 百分位",
    "source_label": "FRED EXHOSLUSM495S",
    "unit": "千戶(年化)",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "new_home_sales": {
    "value": 628.0,
@@ -3809,7 +3843,8 @@
    "note": "位於近 24 期的第 17 百分位",
    "source_label": "FRED HSN1F",
    "unit": "千戶(年化)",
-   "display": "level"
+   "display": "level",
+   "bond": 1
   },
   "s_p_corelogic_case_shiller_hpi": {
    "value": 1.6164962076451905,
@@ -3925,7 +3960,8 @@
    "note": "位於近 24 期的第 42 百分位",
    "source_label": "FRED SPCS20RSA",
    "unit": "%",
-   "display": "yoy"
+   "display": "yoy",
+   "bond": 1
   },
   "30y_fixed_mortgage_rate_pmms": {
    "value": 6.66,
@@ -4043,7 +4079,8 @@
    "note": "連續 4 期走升、創近 24 期新高",
    "source_label": "FRED MORTGAGE30US",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "quarterly_refunding_announcement": {
    "value": null,
@@ -4062,7 +4099,8 @@
    "note": "",
    "source_label": "",
    "unit": "",
-   "display": "text"
+   "display": "text",
+   "bond": null
   },
   "coupon_auction_results": {
    "value": 2.49,
@@ -4172,7 +4210,8 @@
    "extras": {
     "券別": "7-Year Note",
     "得標利率(%)": 4.473,
-    "間接投標占比(%)": 30801964000.0
+    "間接投標占比(%)": 63.0,
+    "一級交易商占比(%)": 11.7
    },
    "also": {},
    "status": "green",
@@ -4180,7 +4219,8 @@
    "note": "位於近 24 期的第 38 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
-   "display": "table"
+   "display": "table",
+   "bond": null
   },
   "treasury_general_account": {
    "value": 997.946,
@@ -4294,7 +4334,8 @@
    "note": "連續 6 期走升、創近 24 期新高",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "bills_share_of_outstanding_debt": {
    "value": 21.535665168414432,
@@ -4408,7 +4449,8 @@
    "note": "占比 21.5%，超出 TBAC 建議的 15–20% 區間；位於近 24 期的第 21 百分位",
    "source_label": "FiscalData MSPD",
    "unit": "%",
-   "display": "pct"
+   "display": "pct",
+   "bond": null
   },
   "monthly_treasury_statement": {
    "value": -93.29562557635998,
@@ -4524,7 +4566,8 @@
    "note": "位於近 24 期的第 83 百分位",
    "source_label": "FiscalData MTS",
    "unit": "十億美元",
-   "display": "level"
+   "display": "level",
+   "bond": -1
   },
   "chicago_fed_national_financial_condition": {
    "value": -0.554,
@@ -4640,7 +4683,8 @@
    "note": "低於 0（歷史均值），金融條件偏寬鬆；連續 7 期走降、創近 24 期新低",
    "source_label": "FRED NFCI",
    "unit": "",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "sofr_minus_iorb": {
    "value": 0.0,
@@ -4757,7 +4801,8 @@
    "note": "利差 0.0bp，SOFR 低於 IORB；位於近 24 期的第 88 百分位",
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "overnight_reverse_repo_facility": {
    "value": 2.127,
@@ -4871,7 +4916,8 @@
    "note": "位於近 24 期的第 67 百分位",
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "reserve_balances_h_4_1": {
    "value": 2984.57,
@@ -4985,7 +5031,8 @@
    "note": "位於近 24 期的第 29 百分位",
    "source_label": "FRED WRESBAL",
    "unit": "十億美元",
-   "display": "level"
+   "display": "level",
+   "bond": null
   },
   "ice_bofa_credit_oas": {
    "value": 0.79,
@@ -5103,7 +5150,8 @@
    "note": "位於近 24 期的第 79 百分位",
    "source_label": "FRED BAMLC0A0CM",
    "unit": "%",
-   "display": "level"
+   "display": "level",
+   "bond": -1
   }
  }
 }

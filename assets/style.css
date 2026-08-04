@@ -5,6 +5,8 @@
   --inf:#D85A30; --lab:#185FA5; --wag:#BA7517; --act:#0F6E56;
   --con:#534AB7; --hou:#A34D7C; --fis:#7A8B2F; --fin:#3C8EA0;
   --green:#3FB27F; --yellow:#D9A441; --gray:#6B7280;
+  /* 債市多空：紅＝利空債市（殖利率上行壓力），綠＝利多債市 */
+  --bear:#E06C5A; --bull:#4FBF8B;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);
@@ -24,6 +26,11 @@ h2{font-size:15px;color:var(--text2);font-weight:600;margin:22px 0 10px;letter-s
 .btn-primary{color:var(--text);border-color:var(--fin)}
 .btn:disabled{opacity:.5;cursor:default}
 .hint{font-size:11.5px;color:var(--text3)}
+.legend{font-size:11.5px;color:var(--text3);margin-top:7px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.legend span{padding:1px 5px;border-radius:3px;border:1px solid currentColor;opacity:.9}
+.legend .bear{color:var(--bear)}
+.legend .bull{color:var(--bull)}
+.legend .flat{color:var(--text3)}
 
 .statusbar{display:flex;gap:6px;flex-wrap:wrap}
 .stat{background:var(--card2);border:1px solid var(--border);color:var(--text2);
@@ -69,6 +76,11 @@ h2{font-size:15px;color:var(--text2);font-weight:600;margin:22px 0 10px;letter-s
 .valbox .v.na{color:var(--text3);font-size:15px}
 .valbox .vlabel{font-size:10.5px;color:var(--text3)}
 .chg{font-size:12px;color:var(--text2);white-space:nowrap}
+/* 語義不明確的卡維持中性灰——沒有把握的多空判斷不給 */
+.chg.bear{color:var(--bear)}
+.chg.bull{color:var(--bull)}
+.chg .bondtag{font-size:10.5px;margin-left:5px;padding:1px 4px;border-radius:3px;
+  border:1px solid currentColor;opacity:.85;letter-spacing:.3px}
 .spark{flex:0 0 auto}
 .asofbox{text-align:right;white-space:nowrap}
 .asofbox .asof{font-size:11px;color:var(--text3);display:block}
