@@ -104,9 +104,12 @@ def _extract(text: str, card_id: str) -> float | None:
                 continue                                # 命中排除語境（預期值/前值）
             raw = mo.group(1).replace(",", "")
             try:
-                return float(raw)
+                v = float(raw)
             except ValueError:
                 continue
+            # ADP 卡的單位是千人，新聞寫的是人數（「added 104,000 jobs」）。
+            # 不換算的話值會差 1000 倍，直接被關卡 1 的合理區間擋掉。
+            return v / 1000 if card_id == "adp_national_employment_report" else v
     return None
 
 

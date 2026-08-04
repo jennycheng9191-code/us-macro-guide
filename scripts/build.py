@@ -44,19 +44,38 @@ def _fetch_one(card_id: str, m: dict, ctx: dict) -> dict:
     return {"ok": False, "reason": f"未知來源型別 {src}"}
 
 
+def _apply_scale(res: dict, m: dict) -> dict:
+    """單位換算（例如 FRED 的 Persons → 千人）。
+
+    必須用「實際取數的那份 mapping」的 scale：不同來源的原始單位不一樣，
+    拿主要來源的倍率去乘備援來源的值，會得到差三個數量級的錯誤數字。
+    也必須在驗證之前套用，sanity 區間才會跟顯示單位一致。
+    """
+    if not (sc := m.get("scale")) or not res.get("ok"):
+        return res
+    if res.get("value") is not None:
+        res["value"] *= sc
+    if res.get("raw_latest") is not None:
+        res["raw_latest"] *= sc
+    res["history"] = [{"date": h["date"], "value": h["value"] * sc}
+                      for h in res.get("history", [])]
+    return res
+
+
 def dispatch(card_id: str, m: dict, ctx: dict) -> dict:
     """主要來源失敗時，改試 mapping 裡宣告的備援來源。
 
     備援結果會標上 source_kind，validate 才知道要用備援來源的關卡規則
     （例如新聞來源仍須雙來源交叉驗證，不會因為掛在官方卡下就免驗）。
     """
-    res = _fetch_one(card_id, m, ctx)
+    res = _apply_scale(_fetch_one(card_id, m, ctx), m)
     fb = m.get("fallback")
     if res.get("ok") or not fb:
         return res
 
+    effective = {**m, **fb}
     try:
-        alt = _fetch_one(card_id, {**m, **fb}, ctx)
+        alt = _apply_scale(_fetch_one(card_id, effective, ctx), effective)
     except Exception as e:                                      # noqa: BLE001
         print(f"  ! {card_id} 備援來源也失敗：{e}", file=sys.stderr)
         return res
@@ -102,16 +121,6 @@ def main() -> int:
             res = {"ok": False, "reason": f"抓取例外：{e}"}
             print(f"  ! {card['n']}: {e}", file=sys.stderr)
             traceback.print_exc(limit=1, file=sys.stderr)
-
-        # 單位換算（例如 FRED 的百萬美元 → 十億美元）。
-        # 必須在驗證之前套用，sanity 區間才會跟顯示單位一致。
-        if (sc := m.get("scale")) and res.get("ok"):
-            if res.get("value") is not None:
-                res["value"] *= sc
-            if res.get("raw_latest") is not None:
-                res["raw_latest"] *= sc
-            res["history"] = [{"date": h["date"], "value": h["value"] * sc}
-                              for h in res.get("history", [])]
 
         verdict = validate.check(res, m)
         status, notes = verdict["status"], list(verdict["notes"])

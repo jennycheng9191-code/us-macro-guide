@@ -38,7 +38,7 @@ CASES = [
      45.3, "新訂單分項"),
     ("adp_national_employment_report",
      "ADP reported private sector payrolls increased by 104,000 in July.",
-     104000.0, "ADP 標準寫法"),
+     104.0, "ADP 標準寫法——新聞寫人數，卡片單位是千人，抽取器要換算"),
 
     # ---- 陷阱：全部必須回 None ----
     ("ism_manufacturing_pmi",

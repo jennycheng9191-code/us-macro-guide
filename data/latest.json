@@ -1,9 +1,9 @@
 {
- "build_time": "2026-08-04 22:14",
+ "build_time": "2026-08-04 22:31",
  "summary": {
-  "green": 45,
+  "green": 46,
   "yellow": 0,
-  "gray": 2
+  "gray": 1
  },
  "cards": {
   "consumer_price_index": {
@@ -1864,21 +1864,116 @@
    "display": "level"
   },
   "adp_national_employment_report": {
-   "value": null,
-   "value_fmt": "—",
+   "value": 98.0,
+   "value_fmt": "98千人",
    "value_label": "",
-   "asof": "",
+   "asof": "2026-06-01",
    "asof_label": "",
-   "age_days": null,
-   "history": [],
+   "age_days": 34,
+   "history": [
+    {
+     "date": "2024-07-01",
+     "value": 120.0
+    },
+    {
+     "date": "2024-08-01",
+     "value": 46.0
+    },
+    {
+     "date": "2024-09-01",
+     "value": -21.0
+    },
+    {
+     "date": "2024-10-01",
+     "value": -12.0
+    },
+    {
+     "date": "2024-11-01",
+     "value": 102.0
+    },
+    {
+     "date": "2024-12-01",
+     "value": 157.0
+    },
+    {
+     "date": "2025-01-01",
+     "value": 140.0
+    },
+    {
+     "date": "2025-02-01",
+     "value": 14.0
+    },
+    {
+     "date": "2025-03-01",
+     "value": -53.0
+    },
+    {
+     "date": "2025-04-01",
+     "value": -23.0
+    },
+    {
+     "date": "2025-05-01",
+     "value": -24.0
+    },
+    {
+     "date": "2025-06-01",
+     "value": -1.0
+    },
+    {
+     "date": "2025-07-01",
+     "value": 77.0
+    },
+    {
+     "date": "2025-08-01",
+     "value": 49.0
+    },
+    {
+     "date": "2025-09-01",
+     "value": 88.0
+    },
+    {
+     "date": "2025-10-01",
+     "value": 20.0
+    },
+    {
+     "date": "2025-11-01",
+     "value": 74.0
+    },
+    {
+     "date": "2025-12-01",
+     "value": 37.0
+    },
+    {
+     "date": "2026-01-01",
+     "value": 11.0
+    },
+    {
+     "date": "2026-02-01",
+     "value": 66.0
+    },
+    {
+     "date": "2026-03-01",
+     "value": 61.0
+    },
+    {
+     "date": "2026-04-01",
+     "value": 105.0
+    },
+    {
+     "date": "2026-05-01",
+     "value": 122.0
+    },
+    {
+     "date": "2026-06-01",
+     "value": 98.0
+    }
+   ],
    "extras": {},
    "also": {},
-   "status": "gray",
-   "notes": [
-    "CNBC 與 AP 皆未抓到可辨識的數值"
-   ],
-   "note": "",
-   "source_label": "",
+   "status": "green",
+   "notes": [],
+   "note": "位於近 24 期的第 75 百分位",
+   "source_label": "FRED ADPMNUSNERSA",
    "unit": "千人",
    "display": "mom_diff"
   },

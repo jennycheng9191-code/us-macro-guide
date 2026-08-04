@@ -22,19 +22,21 @@ GitHub Actions（每天台北 08:00）
 
 | 來源 | 卡數 | 備註 |
 | :-- | --: | :-- |
-| FRED API | 31 | 需要免費金鑰，序列代號皆已逐一驗證 |
+| FRED API | 32 | 需要免費金鑰，序列代號皆已逐一驗證（含 ADP 官方序列） |
 | ISM 官方新聞稿（PR Newswire） | 6 | ISM×6，官方原文全文，分項數字齊全 |
 | Treasury API | 4 | TGA / Bill 占比 / MTS / 拍賣結果，免金鑰 |
 | 官方網頁解析 | 2 | Conference Board、NAHB |
 | NY Fed SCE 資料檔 | 1 | xlsx |
 | 衍生計算 | 1 | SOFR − IORB |
-| 新聞雙來源（CNBC＋AP） | 1 | ADP，官網為 JS 外殼故走此路 |
 | 人工 | 1 | QRA（敘述性內容） |
+
+新聞抓取（`scripts/sources/news.py`）現在只作為 ADP 的備援，沒有任何卡片以它為主要來源。
 
 被封鎖而無法直接抓的來源（已實測）：
 ISM 官網為 reCAPTCHA 牆（含 `/ism-pmi-reports/` 等所有路徑，一律轉址到 SSO 登入頁）、
 ADP 官網為 JS 外殼、S&P Global PMI 403、Reuters 與 MarketWatch 401、
 AP News 已改為前端渲染（hub 頁抓不到任何文章連結）。
+ADP 的月報在 PR Newswire 上只零星出現（發布者頁穩定發的是每週初值），故改走 FRED。
 
 ### ISM 為什麼改抓 PR Newswire
 
@@ -99,4 +101,5 @@ ISM 亮黃燈或未取得時，把數字寫進 `data/manual.json`：
 - 新聞與網頁解析的中間段一律用 `[\s\S]` 而非 `[^.]`。新聞句子常夾帶「down from 49.5」這種帶小數點的數字，用 `[^.]` 會提前截斷。
 - FRED 觀測值的日期是**期別起始日**（6 月 CPI 標成 `2026-06-01`），算新鮮度時必須從期別結束日起算，否則正常資料會被誤判成過期。
 - ISM 新聞稿的分項小標寫成 `Employment Index at 51.2%`（用 `%` 符號），內文則寫 `51.2 percent`。抽取器兩種都要認——只認 `percent` 會略過小標、讓取值視窗滑進下一句，把服務業就業抓成 Services PMI 的數字。
+- `scale`（單位換算）必須用**實際取數的那份 mapping**。走備援時來源的原始單位不同，拿主要來源的倍率去乘備援的值會差好幾個數量級。`build.dispatch` 已在各自的來源上套用。
 - ISM 每年 1 月會完成**季調因子的年度修正**，1 月號引述的 12 月值與 12 月當初公布的不同（例：47.7 → 47.4）。歷史序列在 12 月／1 月交界本來就會混到兩個 vintage，`test_prnewswire.py --live` 已把這個邊界排除，不是錯誤。
