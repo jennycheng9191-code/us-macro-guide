@@ -34,10 +34,11 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 回歸測試
-        # 這兩組測試擋的都是「算錯／抓錯數字」，不過就不該更新資料
+        # 這幾組測試擋的都是「算錯／抓錯數字」，不過就不該更新資料
         run: |
           python scripts/test_transform.py
           python scripts/test_news_extractor.py
+          python scripts/test_prnewswire.py
 
       - name: 抓取並組裝 latest.json
         env:

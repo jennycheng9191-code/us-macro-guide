@@ -6,6 +6,8 @@
   關卡 1  合理範圍   值必須落在該指標的歷史合理區間內（mapping.json 的 sanity）
   關卡 2  變動幅度   與上期的變動不得超過歷史變動標準差的 3 倍
   關卡 3  交叉驗證   新聞來源必須有兩個獨立來源抓到相同數字
+                     （官方新聞稿原文如 prnewswire 屬第一手，不受此關卡限制——
+                       要求官方數字再找二手來源背書反而是降級）
 
 另外檢查資料新鮮度：超過 stale_days 未更新即亮黃燈。
 """
@@ -52,6 +54,8 @@ def _gate_jump(value: float, history: list[dict]) -> str | None:
 def _gate_cross_check(res: dict, source: str) -> str | None:
     if source != "news":
         return None
+    if res.get("sources_found") is None:
+        return None                        # 該卡不是走新聞抓取，沒有來源計數可驗
     found = res.get("sources_found", 0)
     if found < 2:
         return "只有單一新聞來源抓到，未達雙來源交叉驗證"
@@ -80,7 +84,9 @@ def check(res: dict, m: dict) -> dict:
         status = YELLOW
         notes.append(f"關卡2：{n}")
 
-    if (n := _gate_cross_check(res, m.get("source", ""))):
+    # 走備援時實際來源與 mapping 宣告的不同，關卡要跟著實際來源走
+    actual_source = res.get("source_kind") or m.get("source", "")
+    if (n := _gate_cross_check(res, actual_source)):
         status = YELLOW
         notes.append(f"關卡3：{n}")
 
