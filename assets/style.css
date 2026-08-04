@@ -5,8 +5,9 @@
   --inf:#D85A30; --lab:#185FA5; --wag:#BA7517; --act:#0F6E56;
   --con:#534AB7; --hou:#A34D7C; --fis:#7A8B2F; --fin:#3C8EA0;
   --green:#3FB27F; --yellow:#D9A441; --gray:#6B7280;
-  /* 債市多空：紅＝利空債市（殖利率上行壓力），綠＝利多債市 */
-  --bear:#E06C5A; --bull:#4FBF8B;
+  /* 債市多空：比照台股紅漲綠跌，以「債券價格」為準——
+     利多債市＝債價上漲＝紅，利空債市＝債價下跌（殖利率上行）＝綠 */
+  --bull:#E06C5A; --bear:#4FBF8B;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);
@@ -104,6 +105,8 @@ summary{font-size:12.5px;color:var(--text2);cursor:pointer;user-select:none;padd
 footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--border);
   font-size:12px;color:var(--text3);line-height:1.8}
 footer b{color:var(--text2)}
+footer .bull{color:var(--bull)}
+footer .bear{color:var(--bear)}
 
 @media(max-width:480px){
   body{padding:12px}

@@ -25,9 +25,9 @@
       <span class="hint" id="reloadhint"></span>
     </div>
     <div class="legend" title="箭頭表示數值本身的升降；顏色與標籤表示這個變動對債市的意義">
-      箭頭＝數值升降　顏色＝債市含義：
-      <span class="bear">利空債市（殖利率上行壓力）</span>
-      <span class="bull">利多債市</span>
+      箭頭＝數值升降　顏色＝債市含義（紅漲綠跌以債價為準）：
+      <span class="bull">利多債市（債價漲）</span>
+      <span class="bear">利空債市（殖利率上行）</span>
       <span class="flat">灰＝語義不明確，不做判斷</span>
     </div>
   </div>
@@ -63,9 +63,9 @@
 
 <footer>
   <b>燈號語義</b>　🟢 資料在正常發布間隔內且通過三道關卡　·　🟡 資料過期、或未通過驗證而沿用前值　·　⚪ 未取得<br>
-  <b>方向箭頭</b>　▲▼ 僅表示該指標本身相對上期的變動方向與幅度，<u>不代表對債市的多空</u>（各指標與殖利率的關係方向不同，未在此編碼）。<br>
+  <b>方向箭頭</b>　▲▼ 表示該指標<u>本身</u>相對上期的變動方向與幅度；對債市的多空由顏色與標籤另行標示（<span class="bull">紅＝利多債市</span> <span class="bear">綠＝利空債市</span>，比照紅漲綠跌但以債券價格為準）。語義取決於當下情境的指標一律留白不編碼。<br>
   <b>判讀文字</b>　由量化規則自動生成（榮枯線、Sahm Rule、3個月年化、V/U比、百分位等）。需要跨指標推理的評論不自動生成，留白由人補。<br>
-  <b>資料規則</b>　一律取自官方 API 與官方網頁；ISM 與 ADP 因官網封鎖改採 CNBC＋AP 雙來源交叉驗證，未通過驗證即保留前值並亮黃燈，不顯示未經驗證的數字。<br>
+  <b>資料規則</b>　一律取自官方 API、官方網頁與官方新聞稿；ISM 六張卡取自 PR Newswire 上的 ISM 官方新聞稿全文（官網有 reCAPTCHA 牆），ADP 取自 ADP 供給 FRED 的官方季調序列。未通過驗證即保留前值並亮黃燈，不顯示未經驗證的數字。<br>
   <span id="footer-sources"></span>
 </footer>
 
