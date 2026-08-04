@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-04 21:05",
+ "build_time": "2026-08-04 22:14",
  "summary": {
   "green": 45,
   "yellow": 0,
@@ -1629,17 +1629,13 @@
    "display": "yoy"
   },
   "job_openings_and_labor_turnover_survey": {
-   "value": 7594.0,
-   "value_fmt": "7,594千個",
+   "value": 7359.0,
+   "value_fmt": "7,359千個",
    "value_label": "",
-   "asof": "2026-05-01",
+   "asof": "2026-06-01",
    "asof_label": "",
-   "age_days": 65,
+   "age_days": 34,
    "history": [
-    {
-     "date": "2024-06-01",
-     "value": 7416.0
-    },
     {
      "date": "2024-07-01",
      "value": 7426.0
@@ -1730,17 +1726,21 @@
     },
     {
      "date": "2026-05-01",
-     "value": 7594.0
+     "value": 7537.0
+    },
+    {
+     "date": "2026-06-01",
+     "value": 7359.0
     }
    ],
    "extras": {
-    "離職率": 1.9,
+    "離職率": 2.0,
     "失業人數": 7094.0
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "V/U 比 1.07，尚未跌破 1.0 鬆弛門檻；創近 24 期新高",
+   "note": "V/U 比 1.04，尚未跌破 1.0 鬆弛門檻；位於近 24 期的第 71 百分位",
    "source_label": "FRED JTSJOL",
    "unit": "千個",
    "display": "level"
@@ -3147,8 +3147,8 @@
    "display": "level"
   },
   "durable_goods_orders": {
-   "value": 0.31944286287930446,
-   "value_fmt": "0.3%",
+   "value": 0.472079606520448,
+   "value_fmt": "0.5%",
    "value_label": "",
    "asof": "2026-06-01",
    "asof_label": "",
@@ -3244,18 +3244,18 @@
     },
     {
      "date": "2026-05-01",
-     "value": -4.043224342735218
+     "value": -4.004117699494203
     },
     {
      "date": "2026-06-01",
-     "value": 0.31944286287930446
+     "value": 0.472079606520448
     }
    ],
    "extras": {
-    "核心資本財": 85089.0
+    "核心資本財": 85393.0
    },
    "also": {
-    "YoY": 7.380974528565143
+    "YoY": 7.588184538797349
    },
    "status": "green",
    "notes": [],
@@ -4893,17 +4893,13 @@
    "display": "level"
   },
   "ice_bofa_credit_oas": {
-   "value": 0.8,
-   "value_fmt": "0.80%",
+   "value": 0.79,
+   "value_fmt": "0.79%",
    "value_label": "",
-   "asof": "2026-07-30",
+   "asof": "2026-07-31",
    "asof_label": "",
-   "age_days": 5,
+   "age_days": 4,
    "history": [
-    {
-     "date": "2026-06-29",
-     "value": 0.76
-    },
     {
      "date": "2026-06-30",
      "value": 0.76
@@ -4995,17 +4991,21 @@
     {
      "date": "2026-07-30",
      "value": 0.8
+    },
+    {
+     "date": "2026-07-31",
+     "value": 0.79
     }
    ],
    "extras": {
-    "HY": 2.84
+    "HY": 2.85
    },
    "also": {
-    "HY/IG 比": 3.55
+    "HY/IG 比": 3.607594936708861
    },
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 88 百分位",
+   "note": "位於近 24 期的第 79 百分位",
    "source_label": "FRED BAMLC0A0CM",
    "unit": "%",
    "display": "level"
