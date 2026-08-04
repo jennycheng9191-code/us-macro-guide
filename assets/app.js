@@ -44,7 +44,7 @@ function sparkline(history) {
 /* 箭頭一律誠實表示「數值」的升降，債市多空由顏色與標籤承載。
    兩者分開才不會誤讀——47 張卡的語義方向並不一致（CPI 升是利空、
    失業率升是利多），把箭頭本身翻過來看到 ▼ 會以為數值下降。
-   card.bond：1=值升利空債市、-1=值升利多債市、null=語義不明確不編碼。 */
+   card.bond_dir：1=值升利空債市、-1=值升利多債市、null=語義不明確不編碼。 */
 function changeText(card) {
   const hist = card.history || [];
   if (hist.length < 2 || card.value == null) return '';
@@ -59,7 +59,7 @@ function changeText(card) {
   const suffix = card.unit === '%' ? ' pp' : (card.unit ? ' ' + card.unit : '');
 
   // 持平或語義不明確 → 維持中性灰，不給多空判斷
-  const sign = diff === 0 ? 0 : (card.bond || 0) * (diff > 0 ? 1 : -1);
+  const sign = diff === 0 ? 0 : (card.bond_dir || 0) * (diff > 0 ? 1 : -1);
   const tone = sign > 0 ? 'bear' : sign < 0 ? 'bull' : 'flat';
   const label = sign > 0 ? '利空債市' : sign < 0 ? '利多債市' : '';
 
@@ -181,6 +181,8 @@ async function loadData() {
   const changed = BUILD && BUILD !== latest.build_time;
   BUILD = latest.build_time || '';
   $('buildtime').textContent = `上次自動更新：${BUILD}`;
+  // 指標張數由資料算，不寫死在 HTML——加卡時忘了改數字比想像中容易發生
+  $('cardcount').textContent = D.length;
 
   const srcs = new Set(Object.values(V).map(c => c.source_label).filter(Boolean));
   $('footer-sources').innerHTML = `<b>本次資料來源</b>　${[...srcs].join('、')}`;

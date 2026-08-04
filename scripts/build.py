@@ -16,7 +16,8 @@ sys.path[:0] = [str(HERE), str(HERE / "sources")]
 from common import DATA, load_env, read_json, write_json   # noqa: E402
 import rules                                               # noqa: E402
 import validate                                            # noqa: E402
-from sources import fred, html_src, news, nyfed, prnewswire, treasury, umich   # noqa: E402
+from sources import (clevelandfed, fred, html_src, news, nyfed,   # noqa: E402
+                     prnewswire, treasury, umich)
 
 TPE = timezone(timedelta(hours=8))
 
@@ -37,6 +38,8 @@ def _fetch_one(card_id: str, m: dict, ctx: dict) -> dict:
         return umich.fetch(card_id, m)
     if src == "prnewswire":
         return prnewswire.fetch(card_id, m)
+    if src == "clevelandfed":
+        return clevelandfed.fetch(card_id, m)
     if src == "news":
         return news.fetch(card_id, m, ctx.setdefault("news_urls", news._article_urls()))
     if src == "manual":
@@ -179,8 +182,10 @@ def main() -> int:
             "source_label": res.get("source_label", ""),
             "unit": m.get("unit", ""),
             "display": m.get("display", "level"),
-            # 值上升對債市的意義：1=利空（殖利率上行壓力）、-1=利多、缺=語義不明確
-            "bond": m.get("bond"),
+            # 值上升對債市的意義：1=利空（殖利率上行壓力）、-1=利多、缺=語義不明確。
+            # 刻意不叫 bond——indicators.json 的 bond 是「債市含義」的敘述文字，
+            # 兩者同名不同物，前端一個讀 d.bond 一個讀 c.bond_dir，很容易混。
+            "bond_dir": m.get("bond_dir"),
         }
         flag = {"green": "OK", "yellow": "!!", "gray": "--"}[status]
         print(f"  [{flag}] {card['n']:<22} {cards[cid]['value_fmt']:>14}  {res.get('asof', '')}")

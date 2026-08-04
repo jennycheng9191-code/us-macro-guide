@@ -117,8 +117,40 @@
   "sn": "BLS PPI"
  },
  {
-  "id": "5_year_5_year_forward_inflation_expectat",
+  "id": "cleveland_fed_cpi_nowcast",
   "order": 7,
+  "n": "Cleveland Fed CPI 即時預測",
+  "e": "Cleveland Fed CPI Nowcast",
+  "f": [
+   "inf"
+  ],
+  "org": "Cleveland Fed",
+  "t": "日 · 工作日每日更新",
+  "read": "用計量模型結合日頻油價、已公布分項與季節性,預估「下一份尚未公布的CPI報告」;主值為核心CPI月增,總指數與年增見附帶數值。sparkline是該月預測的逐日演變——預測往哪飄比單一數字更有訊息量。判讀文字會附上一期的預測誤差,先看它準不準再決定信多少。",
+  "bond": "公布前唯一有官方背書的量化預估,可用來抓 surprise 的方向;nowcast上修代表通膨壓力升,對債市偏空。但它不是市場共識——交易定價仍以 Bloomberg/Reuters consensus 為準,nowcast 與共識的差距本身才是有交易價值的訊號。",
+  "rel": "對照:CPI 總指數、核心CPI、Cleveland Fed PCE 即時預測、5y5y 通膨預期。",
+  "src": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
+  "sn": "Cleveland Fed"
+ },
+ {
+  "id": "cleveland_fed_pce_nowcast",
+  "order": 8,
+  "n": "Cleveland Fed PCE 即時預測",
+  "e": "Cleveland Fed PCE Nowcast",
+  "f": [
+   "inf"
+  ],
+  "org": "Cleveland Fed",
+  "t": "日 · 工作日每日更新",
+  "read": "同一套模型的PCE版本,預估下一份尚未公布的PCE報告;主值為核心PCE月增。PCE比CPI晚約兩週公布,所以這張卡的預測窗口比CPI版長,參考期也更久。",
+  "bond": "核心PCE是Fed的政策目標對象,這張卡等於在正式數據出來前先看到Fed會看到什麼;與CPI nowcast背離時提示兩者權重差異(住房、醫療)正在發酵,對曲線中段的定價含義最大。",
+  "rel": "對照:PCE / 核心PCE物價、Trimmed Mean PCE、Cleveland Fed CPI 即時預測。",
+  "src": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
+  "sn": "Cleveland Fed"
+ },
+ {
+  "id": "5_year_5_year_forward_inflation_expectat",
+  "order": 9,
   "n": "5y5y 通膨預期(遠期損益兩平)",
   "e": "5-Year, 5-Year Forward Inflation Expectation",
   "f": [
@@ -135,7 +167,7 @@
  },
  {
   "id": "survey_of_consumer_expectations",
-  "order": 8,
+  "order": 10,
   "n": "NY Fed 消費者通膨預期",
   "e": "Survey of Consumer Expectations",
   "f": [
@@ -151,7 +183,7 @@
  },
  {
   "id": "umich_inflation_expectations",
-  "order": 9,
+  "order": 11,
   "n": "密大通膨預期",
   "e": "UMich Inflation Expectations",
   "f": [
@@ -169,7 +201,7 @@
  },
  {
   "id": "nonfarm_payrolls",
-  "order": 10,
+  "order": 12,
   "n": "非農就業 NFP",
   "e": "Nonfarm Payrolls",
   "f": [
@@ -186,7 +218,7 @@
  },
  {
   "id": "unemployment_rate_u_3",
-  "order": 11,
+  "order": 13,
   "n": "失業率",
   "e": "Unemployment Rate (U-3)",
   "f": [
@@ -203,7 +235,7 @@
  },
  {
   "id": "labor_force_participation_rate",
-  "order": 12,
+  "order": 14,
   "n": "勞動參與率",
   "e": "Labor Force Participation Rate",
   "f": [
@@ -220,7 +252,7 @@
  },
  {
   "id": "average_hourly_earnings",
-  "order": 13,
+  "order": 15,
   "n": "平均時薪 AHE",
   "e": "Average Hourly Earnings",
   "f": [
@@ -238,7 +270,7 @@
  },
  {
   "id": "job_openings_and_labor_turnover_survey",
-  "order": 14,
+  "order": 16,
   "n": "JOLTS 職缺",
   "e": "Job Openings and Labor Turnover Survey",
   "f": [
@@ -254,7 +286,7 @@
  },
  {
   "id": "initial_jobless_claims",
-  "order": 15,
+  "order": 17,
   "n": "初領失業金",
   "e": "Initial Jobless Claims",
   "f": [
@@ -270,7 +302,7 @@
  },
  {
   "id": "adp_national_employment_report",
-  "order": 16,
+  "order": 18,
   "n": "ADP 民間就業",
   "e": "ADP National Employment Report",
   "f": [
@@ -286,7 +318,7 @@
  },
  {
   "id": "ism_manufacturing_employment",
-  "order": 17,
+  "order": 19,
   "n": "ISM製造業就業分項",
   "e": "ISM Manufacturing Employment",
   "f": [
@@ -304,7 +336,7 @@
  },
  {
   "id": "ism_services_employment",
-  "order": 18,
+  "order": 20,
   "n": "ISM服務業就業分項",
   "e": "ISM Services Employment",
   "f": [
@@ -322,7 +354,7 @@
  },
  {
   "id": "employment_cost_index",
-  "order": 19,
+  "order": 21,
   "n": "ECI 僱傭成本指數",
   "e": "Employment Cost Index",
   "f": [
@@ -338,7 +370,7 @@
  },
  {
   "id": "wage_growth_tracker",
-  "order": 20,
+  "order": 22,
   "n": "Atlanta Fed 薪資追蹤",
   "e": "Wage Growth Tracker",
   "f": [
@@ -354,7 +386,7 @@
  },
  {
   "id": "ism_manufacturing_pmi",
-  "order": 21,
+  "order": 23,
   "n": "ISM製造業PMI",
   "e": "ISM Manufacturing PMI",
   "f": [
@@ -371,7 +403,7 @@
  },
  {
   "id": "ism_mfg_new_orders",
-  "order": 22,
+  "order": 24,
   "n": "ISM製造新訂單",
   "e": "ISM Mfg New Orders",
   "f": [
@@ -388,7 +420,7 @@
  },
  {
   "id": "ism_mfg_prices_paid",
-  "order": 23,
+  "order": 25,
   "n": "ISM製造物價分項",
   "e": "ISM Mfg Prices Paid",
   "f": [
@@ -406,7 +438,7 @@
  },
  {
   "id": "ism_services_pmi",
-  "order": 24,
+  "order": 26,
   "n": "ISM服務業PMI",
   "e": "ISM Services PMI",
   "f": [
@@ -423,7 +455,7 @@
  },
  {
   "id": "retail_sales_advance",
-  "order": 25,
+  "order": 27,
   "n": "零售銷售",
   "e": "Retail Sales (Advance)",
   "f": [
@@ -439,7 +471,7 @@
  },
  {
   "id": "industrial_production",
-  "order": 26,
+  "order": 28,
   "n": "工業生產",
   "e": "Industrial Production",
   "f": [
@@ -455,7 +487,7 @@
  },
  {
   "id": "atlanta_fed_gdpnow",
-  "order": 27,
+  "order": 29,
   "n": "GDPNow",
   "e": "Atlanta Fed GDPNow",
   "f": [
@@ -471,7 +503,7 @@
  },
  {
   "id": "durable_goods_orders",
-  "order": 28,
+  "order": 30,
   "n": "耐久財訂單",
   "e": "Durable Goods Orders",
   "f": [
@@ -487,7 +519,7 @@
  },
  {
   "id": "umich_consumer_sentiment",
-  "order": 29,
+  "order": 31,
   "n": "密大消費者信心",
   "e": "UMich Consumer Sentiment",
   "f": [
@@ -504,7 +536,7 @@
  },
  {
   "id": "conference_board_consumer_confidence",
-  "order": 30,
+  "order": 32,
   "n": "CB 消費者信心",
   "e": "Conference Board Consumer Confidence",
   "f": [
@@ -521,7 +553,7 @@
  },
  {
   "id": "nahb_housing_market_index",
-  "order": 31,
+  "order": 33,
   "n": "NAHB 建商信心",
   "e": "NAHB Housing Market Index",
   "f": [
@@ -537,7 +569,7 @@
  },
  {
   "id": "housing_starts_building_permits",
-  "order": 32,
+  "order": 34,
   "n": "新屋開工 / 建照",
   "e": "Housing Starts & Building Permits",
   "f": [
@@ -553,7 +585,7 @@
  },
  {
   "id": "existing_home_sales",
-  "order": 33,
+  "order": 35,
   "n": "成屋銷售",
   "e": "Existing Home Sales",
   "f": [
@@ -569,7 +601,7 @@
  },
  {
   "id": "new_home_sales",
-  "order": 34,
+  "order": 36,
   "n": "新屋銷售",
   "e": "New Home Sales",
   "f": [
@@ -585,7 +617,7 @@
  },
  {
   "id": "s_p_corelogic_case_shiller_hpi",
-  "order": 35,
+  "order": 37,
   "n": "Case-Shiller 房價",
   "e": "S&P CoreLogic Case-Shiller HPI",
   "f": [
@@ -601,7 +633,7 @@
  },
  {
   "id": "30y_fixed_mortgage_rate_pmms",
-  "order": 36,
+  "order": 38,
   "n": "30年期房貸利率",
   "e": "30Y Fixed Mortgage Rate (PMMS)",
   "f": [
@@ -618,7 +650,7 @@
  },
  {
   "id": "quarterly_refunding_announcement",
-  "order": 37,
+  "order": 39,
   "n": "QRA 季度再融資",
   "e": "Quarterly Refunding Announcement",
   "f": [
@@ -634,7 +666,7 @@
  },
  {
   "id": "coupon_auction_results",
-  "order": 38,
+  "order": 40,
   "n": "附息債拍賣結果",
   "e": "Coupon Auction Results",
   "f": [
@@ -650,7 +682,7 @@
  },
  {
   "id": "treasury_general_account",
-  "order": 39,
+  "order": 41,
   "n": "TGA 財政部現金餘額",
   "e": "Treasury General Account",
   "f": [
@@ -667,7 +699,7 @@
  },
  {
   "id": "bills_share_of_outstanding_debt",
-  "order": 40,
+  "order": 42,
   "n": "Bill 占比",
   "e": "Bills Share of Outstanding Debt",
   "f": [
@@ -683,7 +715,7 @@
  },
  {
   "id": "monthly_treasury_statement",
-  "order": 41,
+  "order": 43,
   "n": "MTS 月度財政收支",
   "e": "Monthly Treasury Statement",
   "f": [
@@ -699,7 +731,7 @@
  },
  {
   "id": "chicago_fed_national_financial_condition",
-  "order": 42,
+  "order": 44,
   "n": "NFCI 金融條件指數",
   "e": "Chicago Fed National Financial Conditions Index",
   "f": [
@@ -715,7 +747,7 @@
  },
  {
   "id": "sofr_minus_iorb",
-  "order": 43,
+  "order": 45,
   "n": "SOFR-IORB 利差",
   "e": "SOFR minus IORB",
   "f": [
@@ -731,7 +763,7 @@
  },
  {
   "id": "overnight_reverse_repo_facility",
-  "order": 44,
+  "order": 46,
   "n": "ON RRP 餘額",
   "e": "Overnight Reverse Repo Facility",
   "f": [
@@ -747,7 +779,7 @@
  },
  {
   "id": "reserve_balances_h_4_1",
-  "order": 45,
+  "order": 47,
   "n": "銀行準備金餘額",
   "e": "Reserve Balances (H.4.1)",
   "f": [
@@ -763,7 +795,7 @@
  },
  {
   "id": "ice_bofa_credit_oas",
-  "order": 46,
+  "order": 48,
   "n": "信用OAS(IG/HY)",
   "e": "ICE BofA Credit OAS",
   "f": [

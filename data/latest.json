@@ -1,7 +1,7 @@
 {
- "build_time": "2026-08-04 22:55",
+ "build_time": "2026-08-04 23:25",
  "summary": {
-  "green": 46,
+  "green": 48,
   "yellow": 0,
   "gray": 1
  },
@@ -122,7 +122,7 @@
    "source_label": "FRED CPIAUCNS",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "core_cpi_ex_food_energy": {
    "value": 2.594072431813488,
@@ -240,7 +240,7 @@
    "source_label": "FRED CPILFENS",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "core_services_ex_housing": {
    "value": 3.145977333762784,
@@ -357,7 +357,7 @@
    "source_label": "FRED CUSR0000SASL2RS",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "owners_equivalent_rent_rent": {
    "value": 3.2508011303475692,
@@ -474,7 +474,7 @@
    "source_label": "FRED CUSR0000SEHC",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "pce_price_index": {
    "value": 3.286526430967074,
@@ -593,7 +593,7 @@
    "source_label": "FRED PCEPILFE",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "dallas_fed_trimmed_mean_pce": {
    "value": 2.23,
@@ -710,7 +710,7 @@
    "source_label": "FRED PCETRIM12M159SFRBDAL",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "producer_price_index": {
    "value": 5.507672194780078,
@@ -827,7 +827,245 @@
    "source_label": "FRED PPIFIS",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
+  },
+  "cleveland_fed_cpi_nowcast": {
+   "value": 0.211432281705678,
+   "value_fmt": "0.21%",
+   "value_label": "2026 年 7 月 預估",
+   "asof": "2026-08-04",
+   "asof_label": "",
+   "age_days": 0,
+   "history": [
+    {
+     "date": "2026-07-02",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-03",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-06",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-07",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-08",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-09",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-10",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-13",
+     "value": 0.232180876007138
+    },
+    {
+     "date": "2026-07-14",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-15",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-16",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-17",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-20",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-21",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-22",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-23",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-24",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-27",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-28",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-29",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-30",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-07-31",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-08-03",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-08-04",
+     "value": 0.211432281705678
+    }
+   ],
+   "extras": {
+    "CPI月增": 0.0865130552949185,
+    "CPI年增": 3.41865491219704,
+    "核心CPI年增": 2.52318470411008
+   },
+   "also": {},
+   "status": "green",
+   "notes": [],
+   "note": "上期（2026-06）預估 +0.23%、實際 -0.02%，高估 0.25pp；創近 24 期新低",
+   "source_label": "Cleveland Fed 官方 JSON",
+   "unit": "%",
+   "display": "level",
+   "bond_dir": 1
+  },
+  "cleveland_fed_pce_nowcast": {
+   "value": 0.269874877191236,
+   "value_fmt": "0.27%",
+   "value_label": "2026 年 7 月 預估",
+   "asof": "2026-08-04",
+   "asof_label": "",
+   "age_days": 0,
+   "history": [
+    {
+     "date": "2026-07-02",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-03",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-06",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-07",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-08",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-09",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-10",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-13",
+     "value": 0.281420274932748
+    },
+    {
+     "date": "2026-07-14",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-15",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-16",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-17",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-20",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-21",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-22",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-23",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-24",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-27",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-28",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-29",
+     "value": 0.273671689976095
+    },
+    {
+     "date": "2026-07-30",
+     "value": 0.269874877191236
+    },
+    {
+     "date": "2026-07-31",
+     "value": 0.269874877191236
+    },
+    {
+     "date": "2026-08-03",
+     "value": 0.269874877191236
+    },
+    {
+     "date": "2026-08-04",
+     "value": 0.269874877191236
+    }
+   ],
+   "extras": {
+    "PCE月增": 0.187833795625472,
+    "PCE年增": 3.68525408061453,
+    "核心PCE年增": 3.31215313416271
+   },
+   "also": {},
+   "status": "green",
+   "notes": [],
+   "note": "上期（2026-06）預估 +0.19%、實際 +0.13%，誤差在 0.1pp 內；創近 24 期新低",
+   "source_label": "Cleveland Fed 官方 JSON",
+   "unit": "%",
+   "display": "level",
+   "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
    "value": 2.31,
@@ -942,7 +1180,7 @@
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "survey_of_consumer_expectations": {
    "value": 3.336173057556152,
@@ -1059,7 +1297,7 @@
    "source_label": "NY Fed SCE 官方資料檔",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "umich_inflation_expectations": {
    "value": 4.2,
@@ -1176,7 +1414,7 @@
    "source_label": "密大官方資料表 tbmpx1px5.csv",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "nonfarm_payrolls": {
    "value": 57.0,
@@ -1291,7 +1529,7 @@
    "source_label": "FRED PAYEMS",
    "unit": "千人",
    "display": "mom_diff",
-   "bond": 1
+   "bond_dir": 1
   },
   "unemployment_rate_u_3": {
    "value": 4.2,
@@ -1406,7 +1644,7 @@
    "source_label": "FRED UNRATE",
    "unit": "%",
    "display": "level",
-   "bond": -1
+   "bond_dir": -1
   },
   "labor_force_participation_rate": {
    "value": 61.5,
@@ -1523,7 +1761,7 @@
    "source_label": "FRED CIVPART",
    "unit": "%",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "average_hourly_earnings": {
    "value": 3.5203520352035333,
@@ -1640,7 +1878,7 @@
    "source_label": "FRED CES0500000003",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "job_openings_and_labor_turnover_survey": {
    "value": 7359.0,
@@ -1758,7 +1996,7 @@
    "source_label": "FRED JTSJOL",
    "unit": "千個",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "initial_jobless_claims": {
    "value": 197000.0,
@@ -1877,7 +2115,7 @@
    "source_label": "FRED ICSA",
    "unit": "人",
    "display": "level",
-   "bond": -1
+   "bond_dir": -1
   },
   "adp_national_employment_report": {
    "value": 98.0,
@@ -1992,7 +2230,7 @@
    "source_label": "FRED ADPMNUSNERSA",
    "unit": "千人",
    "display": "mom_diff",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_manufacturing_employment": {
    "value": 52.8,
@@ -2107,7 +2345,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_services_employment": {
    "value": 51.2,
@@ -2222,7 +2460,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "employment_cost_index": {
    "value": 3.3831252188119887,
@@ -2339,7 +2577,7 @@
    "source_label": "FRED ECIALLCIV",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "wage_growth_tracker": {
    "value": 3.6,
@@ -2454,7 +2692,7 @@
    "source_label": "FRED FRBATLWGT3MMAUMHWGO",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_manufacturing_pmi": {
    "value": 55.6,
@@ -2569,7 +2807,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_mfg_new_orders": {
    "value": 56.7,
@@ -2684,7 +2922,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_mfg_prices_paid": {
    "value": 71.1,
@@ -2799,7 +3037,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "ism_services_pmi": {
    "value": 54.0,
@@ -2914,7 +3152,7 @@
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "retail_sales_advance": {
    "value": 0.2186794214449339,
@@ -3033,7 +3271,7 @@
    "source_label": "FRED RSAFS",
    "unit": "%",
    "display": "mom",
-   "bond": 1
+   "bond_dir": 1
   },
   "industrial_production": {
    "value": 0.0769301271638545,
@@ -3152,7 +3390,7 @@
    "source_label": "FRED INDPRO",
    "unit": "%",
    "display": "mom",
-   "bond": 1
+   "bond_dir": 1
   },
   "atlanta_fed_gdpnow": {
    "value": 6.1804,
@@ -3267,7 +3505,7 @@
    "source_label": "FRED GDPNOW",
    "unit": "%",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "durable_goods_orders": {
    "value": 0.472079606520448,
@@ -3386,7 +3624,7 @@
    "source_label": "FRED DGORDER",
    "unit": "%",
    "display": "mom",
-   "bond": 1
+   "bond_dir": 1
   },
   "umich_consumer_sentiment": {
    "value": 55.2,
@@ -3501,7 +3739,7 @@
    "source_label": "密大官方資料表 tbmics.csv",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "conference_board_consumer_confidence": {
    "value": 90.8,
@@ -3522,7 +3760,7 @@
    "source_label": "Conference Board 官網新聞稿",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "nahb_housing_market_index": {
    "value": 34.0,
@@ -3540,7 +3778,7 @@
    "source_label": "NAHB 官網 HMI 頁",
    "unit": "",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "housing_starts_building_permits": {
    "value": 1427.0,
@@ -3658,7 +3896,7 @@
    "source_label": "FRED HOUST",
    "unit": "千戶(年化)",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "existing_home_sales": {
    "value": 4090.0,
@@ -3729,7 +3967,7 @@
    "source_label": "FRED EXHOSLUSM495S",
    "unit": "千戶(年化)",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "new_home_sales": {
    "value": 628.0,
@@ -3844,7 +4082,7 @@
    "source_label": "FRED HSN1F",
    "unit": "千戶(年化)",
    "display": "level",
-   "bond": 1
+   "bond_dir": 1
   },
   "s_p_corelogic_case_shiller_hpi": {
    "value": 1.6164962076451905,
@@ -3961,7 +4199,7 @@
    "source_label": "FRED SPCS20RSA",
    "unit": "%",
    "display": "yoy",
-   "bond": 1
+   "bond_dir": 1
   },
   "30y_fixed_mortgage_rate_pmms": {
    "value": 6.66,
@@ -4080,7 +4318,7 @@
    "source_label": "FRED MORTGAGE30US",
    "unit": "%",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "quarterly_refunding_announcement": {
    "value": null,
@@ -4100,7 +4338,7 @@
    "source_label": "",
    "unit": "",
    "display": "text",
-   "bond": null
+   "bond_dir": null
   },
   "coupon_auction_results": {
    "value": 2.49,
@@ -4220,7 +4458,7 @@
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
    "display": "table",
-   "bond": null
+   "bond_dir": null
   },
   "treasury_general_account": {
    "value": 997.946,
@@ -4335,7 +4573,7 @@
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "bills_share_of_outstanding_debt": {
    "value": 21.535665168414432,
@@ -4450,7 +4688,7 @@
    "source_label": "FiscalData MSPD",
    "unit": "%",
    "display": "pct",
-   "bond": null
+   "bond_dir": null
   },
   "monthly_treasury_statement": {
    "value": -93.29562557635998,
@@ -4567,7 +4805,7 @@
    "source_label": "FiscalData MTS",
    "unit": "十億美元",
    "display": "level",
-   "bond": -1
+   "bond_dir": -1
   },
   "chicago_fed_national_financial_condition": {
    "value": -0.554,
@@ -4684,7 +4922,7 @@
    "source_label": "FRED NFCI",
    "unit": "",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "sofr_minus_iorb": {
    "value": 0.0,
@@ -4802,7 +5040,7 @@
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "overnight_reverse_repo_facility": {
    "value": 2.127,
@@ -4917,7 +5155,7 @@
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "reserve_balances_h_4_1": {
    "value": 2984.57,
@@ -5032,7 +5270,7 @@
    "source_label": "FRED WRESBAL",
    "unit": "十億美元",
    "display": "level",
-   "bond": null
+   "bond_dir": null
   },
   "ice_bofa_credit_oas": {
    "value": 0.79,
@@ -5151,7 +5389,7 @@
    "source_label": "FRED BAMLC0A0CM",
    "unit": "%",
    "display": "level",
-   "bond": -1
+   "bond_dir": -1
   }
  }
 }

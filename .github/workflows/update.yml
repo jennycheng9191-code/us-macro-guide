@@ -39,6 +39,7 @@ jobs:
           python scripts/test_transform.py
           python scripts/test_news_extractor.py
           python scripts/test_prnewswire.py
+          python scripts/test_clevelandfed.py
 
       - name: 抓取並組裝 latest.json
         env:

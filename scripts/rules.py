@@ -119,6 +119,16 @@ def tbac_15_20(res: dict, **_) -> str | None:
     return f"占比 {v:.1f}%，落在 TBAC 建議的 15–20% 區間內"
 
 
+def nowcast_prior_error(res: dict, **_) -> str | None:
+    """上一個目標月的預測誤差——判斷這份 nowcast 現在準不準的唯一依據。"""
+    p = res.get("prior")
+    if not p:
+        return None
+    err = p["nowcast"] - p["actual"]
+    good = "誤差在 0.1pp 內" if abs(err) <= 0.1 else f"高估 {err:.2f}pp" if err > 0 else f"低估 {-err:.2f}pp"
+    return f"上期（{p['month']}）預估 {p['nowcast']:+.2f}%、實際 {p['actual']:+.2f}%，{good}"
+
+
 def nfci_zero_line(res: dict, **_) -> str | None:
     v = res.get("value")
     if v is None:
@@ -143,6 +153,7 @@ RULES = {f.__name__: f for f in [
     sahm_rule, pmi_50_line, pmi_45_recession, deanchor_2_5, core_vs_target,
     wage_compat_3_0_3_5, eci_compat_3_5, v_u_ratio, breakeven_100_150,
     claims_range_break, tbac_15_20, nfci_zero_line, sofr_iorb_persistent,
+    nowcast_prior_error,
 ]}
 
 
