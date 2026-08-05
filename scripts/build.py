@@ -108,6 +108,8 @@ def main() -> int:
     manual = read_json(DATA / "manual.json", {})
     previous = read_json(DATA / "latest.json", {}).get("cards", {})
 
+    today = datetime.now(TPE).strftime("%Y-%m-%d")
+
     ctx: dict = {}
     cards: dict[str, dict] = {}
     tally = {"green": 0, "yellow": 0, "gray": 0}
@@ -166,6 +168,19 @@ def main() -> int:
         note = rules.build_note(res, m) if res.get("ok") else ""
         tally[status] = tally.get(status, 0) + 1
 
+        # new_since = 這張卡的「期別」最後一次往前推進的日期，供前端標 🆕。
+        # 只在前一版已有期別、且期別確實變了才記——首次建置時整頁都會是新的，
+        # 那樣標記沒有資訊量。抓不到值的卡不標。
+        #
+        # 日頻卡（SOFR、RRP、OAS、通膨 nowcast…）每天都會推進期別，天天掛 🆕
+        # 等於沒標。用 stale_days 當頻率代理值：<10 的是日頻，排除；
+        # >=10 的週頻以上（初領失業金 12、月頻 40+）才是「今天有新東西公布」。
+        prev = previous.get(cid, {})
+        new_since = prev.get("new_since", "")
+        if (m.get("stale_days") or 0) >= 10:
+            if (a := res.get("asof")) and prev.get("asof") and a != prev["asof"]:
+                new_since = today
+
         cards[cid] = {
             "value": res.get("value"),
             "value_fmt": fmt(res.get("value"), m) if res.get("ok") else "—",
@@ -173,6 +188,7 @@ def main() -> int:
             "asof": res.get("asof", ""),
             "asof_label": res.get("asof_label", ""),
             "age_days": res.get("age_days"),
+            "new_since": new_since,
             "history": res.get("history", []),
             "extras": {k: v for k, v in (res.get("extras") or {}).items() if v is not None},
             "also": res.get("also", {}),

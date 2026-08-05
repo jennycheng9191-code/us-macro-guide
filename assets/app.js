@@ -12,6 +12,10 @@ const FACETS = {
 const LIGHT = {green:'🟢', yellow:'🟡', gray:'⚪'};
 const LIGHT_LABEL = {green:'正常', yellow:'待確認', gray:'未取得'};
 
+// build.py 的 new_since 記的是台北日期，這裡也要用台北日期比，
+// 否則跨時區看這頁時 🆕 會早一天消失或晚一天出現。
+const TODAY_TPE = new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Taipei'}).format(new Date());
+
 let D = [], V = {}, BUILD = '';
 const selFacet = new Set();
 let selStatus = null, q = '';
@@ -104,7 +108,10 @@ function renderCard(d) {
 
   const hasVal = c.value != null;
   const asof = c.asof_label || c.asof || '期別：—';
-  const age = c.age_days != null ? `${c.age_days} 天前` : '';
+  // age_days 算的是「期別結束 → 今天」，不是公布日距今多久（見 scripts/validate.py）。
+  // 寫成「N 天前」會被讀成 N 天前才公布，剛出爐的月頻數據看起來像過期。
+  const age = c.age_days != null ? `期別結束後 ${c.age_days} 天` : '';
+  const isNew = c.new_since && c.new_since === TODAY_TPE;
 
   // also = 同一指標的其他呈現形式（MoM / 3個月年化 / 總指數 YoY…）
   // extras = 子項與對照序列。兩者都是輔助數字，併排顯示。
@@ -128,7 +135,9 @@ function renderCard(d) {
         <div class="name">${d.n}</div>
         <div class="en">${d.e}</div>
       </div>
-      <div class="light" title="${(c.notes || []).join('；') || LIGHT_LABEL[c.status]}">${LIGHT[c.status]}</div>
+      <div class="light" title="${(c.notes || []).join('；') || LIGHT_LABEL[c.status]}">${
+        isNew ? '<span class="isnew" title="今天期別往前推進，是新公布的數據">🆕</span>' : ''
+      }${LIGHT[c.status]}</div>
     </div>
     <div class="tags">${tags}${badge}</div>
     <div class="meta">${d.org} · ${d.t}</div>
