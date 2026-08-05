@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-05 20:42",
+ "build_time": "2026-08-05 22:40",
  "summary": {
   "green": 47,
   "yellow": 1,
@@ -833,14 +833,10 @@
    "value": 0.211432281705678,
    "value_fmt": "0.21%",
    "value_label": "2026 年 7 月 預估",
-   "asof": "2026-08-04",
+   "asof": "2026-08-05",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "history": [
-    {
-     "date": "2026-07-02",
-     "value": 0.232180876007138
-    },
     {
      "date": "2026-07-03",
      "value": 0.232180876007138
@@ -931,6 +927,10 @@
     },
     {
      "date": "2026-08-04",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-08-05",
      "value": 0.211432281705678
     }
    ],
@@ -952,14 +952,10 @@
    "value": 0.269874877191236,
    "value_fmt": "0.27%",
    "value_label": "2026 年 7 月 預估",
-   "asof": "2026-08-04",
+   "asof": "2026-08-05",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "history": [
-    {
-     "date": "2026-07-02",
-     "value": 0.281420274932748
-    },
     {
      "date": "2026-07-03",
      "value": 0.281420274932748
@@ -1050,6 +1046,10 @@
     },
     {
      "date": "2026-08-04",
+     "value": 0.269874877191236
+    },
+    {
+     "date": "2026-08-05",
      "value": 0.269874877191236
     }
    ],
@@ -2348,17 +2348,13 @@
    "bond_dir": 1
   },
   "ism_services_employment": {
-   "value": 51.2,
-   "value_fmt": "51.2",
+   "value": 47.4,
+   "value_fmt": "47.4",
    "value_label": "",
-   "asof": "2026-06-01",
-   "asof_label": "2026 June",
-   "age_days": 35,
+   "asof": "2026-07-01",
+   "asof_label": "2026 July",
+   "age_days": 5,
    "history": [
-    {
-     "date": "2024-07-01",
-     "value": 51.1
-    },
     {
      "date": "2024-08-01",
      "value": 50.2
@@ -2450,13 +2446,17 @@
     {
      "date": "2026-06-01",
      "value": 51.2
+    },
+    {
+     "date": "2026-07-01",
+     "value": 47.4
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "高於 50 榮枯線；位於近 24 期的第 71 百分位",
+   "note": "低於 50 榮枯線；位於近 24 期的第 29 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
@@ -3040,17 +3040,13 @@
    "bond_dir": 1
   },
   "ism_services_pmi": {
-   "value": 54.0,
-   "value_fmt": "54.0",
+   "value": 54.1,
+   "value_fmt": "54.1",
    "value_label": "",
-   "asof": "2026-06-01",
-   "asof_label": "2026 June",
-   "age_days": 35,
+   "asof": "2026-07-01",
+   "asof_label": "2026 July",
+   "age_days": 5,
    "history": [
-    {
-     "date": "2024-07-01",
-     "value": 51.4
-    },
     {
      "date": "2024-08-01",
      "value": 51.5
@@ -3142,13 +3138,17 @@
     {
      "date": "2026-06-01",
      "value": 54.0
+    },
+    {
+     "date": "2026-07-01",
+     "value": 54.1
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "高於 50 榮枯線；位於近 24 期的第 75 百分位",
+   "note": "高於 50 榮枯線；位於近 24 期的第 79 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
@@ -4915,7 +4915,7 @@
     }
    ],
    "extras": {
-    "調整版": -0.56
+    "調整版": -0.543
    },
    "also": {},
    "status": "green",
