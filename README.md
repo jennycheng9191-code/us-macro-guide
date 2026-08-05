@@ -122,6 +122,20 @@ ISM 亮黃燈或未取得時，把數字寫進 `data/manual.json`：
 | `scripts/test_news_extractor.py` | 新聞抽取器回歸測試，改正則後務必執行 |
 | `scripts/test_prnewswire.py` | ISM 新聞稿抽取器回歸測試；加 `--live` 會用「前後期互證」驗完整 24 期 |
 | `scripts/test_clevelandfed.py` | 通膨即時預測抽取器回歸測試（事件標記濾除、選月規則） |
+| `assets/gate.js` | 前端密碼閘門，驗證通過才載入 `app.js` |
+| `scripts/set_password.py` | 在本機設定網頁密碼（只寫雜湊，密碼原文不進版控） |
+
+## 網頁密碼
+
+```bash
+python scripts/set_password.py   # 互動輸入密碼，寫入 assets/gate.js 的鹽與雜湊
+git add -A && git commit -m "更新網頁密碼" && git push
+```
+
+- 密碼以 PBKDF2-SHA256（20 萬次迭代）存雜湊，原文不會出現在 repo 裡；輸入正確後記住 30 天，換密碼會讓舊憑證失效。
+- **這是軟鎖，不是存取控制。** 本 repo 是 public、GitHub Pages 也是公開的，`data/latest.json` 可以直接用網址開啟繞過閘門，原始碼在 github.com 上也看得到。它擋的是「隨手點進網址的人」。
+- 要真正鎖住得換伺服器端驗證：把 repo 轉 private，改用 Cloudflare Pages + Cloudflare Access（免費 50 人以內），網址會變成 `xxx.pages.dev`。
+- `salt`／`hash` 留空時閘門直接放行並在 console 提示，避免忘了設密碼卻以為鎖上了。
 
 ## 維護時的注意事項
 

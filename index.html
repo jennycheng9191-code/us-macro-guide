@@ -7,6 +7,22 @@
 <title>美國總經指標手冊</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230E1116'/><path d='M5 22 L11 14 L17 18 L27 7' stroke='%233FB27F' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  /* 密碼閘門：未解鎖前整頁不顯示（gate.js 驗證通過後移除 .locked） */
+  html.locked body > *{visibility:hidden}
+  html.locked #gate{visibility:visible}
+  #gate{position:fixed;inset:0;z-index:99;background:var(--bg);
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  #gate form{width:100%;max-width:320px;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:10px}
+  .gate-title{font-size:16px;font-weight:600}
+  .gate-sub{font-size:12.5px;color:var(--text3);margin-bottom:4px}
+  #gatepw{background:var(--card2);border:1px solid var(--border);border-radius:8px;
+    color:var(--text);padding:10px 12px;font-size:15px;min-height:42px;font-family:inherit}
+  #gatego{justify-content:center}
+  .gate-msg{font-size:12px;color:var(--bear);min-height:16px}
+</style>
+<script>document.documentElement.className='locked';</script>
 </head>
 <body>
 
@@ -69,6 +85,7 @@
   <span id="footer-sources"></span>
 </footer>
 
-<script src="assets/app.js"></script>
+<!-- gate.js 驗證通過後才會載入 assets/app.js -->
+<script src="assets/gate.js"></script>
 </body>
 </html>
