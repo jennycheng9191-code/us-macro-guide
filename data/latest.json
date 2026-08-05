@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-05 18:06",
+ "build_time": "2026-08-05 20:42",
  "summary": {
   "green": 47,
   "yellow": 1,
@@ -2118,17 +2118,13 @@
    "bond_dir": -1
   },
   "adp_national_employment_report": {
-   "value": 98.0,
-   "value_fmt": "98千人",
+   "value": 44.0,
+   "value_fmt": "44千人",
    "value_label": "",
-   "asof": "2026-06-01",
+   "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 35,
+   "age_days": 5,
    "history": [
-    {
-     "date": "2024-07-01",
-     "value": 120.0
-    },
     {
      "date": "2024-08-01",
      "value": 46.0
@@ -2219,14 +2215,18 @@
     },
     {
      "date": "2026-06-01",
-     "value": 98.0
+     "value": 95.0
+    },
+    {
+     "date": "2026-07-01",
+     "value": 44.0
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 75 百分位",
+   "note": "位於近 24 期的第 46 百分位",
    "source_label": "FRED ADPMNUSNERSA",
    "unit": "千人",
    "display": "mom_diff",
@@ -4810,17 +4810,13 @@
    "bond_dir": -1
   },
   "chicago_fed_national_financial_condition": {
-   "value": -0.554,
-   "value_fmt": "-0.55",
+   "value": -0.529,
+   "value_fmt": "-0.53",
    "value_label": "",
-   "asof": "2026-07-24",
+   "asof": "2026-07-31",
    "asof_label": "",
-   "age_days": 6,
+   "age_days": 0,
    "history": [
-    {
-     "date": "2026-02-13",
-     "value": -0.539
-    },
     {
      "date": "2026-02-20",
      "value": -0.522
@@ -4839,59 +4835,59 @@
     },
     {
      "date": "2026-03-20",
-     "value": -0.458
-    },
-    {
-     "date": "2026-03-27",
-     "value": -0.454
-    },
-    {
-     "date": "2026-04-03",
      "value": -0.459
     },
     {
+     "date": "2026-03-27",
+     "value": -0.456
+    },
+    {
+     "date": "2026-04-03",
+     "value": -0.46
+    },
+    {
      "date": "2026-04-10",
-     "value": -0.469
+     "value": -0.47
     },
     {
      "date": "2026-04-17",
-     "value": -0.48
+     "value": -0.481
     },
     {
      "date": "2026-04-24",
-     "value": -0.489
+     "value": -0.491
     },
     {
      "date": "2026-05-01",
-     "value": -0.496
-    },
-    {
-     "date": "2026-05-08",
-     "value": -0.5
-    },
-    {
-     "date": "2026-05-15",
      "value": -0.499
     },
     {
+     "date": "2026-05-08",
+     "value": -0.503
+    },
+    {
+     "date": "2026-05-15",
+     "value": -0.503
+    },
+    {
      "date": "2026-05-22",
-     "value": -0.498
+     "value": -0.502
     },
     {
      "date": "2026-05-29",
-     "value": -0.495
+     "value": -0.501
     },
     {
      "date": "2026-06-05",
-     "value": -0.495
+     "value": -0.501
     },
     {
      "date": "2026-06-12",
-     "value": -0.497
+     "value": -0.502
     },
     {
      "date": "2026-06-19",
-     "value": -0.502
+     "value": -0.505
     },
     {
      "date": "2026-06-26",
@@ -4899,19 +4895,23 @@
     },
     {
      "date": "2026-07-03",
-     "value": -0.522
+     "value": -0.517
     },
     {
      "date": "2026-07-10",
-     "value": -0.534
+     "value": -0.523
     },
     {
      "date": "2026-07-17",
-     "value": -0.544
+     "value": -0.527
     },
     {
      "date": "2026-07-24",
-     "value": -0.554
+     "value": -0.53
+    },
+    {
+     "date": "2026-07-31",
+     "value": -0.529
     }
    ],
    "extras": {
@@ -4920,24 +4920,20 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "低於 0（歷史均值），金融條件偏寬鬆；連續 7 期走降、創近 24 期新低",
+   "note": "低於 0（歷史均值），金融條件偏寬鬆；位於近 24 期的第 8 百分位",
    "source_label": "FRED NFCI",
    "unit": "",
    "display": "level",
    "bond_dir": null
   },
   "sofr_minus_iorb": {
-   "value": 0.0,
-   "value_fmt": "0.0bp",
+   "value": 1.000000000000023,
+   "value_fmt": "1.0bp",
    "value_label": "",
-   "asof": "2026-08-03",
+   "asof": "2026-08-04",
    "asof_label": "",
-   "age_days": 2,
+   "age_days": 1,
    "history": [
-    {
-     "date": "2026-06-30",
-     "value": 3.000000000000025
-    },
     {
      "date": "2026-07-01",
      "value": 1.000000000000023
@@ -5029,16 +5025,20 @@
     {
      "date": "2026-08-03",
      "value": 0.0
+    },
+    {
+     "date": "2026-08-04",
+     "value": 1.000000000000023
     }
    ],
    "extras": {
-    "SOFR": 3.65,
+    "SOFR": 3.66,
     "IORB": 3.65
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "利差 0.0bp，SOFR 低於 IORB；位於近 24 期的第 88 百分位",
+   "note": "利差 1.0bp，SOFR 高於 IORB；創近 24 期新高",
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
    "display": "level",
