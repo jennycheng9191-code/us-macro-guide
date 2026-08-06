@@ -1,7 +1,7 @@
 {
- "build_time": "2026-08-06 18:14",
+ "build_time": "2026-08-06 19:48",
  "summary": {
-  "green": 48,
+  "green": 49,
   "yellow": 0,
   "gray": 1
  },
@@ -3176,6 +3176,122 @@
    "status": "green",
    "notes": [],
    "note": "高於 50 榮枯線；位於近 24 期的第 79 百分位",
+   "source_label": "ISM 官方新聞稿（PR Newswire）",
+   "unit": "",
+   "display": "level",
+   "bond_dir": 1
+  },
+  "ism_services_prices_paid": {
+   "value": 70.3,
+   "value_fmt": "70.3",
+   "value_label": "",
+   "asof": "2026-07-01",
+   "asof_label": "2026 July",
+   "age_days": 6,
+   "new_since": "",
+   "history": [
+    {
+     "date": "2024-08-01",
+     "value": 57.3
+    },
+    {
+     "date": "2024-09-01",
+     "value": 59.4
+    },
+    {
+     "date": "2024-10-01",
+     "value": 58.1
+    },
+    {
+     "date": "2024-11-01",
+     "value": 58.2
+    },
+    {
+     "date": "2024-12-01",
+     "value": 64.4
+    },
+    {
+     "date": "2025-01-01",
+     "value": 60.4
+    },
+    {
+     "date": "2025-02-01",
+     "value": 62.6
+    },
+    {
+     "date": "2025-03-01",
+     "value": 60.9
+    },
+    {
+     "date": "2025-04-01",
+     "value": 65.1
+    },
+    {
+     "date": "2025-05-01",
+     "value": 68.7
+    },
+    {
+     "date": "2025-06-01",
+     "value": 67.5
+    },
+    {
+     "date": "2025-07-01",
+     "value": 69.9
+    },
+    {
+     "date": "2025-08-01",
+     "value": 69.2
+    },
+    {
+     "date": "2025-09-01",
+     "value": 69.4
+    },
+    {
+     "date": "2025-10-01",
+     "value": 70.0
+    },
+    {
+     "date": "2025-11-01",
+     "value": 65.4
+    },
+    {
+     "date": "2025-12-01",
+     "value": 64.3
+    },
+    {
+     "date": "2026-01-01",
+     "value": 66.6
+    },
+    {
+     "date": "2026-02-01",
+     "value": 63.0
+    },
+    {
+     "date": "2026-03-01",
+     "value": 70.7
+    },
+    {
+     "date": "2026-04-01",
+     "value": 70.7
+    },
+    {
+     "date": "2026-05-01",
+     "value": 71.3
+    },
+    {
+     "date": "2026-06-01",
+     "value": 67.7
+    },
+    {
+     "date": "2026-07-01",
+     "value": 70.3
+    }
+   ],
+   "extras": {},
+   "also": {},
+   "status": "green",
+   "notes": [],
+   "note": "高於 50 榮枯線；位於近 24 期的第 88 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
