@@ -33,7 +33,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # enablement: true —— 站台被 Unpublish 後由這一步自己重新建立
+      # （build_type 直接設成 workflow，不會退回 Jekyll 舊路徑），
+      # 不需要再進 Settings 手動開一次。站台已存在時這個參數不做事。
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: 打包整個站台
         uses: actions/upload-pages-artifact@v3
