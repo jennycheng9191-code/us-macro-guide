@@ -23,6 +23,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # 提交資料後要能 dispatch pages.yml 觸發部署
 
 concurrency:
   group: update-data
@@ -81,4 +82,19 @@ jobs:
             git add data/latest.json
             git commit -m "資料更新 $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
             git push
+            echo "COMMITTED=1" >> "$GITHUB_ENV"
           fi
+
+      - name: 觸發網站部署
+        # GITHUB_TOKEN 推的 commit 不會觸發其他 workflow（GitHub 防遞迴），
+        # 所以 push 本身帶不動 pages.yml——workflow_dispatch 是這條規則的例外，
+        # 這裡在有新資料時明確 dispatch 一次，網站才會跟著更新
+        if: env.COMMITTED == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/pages.yml/dispatches" \
+            -d '{"ref":"main"}'
