@@ -1,0 +1,45 @@
+name: 部署網站
+
+# GitHub 內建的「pages build and deployment」（Jekyll 舊路徑）在 2026-08-06
+# 連續 7 次以 `Timeout reached, aborting!` 失敗：build 每次成功，deploy 步驟
+# 送出請求後輪詢滿 10 分鐘等不到 Pages 後端回報完成。內容本身沒有問題
+# （倉庫 32 檔、129 KiB），是 GitHub 那條管線卡住。
+#
+# 這個站台是純靜態的 HTML/CSS/JS/JSON，本來就不需要 Jekyll。改用明確的
+# Actions 部署除了繞開卡死的舊路徑，失敗時也才看得到真正的錯誤訊息。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 排隊而不是互相取消。「更新總經數值」推完資料會緊接著觸發這裡，
+# cancel-in-progress 會把前一次砍在半路——今天就是這樣互相取消過。
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - name: 打包整個站台
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'          # .git 與 .github 由 action 自動排除
+
+      - name: 發佈到 GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
