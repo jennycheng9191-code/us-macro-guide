@@ -6,7 +6,7 @@
 ## 這份東西怎麼運作
 
 ```
-GitHub Actions（每天台北 08:00）
+GitHub Actions（每天台北 03:47 與 06:47，排兩次避開排程延遲）
    └─ scripts/build.py
         ├─ 抓取     FRED / BLS / Treasury / 官方網頁 / 官方新聞稿 / Cleveland Fed
         ├─ 三道關卡  合理範圍、變動幅度、雙來源交叉驗證
@@ -146,4 +146,6 @@ git add -A && git commit -m "更新網頁密碼" && git push
 - `scale`（單位換算）必須用**實際取數的那份 mapping**。走備援時來源的原始單位不同，拿主要來源的倍率去乘備援的值會差好幾個數量級。`build.dispatch` 已在各自的來源上套用。
 - ISM 每年 1 月會完成**季調因子的年度修正**，1 月號引述的 12 月值與 12 月當初公布的不同（例：47.7 → 47.4）。歷史序列在 12 月／1 月交界本來就會混到兩個 vintage，`test_prnewswire.py --live` 已把這個邊界排除，不是錯誤。
 - Cleveland Fed 的 `categories` 裡混了事件標記（`CPI Jun`、`PCE Jun`，圖上標示前期公布日的垂直線），**不占資料點**：27 個標籤對 25 筆值。必須把非日期標籤整個濾掉再對齊，留空位會讓整條序列錯位。
+- ISM 服務業新聞稿的物價段開頭是「The Prices Index registered **above 70 percent** …; the reading of 70.3 percent in July」。「標籤後第一個讀值」會抓到門檻描述的 70.0 而非真值——`prnewswire.QUALIFIER` 就是為了跳過 `above／below／over／under` 後面的數字。製造業沒有這種比較級句式，所以到服務物價卡才踩到。
+- **不要把 cron 排在 UTC 00:00**。GitHub 排程是 best-effort，UTC 00:00 是全平台最壅塞的時段，公開 repo 優先序又低。原本設 `'0 0 * * *'`（台北 08:00）的四次排程實際都在台北 18:05–20:39 才觸發，穩定遲到 10 小時以上，等於每天早上看到的都是前一天傍晚的資料。現在改排冷門分鐘、且一天兩次避險。
 - Cleveland Fed 的目標月只能取「檔尾**連續**還沒有 Actual 的那一段」。歷史區間中間也有 Actual 空缺（2013-07 資料缺漏、2025-10 政府停擺期間未採集 CPI），從頭掃第一個空的會選到十幾年前。CPI 與 PCE 公布時程不同，各自用自己的 Actual 序列判斷。
