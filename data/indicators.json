@@ -454,8 +454,26 @@
   "sn": "ISM"
  },
  {
-  "id": "retail_sales_advance",
+  "id": "ism_services_prices_paid",
   "order": 27,
+  "n": "ISM服務物價分項",
+  "e": "ISM Services Prices",
+  "f": [
+   "act",
+   "inf"
+  ],
+  "p": "ISM服務業報告",
+  "org": "ISM",
+  "t": "月 · 隨ISM服務",
+  "read": "服務投入價格上漲的「廣度」,長期站在50上方是常態,要看的是相對近12個月均值的位置與方向;比製造物價更貼近核心服務通膨的黏性來源。",
+  "bond": "服務通膨是Fed降息的最後一哩,長居高檔會壓抑降息定價、支撐前端殖利率;與製造物價背離時以此項為準判斷通膨韌性。",
+  "rel": "母報告:ISM服務業;搭配:ISM製造物價(商品端);下游:CPI/PCE核心服務、Super Core。",
+  "src": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/",
+  "sn": "ISM"
+ },
+ {
+  "id": "retail_sales_advance",
+  "order": 28,
   "n": "零售銷售",
   "e": "Retail Sales (Advance)",
   "f": [
@@ -471,7 +489,7 @@
  },
  {
   "id": "industrial_production",
-  "order": 28,
+  "order": 29,
   "n": "工業生產",
   "e": "Industrial Production",
   "f": [
@@ -487,7 +505,7 @@
  },
  {
   "id": "atlanta_fed_gdpnow",
-  "order": 29,
+  "order": 30,
   "n": "GDPNow",
   "e": "Atlanta Fed GDPNow",
   "f": [
@@ -503,7 +521,7 @@
  },
  {
   "id": "durable_goods_orders",
-  "order": 30,
+  "order": 31,
   "n": "耐久財訂單",
   "e": "Durable Goods Orders",
   "f": [
@@ -519,7 +537,7 @@
  },
  {
   "id": "umich_consumer_sentiment",
-  "order": 31,
+  "order": 32,
   "n": "密大消費者信心",
   "e": "UMich Consumer Sentiment",
   "f": [
@@ -536,7 +554,7 @@
  },
  {
   "id": "conference_board_consumer_confidence",
-  "order": 32,
+  "order": 33,
   "n": "CB 消費者信心",
   "e": "Conference Board Consumer Confidence",
   "f": [
@@ -553,7 +571,7 @@
  },
  {
   "id": "nahb_housing_market_index",
-  "order": 33,
+  "order": 34,
   "n": "NAHB 建商信心",
   "e": "NAHB Housing Market Index",
   "f": [
@@ -569,7 +587,7 @@
  },
  {
   "id": "housing_starts_building_permits",
-  "order": 34,
+  "order": 35,
   "n": "新屋開工 / 建照",
   "e": "Housing Starts & Building Permits",
   "f": [
@@ -585,7 +603,7 @@
  },
  {
   "id": "existing_home_sales",
-  "order": 35,
+  "order": 36,
   "n": "成屋銷售",
   "e": "Existing Home Sales",
   "f": [
@@ -601,7 +619,7 @@
  },
  {
   "id": "new_home_sales",
-  "order": 36,
+  "order": 37,
   "n": "新屋銷售",
   "e": "New Home Sales",
   "f": [
@@ -617,7 +635,7 @@
  },
  {
   "id": "s_p_corelogic_case_shiller_hpi",
-  "order": 37,
+  "order": 38,
   "n": "Case-Shiller 房價",
   "e": "S&P CoreLogic Case-Shiller HPI",
   "f": [
@@ -633,7 +651,7 @@
  },
  {
   "id": "30y_fixed_mortgage_rate_pmms",
-  "order": 38,
+  "order": 39,
   "n": "30年期房貸利率",
   "e": "30Y Fixed Mortgage Rate (PMMS)",
   "f": [
@@ -650,7 +668,7 @@
  },
  {
   "id": "quarterly_refunding_announcement",
-  "order": 39,
+  "order": 40,
   "n": "QRA 季度再融資",
   "e": "Quarterly Refunding Announcement",
   "f": [
@@ -666,7 +684,7 @@
  },
  {
   "id": "coupon_auction_results",
-  "order": 40,
+  "order": 41,
   "n": "附息債拍賣結果",
   "e": "Coupon Auction Results",
   "f": [
@@ -682,7 +700,7 @@
  },
  {
   "id": "treasury_general_account",
-  "order": 41,
+  "order": 42,
   "n": "TGA 財政部現金餘額",
   "e": "Treasury General Account",
   "f": [
@@ -699,7 +717,7 @@
  },
  {
   "id": "bills_share_of_outstanding_debt",
-  "order": 42,
+  "order": 43,
   "n": "Bill 占比",
   "e": "Bills Share of Outstanding Debt",
   "f": [
@@ -715,7 +733,7 @@
  },
  {
   "id": "monthly_treasury_statement",
-  "order": 43,
+  "order": 44,
   "n": "MTS 月度財政收支",
   "e": "Monthly Treasury Statement",
   "f": [
@@ -731,7 +749,7 @@
  },
  {
   "id": "chicago_fed_national_financial_condition",
-  "order": 44,
+  "order": 45,
   "n": "NFCI 金融條件指數",
   "e": "Chicago Fed National Financial Conditions Index",
   "f": [
@@ -747,7 +765,7 @@
  },
  {
   "id": "sofr_minus_iorb",
-  "order": 45,
+  "order": 46,
   "n": "SOFR-IORB 利差",
   "e": "SOFR minus IORB",
   "f": [
@@ -763,7 +781,7 @@
  },
  {
   "id": "overnight_reverse_repo_facility",
-  "order": 46,
+  "order": 47,
   "n": "ON RRP 餘額",
   "e": "Overnight Reverse Repo Facility",
   "f": [
@@ -779,7 +797,7 @@
  },
  {
   "id": "reserve_balances_h_4_1",
-  "order": 47,
+  "order": 48,
   "n": "銀行準備金餘額",
   "e": "Reserve Balances (H.4.1)",
   "f": [
@@ -795,7 +813,7 @@
  },
  {
   "id": "ice_bofa_credit_oas",
-  "order": 48,
+  "order": 49,
   "n": "信用OAS(IG/HY)",
   "e": "ICE BofA Credit OAS",
   "f": [

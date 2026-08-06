@@ -45,6 +45,7 @@ CARDS: dict[str, tuple[str, str | None]] = {
     "ism_services_pmi":             ("services", None),
     "ism_mfg_new_orders":           ("manufacturing", "New Orders Index"),
     "ism_mfg_prices_paid":          ("manufacturing", "Prices Index"),
+    "ism_services_prices_paid":     ("services", "Prices Index"),
     "ism_manufacturing_employment": ("manufacturing", "Employment Index"),
     "ism_services_employment":      ("services", "Employment Index"),
 }
@@ -56,6 +57,14 @@ CARDS: dict[str, tuple[str, str | None]] = {
 # 只認 percent 的話會略過小標，讓取值視窗滑進下一句，抓到總指數的數字
 # （服務業就業曾因此被抓成 Services PMI 的 54.0，實際是 51.2）。
 NUM = re.compile(r"(\d{1,3}(?:\.\d)?)\s*(?:%|percent\b(?!age))", re.I)
+
+# 門檻描述不是讀值。服務業物價分項的開頭句是
+#   「The Prices Index registered above 70 percent for the fourth time in five
+#     months; the reading of 70.3 percent in July is...」
+# 「標籤後第一個讀值」會拿到 above 後面的整數門檻 70.0，真值 70.3 在下一句。
+# 製造業的句式沒有這種比較級開頭，所以這個陷阱到服務物價卡才踩到。
+QUALIFIER = re.compile(
+    r"(?:above|below|over|under|than|near|nearly|around|approximately)\s+\Z", re.I)
 
 
 def _plain(html: str) -> str:
@@ -125,11 +134,15 @@ def _subindex(text: str, label: str) -> float | None:
       「The New Orders Index ... registering 56.7 percent, up 0.7 percentage
         point compared to June's figure of 56 percent.」
       「The Employment Index reading of 52.8 percent is up 3.1 percentage points...」
-    因此「標籤後的第一個讀值」就是本期值，不需要辨識動詞。
+    因此「標籤後的第一個讀值」就是本期值，不需要辨識動詞，
+    只需跳過 QUALIFIER 那種「above N percent」的門檻描述。
     """
     window = 220      # 太長會滑進下一個分項的句子，抓到別人的數字
     for mo in re.finditer(re.escape(label), text, re.I):
-        if (hit := NUM.search(text[mo.end():mo.end() + window])):
+        seg = text[mo.end():mo.end() + window]
+        for hit in NUM.finditer(seg):
+            if QUALIFIER.search(seg[:hit.start()]):
+                continue
             return float(hit.group(1))
     return None
 

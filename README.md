@@ -1,6 +1,6 @@
 # 美國總經指標手冊（自動更新版）
 
-49 個美國總經指標的參考手冊，數值每天由 GitHub Actions 自動抓取官方來源更新。
+50 個美國總經指標的參考手冊，數值每天由 GitHub Actions 自動抓取官方來源更新。
 前身是每次都要重跑 skill 才會更新的靜態 HTML。
 
 ## 這份東西怎麼運作
@@ -53,7 +53,7 @@ ISM 每月的 Report On Business **官方新聞稿全文**會同步發到 PR New
 ## 方向箭頭與債市多空
 
 箭頭**一律誠實表示數值本身的升降**，債市多空由顏色與標籤承載。兩者刻意分開：
-49 張卡的語義方向並不一致（CPI 升是利空、失業率升是利多），
+50 張卡的語義方向並不一致（CPI 升是利空、失業率升是利多），
 若把箭頭本身翻過來，看到 ▼ 會誤以為數值下降。
 
 | mapping 的 `bond_dir` | 意義 | 呈現 |
@@ -115,10 +115,10 @@ ISM 亮黃燈或未取得時，把數字寫進 `data/manual.json`：
 
 | 路徑 | 用途 |
 | :-- | :-- |
-| `data/indicators.json` | 49 卡知識層（解讀方法論、債市含義、關聯指標）——幾乎不會變 |
+| `data/indicators.json` | 50 卡知識層（解讀方法論、債市含義、關聯指標）——幾乎不會變 |
 | `data/mapping.json` | 每張卡的資料來源、序列代號、單位、合理區間、適用規則 |
 | `data/latest.json` | 每日產出的數值層，網頁唯一讀取的檔案 |
-| `docs/mapping-review.md` | 47 卡來源對照清單（2026-08-02 建立，未含後來新增的 Cleveland Fed 兩張），供抽查 |
+| `docs/mapping-review.md` | 47 卡來源對照清單（2026-08-02 建立，未含後來新增的 Cleveland Fed 兩張與 ISM 服務物價分項），供抽查 |
 | `scripts/test_news_extractor.py` | 新聞抽取器回歸測試，改正則後務必執行 |
 | `scripts/test_prnewswire.py` | ISM 新聞稿抽取器回歸測試；加 `--live` 會用「前後期互證」驗完整 24 期 |
 | `scripts/test_clevelandfed.py` | 通膨即時預測抽取器回歸測試（事件標記濾除、選月規則） |
