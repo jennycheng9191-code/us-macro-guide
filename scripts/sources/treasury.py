@@ -95,16 +95,37 @@ def mts(m: dict) -> dict:
             "extras": {"滾動12個月": rolling}, "also": {}, "source_label": "FiscalData MTS"}
 
 
+_AUCTION_CACHE: dict[str, list[dict]] = {}
+
+
+def _auctioned(sec_type: str) -> list[dict]:
+    """依證券型別抓拍賣紀錄，同一次 build 內快取——七張年期卡只打兩次 API。"""
+    if sec_type not in _AUCTION_CACHE:
+        _AUCTION_CACHE[sec_type] = get_json(
+            "https://www.treasurydirect.gov/TA_WS/securities/auctioned",
+            {"format": "json", "type": sec_type, "pagesize": "250"})
+    return _AUCTION_CACHE[sec_type]
+
+
 def auctions(m: dict) -> dict:
-    """最近的附息債拍賣結果（只取 Note / Bond，Bill 不列）。"""
-    rows = get_json("https://www.treasurydirect.gov/TA_WS/securities/auctioned",
-                    {"format": "json", "pagesize": "150"})
+    """指定年期的最新標售結果（mapping 的 term，如 '7-Year'）。
+
+    分桶用 originalSecurityTerm：增額發行（reopening）的 securityTerm 是剩餘年期
+    （如 9-Year 10-Month），只有原始年期能把它歸回 10-Year。
+    TIPS 在這支 API 的 securityType 一樣是 Note/Bond，得靠 tips 欄位排除，
+    否則名目 10Y 卡會混進實質利率 2% 出頭的 TIPS 場次。
+    """
+    term = m.get("term", "")
+    sec_type = "Bond" if term in ("20-Year", "30-Year") else "Note"
+    rows = _auctioned(sec_type)
     # 只採計「結果已公布」的拍賣：僅有公告尚未開標的紀錄 highYield 為空，
     # 若不濾掉會抓到還沒成交的場次。
-    coupons = [r for r in rows if r.get("securityType") in ("Note", "Bond")
+    coupons = [r for r in rows
+               if (r.get("originalSecurityTerm") or r.get("securityTerm")) == term
+               and r.get("tips") != "Yes"
                and r.get("auctionDate") and (r.get("highYield") or "").strip()]
     if not coupons:
-        return {"ok": False, "reason": "TreasuryDirect 無附息債拍賣紀錄"}
+        return {"ok": False, "reason": f"TreasuryDirect 無 {term} 標售紀錄"}
     coupons.sort(key=lambda r: r["auctionDate"], reverse=True)
     latest = coupons[0]
 
@@ -127,6 +148,11 @@ def auctions(m: dict) -> dict:
         part, total = num(latest.get(field)), num(latest.get("totalAccepted"))
         return round(part / total * 100, 1) if part and total else None
 
+    # 增額發行（reopening）的需求結構跟新券不同，卡面上標明才能比較
+    kind = f"{latest.get('securityTerm')} {latest.get('securityType')}"
+    if latest.get("securityTerm") != latest.get("originalSecurityTerm"):
+        kind += "（增額發行）"
+
     return {"ok": True,
             "value": num(latest.get("bidToCoverRatio")),
             "asof": latest["auctionDate"][:10],
@@ -134,7 +160,7 @@ def auctions(m: dict) -> dict:
             "raw_latest": num(latest.get("bidToCoverRatio")),
             "freq": "D",
             "extras": {
-                "券別": f"{latest.get('securityTerm')} {latest.get('securityType')}",
+                "券別": kind,
                 "得標利率(%)": num(latest.get("highYield")),
                 "間接投標占比(%)": share("indirectBidderAccepted"),
                 "一級交易商占比(%)": share("primaryDealerAccepted"),

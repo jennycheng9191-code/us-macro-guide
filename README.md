@@ -1,6 +1,6 @@
 # 美國總經指標手冊（自動更新版）
 
-50 個美國總經指標的參考手冊，數值每天由 GitHub Actions 自動抓取官方來源更新。
+56 個美國總經指標的參考手冊，數值每天由 GitHub Actions 自動抓取官方來源更新。
 前身是每次都要重跑 skill 才會更新的靜態 HTML。
 
 ## 這份東西怎麼運作
@@ -24,7 +24,7 @@ GitHub Actions（每天台北 03:47 與 06:47，排兩次避開排程延遲）
 | :-- | --: | :-- |
 | FRED API | 32 | 需要免費金鑰，序列代號皆已逐一驗證（含 ADP 官方序列） |
 | ISM 官方新聞稿（PR Newswire） | 6 | ISM×6，官方原文全文，分項數字齊全 |
-| Treasury API | 4 | TGA / Bill 占比 / MTS / 拍賣結果，免金鑰 |
+| Treasury API | 10 | TGA / Bill 占比 / MTS / 各年期標售結果（2/3/5/7/10/20/30Y），免金鑰 |
 | 官方網頁解析 | 2 | Conference Board、NAHB |
 | Cleveland Fed 官方 JSON | 2 | CPI / PCE 通膨即時預測，免金鑰 |
 | NY Fed SCE 資料檔 | 1 | xlsx |
@@ -53,7 +53,7 @@ ISM 每月的 Report On Business **官方新聞稿全文**會同步發到 PR New
 ## 方向箭頭與債市多空
 
 箭頭**一律誠實表示數值本身的升降**，債市多空由顏色與標籤承載。兩者刻意分開：
-50 張卡的語義方向並不一致（CPI 升是利空、失業率升是利多），
+56 張卡的語義方向並不一致（CPI 升是利空、失業率升是利多），
 若把箭頭本身翻過來，看到 ▼ 會誤以為數值下降。
 
 | mapping 的 `bond_dir` | 意義 | 呈現 |
@@ -115,7 +115,7 @@ ISM 亮黃燈或未取得時，把數字寫進 `data/manual.json`：
 
 | 路徑 | 用途 |
 | :-- | :-- |
-| `data/indicators.json` | 50 卡知識層（解讀方法論、債市含義、關聯指標）——幾乎不會變 |
+| `data/indicators.json` | 56 卡知識層（解讀方法論、債市含義、關聯指標）——幾乎不會變 |
 | `data/mapping.json` | 每張卡的資料來源、序列代號、單位、合理區間、適用規則 |
 | `data/latest.json` | 每日產出的數值層，網頁唯一讀取的檔案 |
 | `docs/mapping-review.md` | 47 卡來源對照清單（2026-08-02 建立，未含後來新增的 Cleveland Fed 兩張與 ISM 服務物價分項），供抽查 |

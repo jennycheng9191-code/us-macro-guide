@@ -683,24 +683,120 @@
   "sn": "Treasury Refunding"
  },
  {
-  "id": "coupon_auction_results",
+  "id": "auction_2y",
   "order": 41,
-  "n": "附息債拍賣結果",
-  "e": "Coupon Auction Results",
+  "n": "2年期標售結果",
+  "e": "2-Year Note Auction",
   "f": [
    "fis"
   ],
   "org": "TreasuryDirect",
-  "t": "依拍賣日曆 · 結果13:00 ET",
+  "t": "每月下旬 · 結果13:00 ET",
   "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
-  "bond": "10Y/30Y的尾部是期限溢價的即時體檢;戰時「避險買盤vs通膨+供給賣壓」在拍賣上直接對決。",
+  "bond": "最貼近Fed政策路徑預期的年期;需求好壞直接反映市場對利率路徑的信心,牽動曲線前端。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_3y",
+  "order": 42,
+  "n": "3年期標售結果",
+  "e": "3-Year Note Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月上中旬(再融資週) · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "再融資週打頭陣(與10Y/30Y同週);前端供給風向球,tail會外溢到同週長端標售的情緒。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_5y",
+  "order": 43,
+  "n": "5年期標售結果",
+  "e": "5-Year Note Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月下旬 · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "曲線腹部代表,外資與銀行投資組合的主戰場;5Y需求常決定2s5s10s蝶式價差的方向。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_7y",
+  "order": 44,
+  "n": "7年期標售結果",
+  "e": "7-Year Note Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月下旬 · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "流動性最差的冷門年期,需求最容易出事(2021/2曾爆史詩級tail);附息債需求的壓力測試點。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_10y",
+  "order": 45,
+  "n": "10年期標售結果",
+  "e": "10-Year Note Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月上中旬(新券2/5/8/11月,餘為增額) · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "全球資產定價錨;尾部是期限溢價的即時體檢,「避險買盤vs通膨+供給賣壓」在此直接對決。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_20y",
+  "order": 46,
+  "n": "20年期標售結果",
+  "e": "20-Year Bond Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月中下旬(新券2/5/8/11月,餘為增額) · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "2020年復發行、流動性偏弱常帶折價;20Y需求與20s30s利差是長端健康度的敏感指標。",
+  "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
+  "src": "https://www.treasurydirect.gov/auctions/auction-query/",
+  "sn": "TreasuryDirect"
+ },
+ {
+  "id": "auction_30y",
+  "order": 47,
+  "n": "30年期標售結果",
+  "e": "30-Year Bond Auction",
+  "f": [
+   "fis"
+  ],
+  "org": "TreasuryDirect",
+  "t": "每月上中旬(新券2/5/8/11月,餘為增額) · 結果13:00 ET",
+  "read": "三件套:tail/stop-through(得標vs發行前WI利率)、bid-to-cover、間接投標占比(外資代理需求)。連續tail=需求結構性惡化,單次tail可能只是日內因素。",
+  "bond": "純長端需求試金石(壽險/退休金主場);tail直接推升期限溢價,對財政可持續性疑慮最敏感。",
   "rel": "背景:QRA規模路徑;搭配:dealer takedown占比。",
   "src": "https://www.treasurydirect.gov/auctions/auction-query/",
   "sn": "TreasuryDirect"
  },
  {
   "id": "treasury_general_account",
-  "order": 42,
+  "order": 48,
   "n": "TGA 財政部現金餘額",
   "e": "Treasury General Account",
   "f": [
@@ -717,7 +813,7 @@
  },
  {
   "id": "bills_share_of_outstanding_debt",
-  "order": 43,
+  "order": 49,
   "n": "Bill 占比",
   "e": "Bills Share of Outstanding Debt",
   "f": [
@@ -733,7 +829,7 @@
  },
  {
   "id": "monthly_treasury_statement",
-  "order": 44,
+  "order": 50,
   "n": "MTS 月度財政收支",
   "e": "Monthly Treasury Statement",
   "f": [
@@ -749,7 +845,7 @@
  },
  {
   "id": "chicago_fed_national_financial_condition",
-  "order": 45,
+  "order": 51,
   "n": "NFCI 金融條件指數",
   "e": "Chicago Fed National Financial Conditions Index",
   "f": [
@@ -765,7 +861,7 @@
  },
  {
   "id": "sofr_minus_iorb",
-  "order": 46,
+  "order": 52,
   "n": "SOFR-IORB 利差",
   "e": "SOFR minus IORB",
   "f": [
@@ -781,7 +877,7 @@
  },
  {
   "id": "overnight_reverse_repo_facility",
-  "order": 47,
+  "order": 53,
   "n": "ON RRP 餘額",
   "e": "Overnight Reverse Repo Facility",
   "f": [
@@ -797,7 +893,7 @@
  },
  {
   "id": "reserve_balances_h_4_1",
-  "order": 48,
+  "order": 54,
   "n": "銀行準備金餘額",
   "e": "Reserve Balances (H.4.1)",
   "f": [
@@ -813,7 +909,7 @@
  },
  {
   "id": "ice_bofa_credit_oas",
-  "order": 49,
+  "order": 55,
   "n": "信用OAS(IG/HY)",
   "e": "ICE BofA Credit OAS",
   "f": [
