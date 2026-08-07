@@ -137,6 +137,15 @@ def nfci_zero_line(res: dict, **_) -> str | None:
             + ("金融條件偏寬鬆" if v < 0 else "金融條件偏緊縮"))
 
 
+def auction_size_change(res: dict, **_) -> str | None:
+    """跟同年期上一場標售比規模——QRA 若真的調整發債量，第一手會反映在這裡。"""
+    diff = (res.get("extras") or {}).get("規模變動(十億美元)")
+    if diff is None:
+        return None
+    direction = "增額" if diff > 0 else "減額"
+    return f"標售規模較上次{direction} {abs(diff):.1f}十億美元"
+
+
 def sofr_iorb_persistent(res: dict, **_) -> str | None:
     vals = [h["value"] for h in res.get("history", [])]
     v = res.get("value")
@@ -153,7 +162,7 @@ RULES = {f.__name__: f for f in [
     sahm_rule, pmi_50_line, pmi_45_recession, deanchor_2_5, core_vs_target,
     wage_compat_3_0_3_5, eci_compat_3_5, v_u_ratio, breakeven_100_150,
     claims_range_break, tbac_15_20, nfci_zero_line, sofr_iorb_persistent,
-    nowcast_prior_error,
+    nowcast_prior_error, auction_size_change,
 ]}
 
 

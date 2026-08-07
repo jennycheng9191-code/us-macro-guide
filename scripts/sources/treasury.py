@@ -153,18 +153,31 @@ def auctions(m: dict) -> dict:
     if latest.get("securityTerm") != latest.get("originalSecurityTerm"):
         kind += "（增額發行）"
 
+    # 標售規模（QRA 若宣布增/減額，第一個反映在實際數字上的地方就是這裡，
+    # 不必等我手動去讀公告才更新）——跟同年期「上一場」比較，不分新發或增額，
+    # 因為 Treasury 調整規模可能發生在任一場。
+    offer_latest = num(latest.get("offeringAmount"))
+    prior = coupons[1] if len(coupons) > 1 else None
+    offer_prior = num(prior.get("offeringAmount")) if prior else None
+    extras = {
+        "券別": kind,
+        "得標利率(%)": num(latest.get("highYield")),
+        "間接投標占比(%)": share("indirectBidderAccepted"),
+        "一級交易商占比(%)": share("primaryDealerAccepted"),
+        "標售規模(十億美元)": round(offer_latest / 1e9, 1) if offer_latest else None,
+    }
+    if offer_latest is not None and offer_prior is not None:
+        diff_bn = round((offer_latest - offer_prior) / 1e9, 1)
+        if abs(diff_bn) >= 0.05:      # 濾掉浮點雜訊，只留真的調整過的場次
+            extras["規模變動(十億美元)"] = diff_bn
+
     return {"ok": True,
             "value": num(latest.get("bidToCoverRatio")),
             "asof": latest["auctionDate"][:10],
             "history": hist,
             "raw_latest": num(latest.get("bidToCoverRatio")),
             "freq": "D",
-            "extras": {
-                "券別": kind,
-                "得標利率(%)": num(latest.get("highYield")),
-                "間接投標占比(%)": share("indirectBidderAccepted"),
-                "一級交易商占比(%)": share("primaryDealerAccepted"),
-            },
+            "extras": extras,
             "also": {},
             "source_label": "TreasuryDirect 拍賣查詢",
             "value_label": "bid-to-cover"}
