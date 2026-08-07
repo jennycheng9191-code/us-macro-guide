@@ -922,5 +922,23 @@
   "rel": "同源:晨報§7;成分:NFCI信用子項;對照:Euro HY、EM Corp。",
   "src": "https://fred.stlouisfed.org/series/BAMLC0A0CM",
   "sn": "FRED / ICE BofA"
+ },
+ {
+  "id": "cb_labor_market_differential",
+  "order": 56,
+  "n": "CB 勞動市場差值",
+  "e": "Labor Market Differential (Jobs Plentiful − Hard to Get)",
+  "f": [
+   "lab",
+   "con"
+  ],
+  "p": "CB 消費者信心",
+  "org": "Conference Board",
+  "t": "月 · 最後一個週二 10:00 ET",
+  "read": "「工作充足」減「工作難找」兩個消費者調查分項相減；歷史上是失業率的領先指標，趨勢轉弱常先於Sahm Rule觸發數月。",
+  "bond": "差值加速下滑代表勞動市場結構性轉弱，強化降息定價、壓低短端殖利率；差值走升則相反。",
+  "rel": "母報告:CB消費者信心;下游:失業率、Sahm Rule。",
+  "src": "https://www.conference-board.org/topics/consumer-confidence",
+  "sn": "Conference Board"
  }
 ]

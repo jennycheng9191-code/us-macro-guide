@@ -53,6 +53,7 @@
 
   "umich_consumer_sentiment":        {"source":"umich","table":"sentiment","bond_dir":1,"display":"level","unit":"","decimals":1,"stale_days":45,"sanity":{"min":40,"max":115},"note":"改用密大官方 CSV：FRED 的 UMCSENT 會落後一期"},
   "conference_board_consumer_confidence": {"source":"html","url":"https://www.conference-board.org/topics/consumer-confidence","pattern":"confidence_index","extras":["現況指數","預期指數"],"bond_dir":1,"display":"level","unit":"","decimals":1,"stale_days":40,"sanity":{"min":40,"max":150},"note":"2026-08-02 實測：數字直接寫在 HTML 原文段落中"},
+  "cb_labor_market_differential":    {"source":"html","url":"https://www.conference-board.org/topics/consumer-confidence","pattern":"labor_differential","extras":["工作充足(%)","工作難找(%)"],"bond_dir":1,"display":"level","unit":"pp","decimals":1,"stale_days":40,"sanity":{"min":-25,"max":50},"note":"2026-08-07 新增：抓 CB 新聞稿裡已算好的差值句，不自行相減兩個百分比（各自四捨五入會偶爾差0.1pp）"},
 
   "nahb_housing_market_index":       {"source":"html","url":"https://www.nahb.org/news-and-economics/housing-economics/indices/housing-market-index","pattern":"hmi_key_findings","bond_dir":1,"display":"level","unit":"","decimals":0,"stale_days":40,"sanity":{"min":5,"max":90},"rules":["pmi_50_line"],"note":"2026-08-02 實測：HMI Key Findings 段落含數字，另附 .xls 歷史檔"},
   "housing_starts_building_permits": {"source":"fred","series":"HOUST","extras":{"建照":"PERMIT","單戶開工":"HOUST1F"},"bond_dir":1,"display":"level","unit":"千戶(年化)","decimals":0,"stale_days":45,"sanity":{"min":400,"max":2500}},

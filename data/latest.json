@@ -1,7 +1,7 @@
 {
- "build_time": "2026-08-07 21:47",
+ "build_time": "2026-08-07 22:07",
  "summary": {
-  "green": 56,
+  "green": 57,
   "yellow": 0,
   "gray": 0
  },
@@ -840,15 +840,11 @@
    "value": 0.211432281705678,
    "value_fmt": "0.21%",
    "value_label": "2026 年 7 月 預估",
-   "asof": "2026-08-06",
+   "asof": "2026-08-07",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-06",
-     "value": 0.232180876007138
-    },
     {
      "date": "2026-07-07",
      "value": 0.232180876007138
@@ -939,6 +935,10 @@
     },
     {
      "date": "2026-08-06",
+     "value": 0.211432281705678
+    },
+    {
+     "date": "2026-08-07",
      "value": 0.211432281705678
     }
    ],
@@ -960,15 +960,11 @@
    "value": 0.269874877191236,
    "value_fmt": "0.27%",
    "value_label": "2026 年 7 月 預估",
-   "asof": "2026-08-06",
+   "asof": "2026-08-07",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-06",
-     "value": 0.281420274932748
-    },
     {
      "date": "2026-07-07",
      "value": 0.281420274932748
@@ -1059,6 +1055,10 @@
     },
     {
      "date": "2026-08-06",
+     "value": 0.269874877191236
+    },
+    {
+     "date": "2026-08-07",
      "value": 0.269874877191236
     }
    ],
@@ -6290,6 +6290,28 @@
    "unit": "%",
    "display": "level",
    "bond_dir": -1
+  },
+  "cb_labor_market_differential": {
+   "value": 3.1,
+   "value_fmt": "3.1pp",
+   "value_label": "",
+   "asof": "2026-07-01",
+   "asof_label": "July",
+   "age_days": 7,
+   "new_since": "",
+   "history": [],
+   "extras": {
+    "工作充足(%)": 24.6,
+    "工作難找(%)": 21.5
+   },
+   "also": {},
+   "status": "green",
+   "notes": [],
+   "note": "",
+   "source_label": "Conference Board 官網新聞稿",
+   "unit": "pp",
+   "display": "level",
+   "bond_dir": 1
   }
  }
 }
