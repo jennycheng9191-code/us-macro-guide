@@ -109,6 +109,9 @@ def main() -> int:
     mapping.pop("_doc", None)
     manual = read_json(DATA / "manual.json", {})
     previous = read_json(DATA / "latest.json", {}).get("cards", {})
+    # 官方不提供免費歷史API的卡（目前只有CB兩張）靠這裡自己累積——
+    # 每次 build 把當月值 upsert 進去，久了自然長出走勢圖
+    scraped_hist = read_json(DATA / "scraped_history.json", {})
 
     today = datetime.now(TPE).strftime("%Y-%m-%d")
 
@@ -129,8 +132,26 @@ def main() -> int:
             print(f"  ! {card['n']}: {e}", file=sys.stderr)
             traceback.print_exc(limit=1, file=sys.stderr)
 
+        # 官方不提供免費歷史API的卡（目前CB兩張）靠這裡自己累積歷史。
+        # 候選值先併進 res["history"] 讓下面的關卡2（單期變動）也能套用，
+        # 但要等關卡1（合理區間）確認過關才真的寫回持久化檔案——
+        # 不然一次髒資料就永久污染了辛苦累積的歷史。
+        pending_hist = None
+        if m.get("persist_history") and res.get("ok") and res.get("asof"):
+            pending_hist = [dict(e) for e in scraped_hist.get(cid, [])]
+            existing = next((e for e in pending_hist if e["date"] == res["asof"]), None)
+            if existing:
+                existing["value"] = res["value"]      # 同月修正值，就地更新不重複累加
+            else:
+                pending_hist.append({"date": res["asof"], "value": res["value"]})
+            pending_hist.sort(key=lambda h: h["date"])
+            res["history"] = pending_hist[-24:]
+
         verdict = validate.check(res, m)
         status, notes = verdict["status"], list(verdict["notes"])
+
+        if pending_hist is not None and status != "gray":
+            scraped_hist[cid] = pending_hist
 
         # 走備援來源代表主要來源當下是壞的——即使數字通過關卡也要讓你看得見
         if res.get("fallback_note"):
@@ -220,6 +241,7 @@ def main() -> int:
         "cards": cards,
     }
     write_json(DATA / "latest.json", out)
+    write_json(DATA / "scraped_history.json", scraped_hist)
     print(f"\n完成：綠燈 {tally['green']} / 黃燈 {tally['yellow']} / 未取得 {tally['gray']}")
     return 0
 
