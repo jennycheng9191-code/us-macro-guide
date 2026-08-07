@@ -78,12 +78,26 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet data/latest.json; then
             echo "數值沒有變化，不需提交"
-          else
-            git add data/latest.json
-            git commit -m "資料更新 $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
-            git push
-            echo "COMMITTED=1" >> "$GITHUB_ENV"
+            exit 0
           fi
+          git add data/latest.json
+          git commit -m "資料更新 $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
+          echo "COMMITTED=1" >> "$GITHUB_ENV"
+
+          # 抓 56 張卡要花好幾分鐘，這段時間主分支常被別的 push 動過
+          # （手動改程式碼、或另一次排程）——plain push 一撞就整次失敗、
+          # 資料白抓。改成 fetch+merge 重試，衝突一律保留這次剛跑出的新值
+          # （只有 data/latest.json 會變，用 -X ours 安全）。
+          for i in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push 被拒絕（第 $i 次），fetch 後重新合併再試"
+            git fetch origin main
+            git merge -X ours origin/main -m "合併：保留本次新抓的資料"
+          done
+          echo "::error::push 重試 5 次仍失敗，資料留在 runner 上未提交"
+          exit 1
 
       - name: 觸發網站部署
         # GITHUB_TOKEN 推的 commit 不會觸發其他 workflow（GitHub 防遞迴），
