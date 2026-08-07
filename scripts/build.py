@@ -141,6 +141,7 @@ def main() -> int:
             res = {"ok": True, "value": man.get("value"), "asof": man.get("asof", ""),
                    "history": res.get("history", []) if res.get("ok") else [],
                    "extras": man.get("extras", {}), "also": {},
+                   "value_label": man.get("value_label", ""),
                    "source_label": "人工輸入", "raw_latest": man.get("value")}
             status, notes = "green", [f"人工確認值（{man.get('by', 'Jenny')} 於 {man.get('at', '—')}）"]
 
@@ -165,7 +166,12 @@ def main() -> int:
             res = {"ok": False, "asof": "", "history": [], "extras": {}, "also": {},
                    "source_label": res.get("source_label", "")}
 
-        note = rules.build_note(res, m) if res.get("ok") else ""
+        # QRA 這類敘述性事件卡沒有時間序列可套規則，規則引擎必然留白——
+        # 人工填的判讀句要能覆蓋過去，不是被空字串蓋掉。
+        if cid in manual and manual[cid].get("note"):
+            note = manual[cid]["note"]
+        else:
+            note = rules.build_note(res, m) if res.get("ok") else ""
         tally[status] = tally.get(status, 0) + 1
 
         # new_since = 這張卡的「期別」最後一次往前推進的日期，供前端標 🆕。

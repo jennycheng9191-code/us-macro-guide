@@ -1,1 +1,17 @@
-{}
+{
+ "quarterly_refunding_announcement": {
+  "value": 739,
+  "value_label": "2026 Q3(Jul–Sep)淨可市場借款估計",
+  "asof": "2026-08-05",
+  "note": "前瞻語言『increases→changes』留雙向彈性；3Q借款上修但4Q TGA目標下修，三大行對增額時點預測分歧(2027/2–8月)",
+  "extras": {
+   "4Q26借款估計": "628十億美元",
+   "4Q26季末TGA目標": "850十億美元(原預期900–950)",
+   "coupon/TIPS/FRN規模": "維持不變",
+   "前瞻指引措辭變化": "increases→changes",
+   "TBAC建議採納度": "部分採納(改字，保留'數季'期程)"
+  },
+  "by": "Jenny",
+  "at": "2026-08-07"
+ }
+}
