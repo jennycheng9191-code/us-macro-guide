@@ -16,7 +16,7 @@ sys.path[:0] = [str(HERE), str(HERE / "sources")]
 from common import DATA, load_env, read_json, write_json   # noqa: E402
 import rules                                               # noqa: E402
 import validate                                            # noqa: E402
-from sources import (clevelandfed, fred, html_src, news, nyfed,   # noqa: E402
+from sources import (bls, clevelandfed, fred, html_src, news, nyfed,   # noqa: E402
                      prnewswire, treasury, umich)
 
 TPE = timezone(timedelta(hours=8))
@@ -26,6 +26,8 @@ def _fetch_one(card_id: str, m: dict, ctx: dict) -> dict:
     src = m["source"]
     if src == "fred":
         return fred.fetch(card_id, m)
+    if src == "bls":
+        return bls.fetch(card_id, m)
     if src == "derived":
         return fred.fetch_derived(card_id, m)
     if src == "treasury":
