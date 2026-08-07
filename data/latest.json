@@ -1,9 +1,9 @@
 {
- "build_time": "2026-08-07 20:21",
+ "build_time": "2026-08-07 20:39",
  "summary": {
-  "green": 55,
+  "green": 56,
   "yellow": 0,
-  "gray": 1
+  "gray": 0
  },
  "cards": {
   "consumer_price_index": {
@@ -4476,25 +4476,31 @@
    "bond_dir": null
   },
   "quarterly_refunding_announcement": {
-   "value": null,
-   "value_fmt": "—",
-   "value_label": "",
-   "asof": "",
+   "value": 739,
+   "value_fmt": "739十億美元",
+   "value_label": "2026 Q3(Jul–Sep)淨可市場借款估計",
+   "asof": "2026-08-05",
    "asof_label": "",
    "age_days": null,
    "new_since": "",
    "history": [],
-   "extras": {},
+   "extras": {
+    "4Q26借款估計": "628十億美元",
+    "4Q26季末TGA目標": "850十億美元(原預期900–950)",
+    "coupon/TIPS/FRN規模": "維持不變",
+    "前瞻指引措辭變化": "increases→changes",
+    "TBAC建議採納度": "部分採納(改字，保留'數季'期程)"
+   },
    "also": {},
-   "status": "gray",
+   "status": "green",
    "notes": [
-    "敘述性內容，依行事曆人工更新"
+    "人工確認值（Jenny 於 2026-08-07）"
    ],
-   "note": "",
-   "source_label": "",
-   "unit": "",
+   "note": "前瞻語言『increases→changes』留雙向彈性；3Q借款上修但4Q TGA目標下修，三大行對增額時點預測分歧(2027/2–8月)",
+   "source_label": "人工輸入",
+   "unit": "十億美元",
    "display": "text",
-   "bond_dir": null
+   "bond_dir": 1
   },
   "auction_2y": {
    "value": 2.66,
