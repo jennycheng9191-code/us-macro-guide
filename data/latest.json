@@ -1,8 +1,8 @@
 {
- "build_time": "2026-08-08 08:05",
+ "build_time": "2026-08-09 05:04",
  "summary": {
-  "green": 57,
-  "yellow": 0,
+  "green": 53,
+  "yellow": 4,
   "gray": 0
  },
  "cards": {
@@ -1434,7 +1434,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": null,
    "new_since": "2026-08-07",
    "history": [
     {
@@ -1536,8 +1536,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.bls.gov/publicAPI/v2/timeseries/data/CES0000000001: 503 Server Error: Service Unavailable for url: https://api.bls.gov/publicAPI/v2/timeseries/data/CES0000000001?startyear=2022&endyear=2026",
+    "本次未取得，沿用 2026-07-01 的前值"
+   ],
    "note": "月增 -23千人，低於 10–15 萬盈虧平衡區間；連續 4 期走降、位於近 24 期的第 21 百分位",
    "source_label": "BLS API CES0000000001",
    "unit": "千人",
@@ -1550,7 +1553,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": null,
    "new_since": "2026-08-07",
    "history": [
     {
@@ -1652,8 +1655,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.bls.gov/publicAPI/v2/timeseries/data/LNS14000000: 503 Server Error: Service Unavailable for url: https://api.bls.gov/publicAPI/v2/timeseries/data/LNS14000000?startyear=2022&endyear=2026",
+    "本次未取得，沿用 2026-07-01 的前值"
+   ],
    "note": "Sahm Rule 計數 0.00pp，距 0.5pp 觸發門檻尚有 0.50pp；位於近 24 期的第 25 百分位",
    "source_label": "BLS API LNS14000000",
    "unit": "%",
@@ -1666,7 +1672,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": null,
    "new_since": "2026-08-07",
    "history": [
     {
@@ -1770,8 +1776,11 @@
     "25-54歲": 83.4
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.bls.gov/publicAPI/v2/timeseries/data/LNS11300000: 503 Server Error: Service Unavailable for url: https://api.bls.gov/publicAPI/v2/timeseries/data/LNS11300000?startyear=2022&endyear=2026",
+    "本次未取得，沿用 2026-07-01 的前值"
+   ],
    "note": "創近 24 期新低",
    "source_label": "BLS API LNS11300000",
    "unit": "%",
@@ -1784,7 +1793,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": null,
    "new_since": "2026-08-07",
    "history": [
     {
@@ -1888,8 +1897,11 @@
    "also": {
     "mom": 0.05319148936169249
    },
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.bls.gov/publicAPI/v2/timeseries/data/CES0500000003: 503 Server Error: Service Unavailable for url: https://api.bls.gov/publicAPI/v2/timeseries/data/CES0500000003?startyear=2022&endyear=2026",
+    "本次未取得，沿用 2026-07-01 的前值"
+   ],
    "note": "年增 3.2%，落在與 2% 通膨相容區內；創近 24 期新低",
    "source_label": "BLS API CES0500000003",
    "unit": "%",
