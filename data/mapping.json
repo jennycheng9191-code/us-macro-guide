@@ -3,7 +3,7 @@
     "說明": "47 張卡的資料來源映射表。所有 FRED 序列代號已於 2026-08-02 逐一透過 FRED API 驗證存在且仍在更新。",
     "source 型別": {
       "fred": "FRED API，需 FRED_API_KEY",
-      "derived": "由多個 FRED 序列計算得出",
+      "derived": "由多個 FRED 序列計算得出。預設為兩序列相減轉 bp（SOFR-IORB）；method=level_diff_mom 則是多條金額序列相減成合成總額後再算月增率（零售銷售控制組）",
       "nyfed_sce": "NY Fed 消費者預期調查 xlsx",
       "treasury": "Treasury FiscalData / TreasuryDirect API，免金鑰",
       "html": "解析官方網頁 HTML",
@@ -47,6 +47,7 @@
   "ism_services_prices_paid":        {"source":"prnewswire","fallback":{"source":"news"},"keys":["ISM services prices","services prices index"],"bond_dir":1,"display":"level","unit":"","decimals":1,"stale_days":40,"sanity":{"min":20,"max":95},"rules":["pmi_50_line"],"note":"服務物價長年站在 50 上方（已連續 110 個月上升），50 榮枯線對這張卡幾乎不具訊息量，實務看 60/70 兩道門檻"},
 
   "retail_sales_advance":            {"source":"fred","series":"RSAFS","extras":{"扣除餐飲":"RSXFS"},"bond_dir":1,"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-25,"max":30},"note":"主值改為 MoM——市場交易的是月變動，年增率受基期干擾"},
+  "retail_sales_control_group":      {"source":"derived","method":"level_diff_mom","formula":"RSXFS - RSMVPD - RSBMGESD - RSGASS","inputs":["RSXFS","RSMVPD","RSBMGESD","RSGASS"],"bond_dir":1,"display":"level","unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-15,"max":15},"note":"控制組＝零售貿易總額－汽車及零件－建材－加油站（RSXFS本身已不含餐飲）。Census未發布此組合序列，依官方季調金額自算月增率，與 us-macro-detail 同口徑"},
   "industrial_production":           {"source":"fred","series":"INDPRO","extras":{"產能利用率":"TCU"},"bond_dir":1,"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":45,"sanity":{"min":-20,"max":20},"note":"主值改為 MoM"},
   "atlanta_fed_gdpnow":              {"source":"fred","series":"GDPNOW","bond_dir":1,"display":"level","label_as":"quarter","unit":"%","decimals":1,"stale_days":14,"sanity":{"min":-10,"max":12},"note":"值對應的是預測季別，非資料期別——卡面已標示季度"},
   "durable_goods_orders":            {"source":"fred","series":"DGORDER","extras":{"核心資本財":"NEWORDER"},"bond_dir":1,"display":"mom","also":["yoy"],"also_labels":{"yoy":"YoY"},"unit":"%","decimals":1,"stale_days":50,"sanity":{"min":-40,"max":40},"note":"主值改為 MoM；核心資本財訂單見附帶數值"},

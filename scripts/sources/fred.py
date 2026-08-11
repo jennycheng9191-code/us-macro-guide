@@ -110,8 +110,54 @@ def fetch(card_id: str, m: dict) -> dict:
     return res
 
 
+def _level_diff_mom(m: dict) -> dict:
+    """多條金額序列相減成一個合成總額，再算月增率（零售銷售控制組用）。
+
+    Census 沒有發布控制組這條組合序列（MARTS 的 44Y72/44W72/44Z72 分別是排除
+    汽車、排除汽車＋汽油、排除汽油，都不是控制組），市場口徑一律自行相減。
+    FRED 這幾條就是 Census 官方季調金額的鏡像，數值與 us-macro-detail 直接
+    打 Census API 的結果逐月一致。
+    """
+    base, *minus = m["inputs"]
+    ob = observations(base)
+    if not ob:
+        return {"ok": False, "reason": f"{base} 無可用觀測值"}
+    subs = []
+    for sid in minus:
+        o = observations(sid)
+        if not o:
+            return {"ok": False, "reason": f"{sid} 無可用觀測值"}
+        subs.append({x["date"]: x["value"] for x in o})
+
+    # 只取每條序列都有值的月份，避免某一條當月尚未更新時算出假的跳動
+    levels = [(x["date"], x["value"] - sum(s[x["date"]] for s in subs))
+              for x in ob if all(x["date"] in s for s in subs)]
+    if len(levels) < 2:
+        return {"ok": False, "reason": "各序列共同月份不足，無法計算月增率"}
+
+    hist = [{"date": d, "value": (v / pv - 1) * 100}
+            for (_, pv), (d, v) in zip(levels, levels[1:]) if pv]
+    if not hist:
+        return {"ok": False, "reason": "合成總額為零，無法計算月增率"}
+
+    return {
+        "ok": True,
+        "value": hist[-1]["value"],
+        "asof": hist[-1]["date"],
+        "history": hist[-24:],
+        "raw_latest": levels[-1][1],
+        "freq": "M",
+        "extras": {"合成總額(百萬美元)": levels[-1][1]},
+        "also": {},
+        "source_label": f"FRED {' − '.join(m['inputs'])}",
+    }
+
+
 def fetch_derived(card_id: str, m: dict) -> dict:
-    """目前只有 SOFR - IORB 一張卡，單位換算為 bp。"""
+    """衍生計算：level_diff_mom（金額相減再算月增率）或預設的兩序列相減轉 bp。"""
+    if m.get("method") == "level_diff_mom":
+        return _level_diff_mom(m)
+
     a, b = m["inputs"]
     oa, ob = observations(a), observations(b)
     if not oa or not ob:

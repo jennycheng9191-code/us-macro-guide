@@ -488,8 +488,25 @@
   "sn": "Census MARTS"
  },
  {
-  "id": "industrial_production",
+  "id": "retail_sales_control_group",
   "order": 29,
+  "n": "零售銷售控制組",
+  "e": "Retail Sales Control Group",
+  "f": [
+   "act"
+  ],
+  "mom": "零售銷售報告",
+  "org": "Census Bureau",
+  "t": "月 · 與零售銷售同步發布,約每月15日 08:30 ET",
+  "read": "剔除汽車/加油站/建材/餐飲後的核心口徑,直接進BEA的GDP商品消費估算,是零售報告裡最該看的一行。波動小於總額但修正一樣大;Census不發布這條組合序列,市場一律用官方季調金額相減自算。",
+  "bond": "控制組優於預期→GDPNow消費項上修、「不著陸」敘事→長端承壓。總額與控制組背離時(汽車拉貨、油價漲跌造成)以控制組為準,這是市場真正定價的那個數字。",
+  "rel": "母報告:零售銷售(總額);下游:GDPNow消費項、PCE商品支出;交叉:實質可支配所得、循環信貸餘額。分項拆解見 us-macro-detail 零售銷售頁。",
+  "src": "https://www.census.gov/retail/",
+  "sn": "Census MARTS(自算)"
+ },
+ {
+  "id": "industrial_production",
+  "order": 30,
   "n": "工業生產",
   "e": "Industrial Production",
   "f": [
@@ -505,7 +522,7 @@
  },
  {
   "id": "atlanta_fed_gdpnow",
-  "order": 30,
+  "order": 31,
   "n": "GDPNow",
   "e": "Atlanta Fed GDPNow",
   "f": [
@@ -521,7 +538,7 @@
  },
  {
   "id": "durable_goods_orders",
-  "order": 31,
+  "order": 32,
   "n": "耐久財訂單",
   "e": "Durable Goods Orders",
   "f": [
@@ -537,7 +554,7 @@
  },
  {
   "id": "umich_consumer_sentiment",
-  "order": 32,
+  "order": 33,
   "n": "密大消費者信心",
   "e": "UMich Consumer Sentiment",
   "f": [
@@ -554,7 +571,7 @@
  },
  {
   "id": "conference_board_consumer_confidence",
-  "order": 33,
+  "order": 34,
   "n": "CB 消費者信心",
   "e": "Conference Board Consumer Confidence",
   "f": [
@@ -571,7 +588,7 @@
  },
  {
   "id": "nahb_housing_market_index",
-  "order": 34,
+  "order": 35,
   "n": "NAHB 建商信心",
   "e": "NAHB Housing Market Index",
   "f": [
@@ -587,7 +604,7 @@
  },
  {
   "id": "housing_starts_building_permits",
-  "order": 35,
+  "order": 36,
   "n": "新屋開工 / 建照",
   "e": "Housing Starts & Building Permits",
   "f": [
@@ -603,7 +620,7 @@
  },
  {
   "id": "existing_home_sales",
-  "order": 36,
+  "order": 37,
   "n": "成屋銷售",
   "e": "Existing Home Sales",
   "f": [
@@ -619,7 +636,7 @@
  },
  {
   "id": "new_home_sales",
-  "order": 37,
+  "order": 38,
   "n": "新屋銷售",
   "e": "New Home Sales",
   "f": [
@@ -635,7 +652,7 @@
  },
  {
   "id": "s_p_corelogic_case_shiller_hpi",
-  "order": 38,
+  "order": 39,
   "n": "Case-Shiller 房價",
   "e": "S&P CoreLogic Case-Shiller HPI",
   "f": [
@@ -651,7 +668,7 @@
  },
  {
   "id": "30y_fixed_mortgage_rate_pmms",
-  "order": 39,
+  "order": 40,
   "n": "30年期房貸利率",
   "e": "30Y Fixed Mortgage Rate (PMMS)",
   "f": [
@@ -668,7 +685,7 @@
  },
  {
   "id": "quarterly_refunding_announcement",
-  "order": 40,
+  "order": 41,
   "n": "QRA 季度再融資",
   "e": "Quarterly Refunding Announcement",
   "f": [
@@ -684,7 +701,7 @@
  },
  {
   "id": "auction_2y",
-  "order": 41,
+  "order": 42,
   "n": "2年期標售結果",
   "e": "2-Year Note Auction",
   "f": [
@@ -700,7 +717,7 @@
  },
  {
   "id": "auction_3y",
-  "order": 42,
+  "order": 43,
   "n": "3年期標售結果",
   "e": "3-Year Note Auction",
   "f": [
@@ -716,7 +733,7 @@
  },
  {
   "id": "auction_5y",
-  "order": 43,
+  "order": 44,
   "n": "5年期標售結果",
   "e": "5-Year Note Auction",
   "f": [
@@ -732,7 +749,7 @@
  },
  {
   "id": "auction_7y",
-  "order": 44,
+  "order": 45,
   "n": "7年期標售結果",
   "e": "7-Year Note Auction",
   "f": [
@@ -748,7 +765,7 @@
  },
  {
   "id": "auction_10y",
-  "order": 45,
+  "order": 46,
   "n": "10年期標售結果",
   "e": "10-Year Note Auction",
   "f": [
@@ -764,7 +781,7 @@
  },
  {
   "id": "auction_20y",
-  "order": 46,
+  "order": 47,
   "n": "20年期標售結果",
   "e": "20-Year Bond Auction",
   "f": [
@@ -780,7 +797,7 @@
  },
  {
   "id": "auction_30y",
-  "order": 47,
+  "order": 48,
   "n": "30年期標售結果",
   "e": "30-Year Bond Auction",
   "f": [
@@ -796,7 +813,7 @@
  },
  {
   "id": "treasury_general_account",
-  "order": 48,
+  "order": 49,
   "n": "TGA 財政部現金餘額",
   "e": "Treasury General Account",
   "f": [
@@ -813,7 +830,7 @@
  },
  {
   "id": "bills_share_of_outstanding_debt",
-  "order": 49,
+  "order": 50,
   "n": "Bill 占比",
   "e": "Bills Share of Outstanding Debt",
   "f": [
@@ -829,7 +846,7 @@
  },
  {
   "id": "monthly_treasury_statement",
-  "order": 50,
+  "order": 51,
   "n": "MTS 月度財政收支",
   "e": "Monthly Treasury Statement",
   "f": [
@@ -845,7 +862,7 @@
  },
  {
   "id": "chicago_fed_national_financial_condition",
-  "order": 51,
+  "order": 52,
   "n": "NFCI 金融條件指數",
   "e": "Chicago Fed National Financial Conditions Index",
   "f": [
@@ -861,7 +878,7 @@
  },
  {
   "id": "sofr_minus_iorb",
-  "order": 52,
+  "order": 53,
   "n": "SOFR-IORB 利差",
   "e": "SOFR minus IORB",
   "f": [
@@ -877,7 +894,7 @@
  },
  {
   "id": "overnight_reverse_repo_facility",
-  "order": 53,
+  "order": 54,
   "n": "ON RRP 餘額",
   "e": "Overnight Reverse Repo Facility",
   "f": [
@@ -893,7 +910,7 @@
  },
  {
   "id": "reserve_balances_h_4_1",
-  "order": 54,
+  "order": 55,
   "n": "銀行準備金餘額",
   "e": "Reserve Balances (H.4.1)",
   "f": [
@@ -909,7 +926,7 @@
  },
  {
   "id": "ice_bofa_credit_oas",
-  "order": 55,
+  "order": 56,
   "n": "信用OAS(IG/HY)",
   "e": "ICE BofA Credit OAS",
   "f": [
@@ -925,7 +942,7 @@
  },
  {
   "id": "cb_labor_market_differential",
-  "order": 56,
+  "order": 57,
   "n": "CB 勞動市場差值",
   "e": "Labor Market Differential (Jobs Plentiful − Hard to Get)",
   "f": [
