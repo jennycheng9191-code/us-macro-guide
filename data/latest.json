@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-12 22:43",
+ "build_time": "2026-08-13 06:10",
  "summary": {
   "green": 57,
   "yellow": 1,
@@ -1015,18 +1015,14 @@
    "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.31,
-   "value_fmt": "2.31%",
+   "value": 2.28,
+   "value_fmt": "2.28%",
    "value_label": "",
-   "asof": "2026-08-11",
+   "asof": "2026-08-12",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-09",
-     "value": 2.18
-    },
     {
      "date": "2026-07-10",
      "value": 2.2
@@ -1118,13 +1114,17 @@
     {
      "date": "2026-08-11",
      "value": 2.31
+    },
+    {
+     "date": "2026-08-12",
+     "value": 2.28
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.19pp；位於近 24 期的第 96 百分位",
+   "note": "距 2.5% 去錨警戒線尚有 0.22pp；位於近 24 期的第 75 百分位",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
@@ -4615,10 +4615,10 @@
     }
    ],
    "extras": {
-    "10Y公債": 4.72
+    "10Y公債": 4.7
    },
    "also": {
-    "利差 vs DGS10": 1.9700000000000006
+    "利差 vs DGS10": 1.9900000000000002
    },
    "status": "green",
    "notes": [],
@@ -5140,18 +5140,14 @@
    "bond_dir": null
   },
   "auction_10y": {
-   "value": 2.59,
-   "value_fmt": "2.59",
+   "value": 2.53,
+   "value_fmt": "2.53",
    "value_label": "bid-to-cover",
-   "asof": "2026-07-08",
+   "asof": "2026-08-12",
    "asof_label": "",
-   "age_days": 35,
-   "new_since": "",
+   "age_days": 0,
+   "new_since": "2026-08-13",
    "history": [
-    {
-     "date": "2024-08-07",
-     "value": 2.32
-    },
     {
      "date": "2024-09-11",
      "value": 2.64
@@ -5243,19 +5239,24 @@
     {
      "date": "2026-07-08",
      "value": 2.59
+    },
+    {
+     "date": "2026-08-12",
+     "value": 2.53
     }
    ],
    "extras": {
-    "券別": "9-Year 10-Month Note（增額發行）",
-    "得標利率(%)": 4.58,
-    "間接投標占比(%)": 73.7,
-    "一級交易商占比(%)": 7.0,
-    "標售規模(十億美元)": 39.0
+    "券別": "10-Year Note",
+    "得標利率(%)": 4.683,
+    "間接投標占比(%)": 61.0,
+    "一級交易商占比(%)": 6.8,
+    "標售規模(十億美元)": 42.0,
+    "規模變動(十億美元)": 3.0
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 75 百分位",
+   "note": "標售規模較上次增額 3.0十億美元；位於近 24 期的第 50 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
    "display": "table",
@@ -5506,18 +5507,14 @@
    "bond_dir": null
   },
   "treasury_general_account": {
-   "value": 954.113,
-   "value_fmt": "954十億美元",
+   "value": 966.851,
+   "value_fmt": "967十億美元",
    "value_label": "",
-   "asof": "2026-08-10",
+   "asof": "2026-08-11",
    "asof_label": "",
-   "age_days": 2,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-08",
-     "value": 784.964
-    },
     {
      "date": "2026-07-09",
      "value": 749.244
@@ -5609,13 +5606,17 @@
     {
      "date": "2026-08-10",
      "value": 954.113
+    },
+    {
+     "date": "2026-08-11",
+     "value": 966.851
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 83 百分位",
+   "note": "位於近 24 期的第 92 百分位",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level",
@@ -5738,18 +5739,14 @@
    "bond_dir": null
   },
   "monthly_treasury_statement": {
-   "value": -93.29562557635998,
-   "value_fmt": "-93十億美元",
+   "value": -723.4505349091502,
+   "value_fmt": "-723十億美元",
    "value_label": "",
-   "asof": "2026-06-30",
+   "asof": "2026-07-31",
    "asof_label": "",
-   "age_days": 13,
-   "new_since": "",
+   "age_days": 0,
+   "new_since": "2026-08-13",
    "history": [
-    {
-     "date": "2024-07-31",
-     "value": -464.52318465103
-    },
     {
      "date": "2024-08-31",
      "value": -290.82483274077003
@@ -5841,15 +5838,19 @@
     {
      "date": "2026-06-30",
      "value": -93.29562557635998
+    },
+    {
+     "date": "2026-07-31",
+     "value": -723.4505349091502
     }
    ],
    "extras": {
-    "滾動12個月": -3685.4129687068103
+    "滾動12個月": -3873.9797560308602
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 83 百分位",
+   "note": "位於近 24 期的第 8 百分位",
    "source_label": "FiscalData MTS",
    "unit": "十億美元",
    "display": "level",
@@ -6093,18 +6094,14 @@
    "bond_dir": null
   },
   "overnight_reverse_repo_facility": {
-   "value": 1.25,
+   "value": 0.725,
    "value_fmt": "1十億美元",
    "value_label": "",
-   "asof": "2026-08-11",
+   "asof": "2026-08-12",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-09",
-     "value": 5.772
-    },
     {
      "date": "2026-07-10",
      "value": 0.545
@@ -6196,13 +6193,17 @@
     {
      "date": "2026-08-11",
      "value": 1.25
+    },
+    {
+     "date": "2026-08-12",
+     "value": 0.725
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 62 百分位",
+   "note": "位於近 24 期的第 42 百分位",
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
    "display": "level",
