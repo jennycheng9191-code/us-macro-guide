@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-13 23:09",
+ "build_time": "2026-08-13 23:20",
  "summary": {
   "green": 58,
   "yellow": 0,
@@ -3359,7 +3359,7 @@
   },
   "retail_sales_control_group": {
    "value": 0.5511520825555394,
-   "value_fmt": "0.6%",
+   "value_fmt": "0.55%",
    "value_label": "",
    "asof": "2026-06-01",
    "asof_label": "",
