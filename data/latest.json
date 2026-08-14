@@ -1,5 +1,5 @@
 {
- "build_time": "2026-08-15 04:59",
+ "build_time": "2026-08-15 07:43",
  "summary": {
   "green": 58,
   "yellow": 0,
@@ -1021,18 +1021,14 @@
    "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.27,
-   "value_fmt": "2.27%",
+   "value": 2.3,
+   "value_fmt": "2.30%",
    "value_label": "",
-   "asof": "2026-08-13",
+   "asof": "2026-08-14",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-07-13",
-     "value": 2.21
-    },
     {
      "date": "2026-07-14",
      "value": 2.22
@@ -1124,13 +1120,17 @@
     {
      "date": "2026-08-13",
      "value": 2.27
+    },
+    {
+     "date": "2026-08-14",
+     "value": 2.3
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.23pp；連續 3 期走降、位於近 24 期的第 58 百分位",
+   "note": "距 2.5% 去錨警戒線尚有 0.20pp；位於近 24 期的第 88 百分位",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
