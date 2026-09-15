@@ -1,5 +1,5 @@
 {
- "build_time": "2026-09-15 08:56",
+ "build_time": "2026-09-16 06:27",
  "summary": {
   "green": 51,
   "yellow": 7,
@@ -842,9 +842,9 @@
    "value": 0.201681228472037,
    "value_fmt": "0.20%",
    "value_label": "2026 年 9 月 預估",
-   "asof": "2026-09-14",
+   "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
     {
@@ -882,6 +882,10 @@
     {
      "date": "2026-09-14",
      "value": 0.201681228472037
+    },
+    {
+     "date": "2026-09-15",
+     "value": 0.201681228472037
     }
    ],
    "extras": {
@@ -892,7 +896,7 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "上期（2026-08）預估 +0.20%、實際 +0.29%，誤差在 0.1pp 內；創近 9 期新高",
+   "note": "上期（2026-08）預估 +0.20%、實際 +0.29%，誤差在 0.1pp 內；創近 10 期新高",
    "source_label": "Cleveland Fed 官方 JSON",
    "unit": "%",
    "display": "level",
@@ -902,15 +906,11 @@
    "value": 0.274409309156788,
    "value_fmt": "0.27%",
    "value_label": "2026 年 8 月 預估",
-   "asof": "2026-09-14",
+   "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-11",
-     "value": 0.271947549060734
-    },
     {
      "date": "2026-08-12",
      "value": 0.270059971366209
@@ -1002,6 +1002,10 @@
     {
      "date": "2026-09-14",
      "value": 0.274409309156788
+    },
+    {
+     "date": "2026-09-15",
+     "value": 0.274409309156788
     }
    ],
    "extras": {
@@ -1019,18 +1023,14 @@
    "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.34,
-   "value_fmt": "2.34%",
+   "value": 2.35,
+   "value_fmt": "2.35%",
    "value_label": "",
-   "asof": "2026-09-14",
+   "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-11",
-     "value": 2.31
-    },
     {
      "date": "2026-08-12",
      "value": 2.28
@@ -1122,13 +1122,17 @@
     {
      "date": "2026-09-14",
      "value": 2.34
+    },
+    {
+     "date": "2026-09-15",
+     "value": 2.35
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.16pp；位於近 24 期的第 96 百分位",
+   "note": "距 2.5% 去錨警戒線尚有 0.15pp；創近 24 期新高",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
@@ -4631,10 +4635,10 @@
     }
    ],
    "extras": {
-    "10Y公債": 4.96
+    "10Y公債": 4.97
    },
    "also": {
-    "利差 vs DGS10": 1.7999999999999998
+    "利差 vs DGS10": 1.79
    },
    "status": "green",
    "notes": [],
@@ -5279,18 +5283,14 @@
    "bond_dir": null
   },
   "auction_20y": {
-   "value": 2.53,
-   "value_fmt": "2.53",
+   "value": 2.57,
+   "value_fmt": "2.57",
    "value_label": "bid-to-cover",
-   "asof": "2026-08-19",
+   "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 27,
-   "new_since": "2026-08-20",
+   "age_days": 0,
+   "new_since": "2026-09-16",
    "history": [
-    {
-     "date": "2024-09-17",
-     "value": 2.51
-    },
     {
      "date": "2024-10-23",
      "value": 2.59
@@ -5382,20 +5382,24 @@
     {
      "date": "2026-08-19",
      "value": 2.53
+    },
+    {
+     "date": "2026-09-15",
+     "value": 2.57
     }
    ],
    "extras": {
-    "券別": "20-Year Bond",
-    "得標利率(%)": 5.204,
-    "間接投標占比(%)": 55.1,
-    "一級交易商占比(%)": 10.9,
-    "標售規模(十億美元)": 16.0,
-    "規模變動(十億美元)": 3.0
+    "券別": "19-Year 11-Month Bond（增額發行）",
+    "得標利率(%)": 5.42,
+    "間接投標占比(%)": 52.1,
+    "一級交易商占比(%)": 16.7,
+    "標售規模(十億美元)": 13.0,
+    "規模變動(十億美元)": -3.0
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "標售規模較上次增額 3.0十億美元；位於近 24 期的第 33 百分位",
+   "note": "標售規模較上次減額 3.0十億美元；位於近 24 期的第 42 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
    "display": "table",
@@ -5525,18 +5529,14 @@
    "bond_dir": null
   },
   "treasury_general_account": {
-   "value": 818.11,
-   "value_fmt": "818十億美元",
+   "value": 822.2,
+   "value_fmt": "822十億美元",
    "value_label": "",
-   "asof": "2026-09-11",
+   "asof": "2026-09-14",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-10",
-     "value": 954.113
-    },
     {
      "date": "2026-08-11",
      "value": 966.851
@@ -5628,13 +5628,17 @@
     {
      "date": "2026-09-11",
      "value": 818.11
+    },
+    {
+     "date": "2026-09-14",
+     "value": 822.2
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "連續 5 期走降、創近 24 期新低",
+   "note": "位於近 24 期的第 8 百分位",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level",
@@ -5996,15 +6000,11 @@
    "value": -2.9999999999999805,
    "value_fmt": "-3.0bp",
    "value_label": "",
-   "asof": "2026-09-11",
+   "asof": "2026-09-14",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-10",
-     "value": -2.0000000000000018
-    },
     {
      "date": "2026-08-11",
      "value": -0.9999999999999787
@@ -6096,6 +6096,10 @@
     {
      "date": "2026-09-11",
      "value": -2.9999999999999805
+    },
+    {
+     "date": "2026-09-14",
+     "value": -2.9999999999999805
     }
    ],
    "extras": {
@@ -6112,18 +6116,14 @@
    "bond_dir": null
   },
   "overnight_reverse_repo_facility": {
-   "value": 1.42,
+   "value": 0.7,
    "value_fmt": "1十億美元",
    "value_label": "",
-   "asof": "2026-09-14",
+   "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-11",
-     "value": 1.25
-    },
     {
      "date": "2026-08-12",
      "value": 0.725
@@ -6215,13 +6215,17 @@
     {
      "date": "2026-09-14",
      "value": 1.42
+    },
+    {
+     "date": "2026-09-15",
+     "value": 0.7
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 88 百分位",
+   "note": "位於近 24 期的第 67 百分位",
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
    "display": "level",
@@ -6347,15 +6351,11 @@
    "value": 0.8,
    "value_fmt": "0.80%",
    "value_label": "",
-   "asof": "2026-09-11",
+   "asof": "2026-09-14",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-11",
-     "value": 0.79
-    },
     {
      "date": "2026-08-12",
      "value": 0.79
@@ -6447,13 +6447,17 @@
     {
      "date": "2026-09-11",
      "value": 0.8
+    },
+    {
+     "date": "2026-09-14",
+     "value": 0.8
     }
    ],
    "extras": {
-    "HY": 2.65
+    "HY": 2.71
    },
    "also": {
-    "HY/IG 比": 3.3124999999999996
+    "HY/IG 比": 3.3874999999999997
    },
    "status": "green",
    "notes": [],
