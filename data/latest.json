@@ -1,5 +1,5 @@
 {
- "build_time": "2026-09-19 05:53",
+ "build_time": "2026-09-19 08:39",
  "summary": {
   "green": 54,
   "yellow": 4,
@@ -12,7 +12,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-12",
    "history": [
     {
@@ -131,7 +131,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-12",
    "history": [
     {
@@ -250,7 +250,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-12",
    "history": [
     {
@@ -368,7 +368,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-12",
    "history": [
     {
@@ -486,7 +486,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 49,
+   "age_days": 50,
    "new_since": "2026-08-27",
    "history": [
     {
@@ -594,7 +594,7 @@
    },
    "status": "yellow",
    "notes": [
-    "期別結束後已 49 天仍未更新（正常應在 45 天內）"
+    "期別結束後已 50 天仍未更新（正常應在 45 天內）"
    ],
    "note": "位於近 24 期的第 96 百分位",
    "source_label": "FRED PCEPILFE",
@@ -608,7 +608,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 49,
+   "age_days": 50,
    "new_since": "2026-08-27",
    "history": [
     {
@@ -726,7 +726,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-11",
    "history": [
     {
@@ -844,7 +844,7 @@
    "value_label": "2026 年 9 月 預估",
    "asof": "2026-09-18",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "",
    "history": [
     {
@@ -920,7 +920,7 @@
    "value_label": "2026 年 8 月 預估",
    "asof": "2026-09-18",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "",
    "history": [
     {
@@ -1040,7 +1040,7 @@
    "value_label": "",
    "asof": "2026-09-18",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "",
    "history": [
     {
@@ -1156,7 +1156,7 @@
    "value_label": "3年期中位數",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-09",
    "history": [
     {
@@ -1274,7 +1274,7 @@
    "value_label": "1年期中位數",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-08-29",
    "history": [
     {
@@ -1392,7 +1392,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-05",
    "history": [
     {
@@ -1508,7 +1508,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-05",
    "history": [
     {
@@ -1624,7 +1624,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-05",
    "history": [
     {
@@ -1742,7 +1742,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-05",
    "history": [
     {
@@ -1860,7 +1860,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 49,
+   "age_days": 50,
    "new_since": "2026-09-02",
    "history": [
     {
@@ -1979,7 +1979,7 @@
    "value_label": "",
    "asof": "2026-09-12",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "2026-09-18",
    "history": [
     {
@@ -2099,7 +2099,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-03",
    "history": [
     {
@@ -2215,7 +2215,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-02",
    "history": [
     {
@@ -2331,7 +2331,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-04",
    "history": [
     {
@@ -2447,7 +2447,7 @@
    "value_label": "",
    "asof": "2026-04-01",
    "asof_label": "",
-   "age_days": 79,
+   "age_days": 80,
    "new_since": "",
    "history": [
     {
@@ -2565,7 +2565,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-12",
    "history": [
     {
@@ -2681,7 +2681,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-02",
    "history": [
     {
@@ -2797,7 +2797,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-02",
    "history": [
     {
@@ -2913,7 +2913,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-02",
    "history": [
     {
@@ -3029,7 +3029,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-04",
    "history": [
     {
@@ -3145,7 +3145,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "2026 August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-04",
    "history": [
     {
@@ -3261,7 +3261,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-17",
    "history": [
     {
@@ -3381,7 +3381,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-17",
    "history": [
     {
@@ -3499,7 +3499,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-19",
    "history": [
     {
@@ -3735,7 +3735,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 49,
+   "age_days": 50,
    "new_since": "2026-08-27",
    "history": [
     {
@@ -3855,7 +3855,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-08-29",
    "history": [
     {
@@ -3971,7 +3971,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-08-26",
    "history": [
     {
@@ -4109,7 +4109,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-18",
    "history": [
     {
@@ -4228,7 +4228,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-09-11",
    "history": [
     {
@@ -4300,7 +4300,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 49,
+   "age_days": 50,
    "new_since": "2026-08-26",
    "history": [
     {
@@ -4404,7 +4404,7 @@
    "also": {},
    "status": "yellow",
    "notes": [
-    "期別結束後已 49 天仍未更新（正常應在 45 天內）"
+    "期別結束後已 50 天仍未更新（正常應在 45 天內）"
    ],
    "note": "位於近 24 期的第 8 百分位",
    "source_label": "FRED HSN1F",
@@ -4418,7 +4418,7 @@
    "value_label": "",
    "asof": "2026-06-01",
    "asof_label": "",
-   "age_days": 79,
+   "age_days": 80,
    "new_since": "2026-08-28",
    "history": [
     {
@@ -4524,7 +4524,7 @@
    "also": {},
    "status": "yellow",
    "notes": [
-    "期別結束後已 79 天仍未更新（正常應在 75 天內）"
+    "期別結束後已 80 天仍未更新（正常應在 75 天內）"
    ],
    "note": "連續 3 期走升、位於近 24 期的第 50 百分位",
    "source_label": "FRED SPCS20RSA",
@@ -4687,7 +4687,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-08-25",
    "asof_label": "",
-   "age_days": 24,
+   "age_days": 25,
    "new_since": "2026-08-26",
    "history": [
     {
@@ -4805,7 +4805,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-09-08",
    "asof_label": "",
-   "age_days": 10,
+   "age_days": 11,
    "new_since": "2026-09-09",
    "history": [
     {
@@ -4927,7 +4927,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-08-26",
    "asof_label": "",
-   "age_days": 23,
+   "age_days": 24,
    "new_since": "2026-08-27",
    "history": [
     {
@@ -5049,7 +5049,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-08-27",
    "asof_label": "",
-   "age_days": 22,
+   "age_days": 23,
    "new_since": "2026-08-28",
    "history": [
     {
@@ -5171,7 +5171,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-09-09",
    "asof_label": "",
-   "age_days": 9,
+   "age_days": 10,
    "new_since": "2026-09-10",
    "history": [
     {
@@ -5294,7 +5294,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 3,
+   "age_days": 4,
    "new_since": "2026-09-16",
    "history": [
     {
@@ -5417,7 +5417,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-09-10",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": 9,
    "new_since": "2026-09-11",
    "history": [
     {
@@ -5540,7 +5540,7 @@
    "value_label": "",
    "asof": "2026-09-17",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 2,
    "new_since": "",
    "history": [
     {
@@ -5890,7 +5890,7 @@
    "value_label": "",
    "asof": "2026-09-11",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 2,
    "new_since": "2026-09-17",
    "history": [
     {
@@ -6008,7 +6008,7 @@
    "value_label": "",
    "asof": "2026-09-17",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 2,
    "new_since": "",
    "history": [
     {
@@ -6127,7 +6127,7 @@
    "value_label": "",
    "asof": "2026-09-18",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "",
    "history": [
     {
@@ -6359,7 +6359,7 @@
    "value_label": "",
    "asof": "2026-09-17",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 2,
    "new_since": "",
    "history": [
     {
@@ -6479,7 +6479,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "August",
-   "age_days": 18,
+   "age_days": 19,
    "new_since": "2026-08-26",
    "history": [
     {
