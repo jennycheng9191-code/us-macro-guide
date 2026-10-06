@@ -1,5 +1,5 @@
 {
- "build_time": "2026-10-06 10:31",
+ "build_time": "2026-10-07 07:17",
  "summary": {
   "green": 57,
   "yellow": 1,
@@ -840,15 +840,11 @@
    "value": 0.201681228472037,
    "value_fmt": "0.20%",
    "value_label": "2026 年 9 月 預估",
-   "asof": "2026-10-05",
+   "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-01",
-     "value": 0.194476733021784
-    },
     {
      "date": "2026-09-02",
      "value": 0.194476733021784
@@ -939,6 +935,10 @@
     },
     {
      "date": "2026-10-05",
+     "value": 0.201681228472037
+    },
+    {
+     "date": "2026-10-06",
      "value": 0.201681228472037
     }
    ],
@@ -960,15 +960,11 @@
    "value": 0.247276649591142,
    "value_fmt": "0.25%",
    "value_label": "2026 年 9 月 預估",
-   "asof": "2026-10-05",
+   "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-01",
-     "value": 0.278693361164122
-    },
     {
      "date": "2026-09-02",
      "value": 0.278693361164122
@@ -1060,6 +1056,10 @@
     {
      "date": "2026-10-05",
      "value": 0.247276649591142
+    },
+    {
+     "date": "2026-10-06",
+     "value": 0.247276649591142
     }
    ],
    "extras": {
@@ -1077,18 +1077,14 @@
    "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.36,
-   "value_fmt": "2.36%",
+   "value": 2.35,
+   "value_fmt": "2.35%",
    "value_label": "",
-   "asof": "2026-10-05",
+   "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-01",
-     "value": 2.33
-    },
     {
      "date": "2026-09-02",
      "value": 2.33
@@ -1180,13 +1176,17 @@
     {
      "date": "2026-10-05",
      "value": 2.36
+    },
+    {
+     "date": "2026-10-06",
+     "value": 2.35
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.14pp；創近 24 期新高",
+   "note": "距 2.5% 去錨警戒線尚有 0.15pp；位於近 24 期的第 79 百分位",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
@@ -3656,7 +3656,7 @@
    "bond_dir": 1
   },
   "atlanta_fed_gdpnow": {
-   "value": 3.6773,
+   "value": 3.6844,
    "value_fmt": "3.7%",
    "value_label": "2026 Q3 預測值",
    "asof": "2026-07-01",
@@ -3758,7 +3758,7 @@
     },
     {
      "date": "2026-07-01",
-     "value": 3.6773
+     "value": 3.6844
     }
    ],
    "extras": {},
@@ -4677,10 +4677,10 @@
     }
    ],
    "extras": {
-    "10Y公債": 5.28
+    "10Y公債": 5.31
    },
    "also": {
-    "利差 vs DGS10": 2.0
+    "利差 vs DGS10": 1.9700000000000006
    },
    "status": "yellow",
    "notes": [
@@ -4838,18 +4838,14 @@
    "bond_dir": null
   },
   "auction_3y": {
-   "value": 2.72,
-   "value_fmt": "2.72",
+   "value": 2.62,
+   "value_fmt": "2.62",
    "value_label": "bid-to-cover",
-   "asof": "2026-09-08",
+   "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 28,
-   "new_since": "2026-09-09",
+   "age_days": 0,
+   "new_since": "2026-10-07",
    "history": [
-    {
-     "date": "2024-10-08",
-     "value": 2.45
-    },
     {
      "date": "2024-11-04",
      "value": 2.6
@@ -4941,19 +4937,23 @@
     {
      "date": "2026-09-08",
      "value": 2.72
+    },
+    {
+     "date": "2026-10-06",
+     "value": 2.62
     }
    ],
    "extras": {
     "券別": "3-Year Note",
-    "得標利率(%)": 4.474,
-    "間接投標占比(%)": 61.7,
-    "一級交易商占比(%)": 10.8,
+    "得標利率(%)": 4.932,
+    "間接投標占比(%)": 55.3,
+    "一級交易商占比(%)": 10.3,
     "標售規模(十億美元)": 58.0
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 88 百分位",
+   "note": "位於近 24 期的第 54 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
    "display": "table",
@@ -5573,18 +5573,14 @@
    "bond_dir": null
   },
   "treasury_general_account": {
-   "value": 893.699,
-   "value_fmt": "894十億美元",
+   "value": 871.181,
+   "value_fmt": "871十億美元",
    "value_label": "",
-   "asof": "2026-10-02",
+   "asof": "2026-10-05",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-31",
-     "value": 971.343
-    },
     {
      "date": "2026-09-01",
      "value": 1023.554
@@ -5676,31 +5672,31 @@
     {
      "date": "2026-10-02",
      "value": 893.699
+    },
+    {
+     "date": "2026-10-05",
+     "value": 871.181
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 29 百分位",
+   "note": "位於近 24 期的第 17 百分位",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level",
    "bond_dir": null
   },
   "bills_share_of_outstanding_debt": {
-   "value": 22.78688161458802,
-   "value_fmt": "22.8%",
+   "value": 22.37332086308832,
+   "value_fmt": "22.4%",
    "value_label": "",
-   "asof": "2026-08-31",
+   "asof": "2026-09-30",
    "asof_label": "",
-   "age_days": 6,
-   "new_since": "2026-09-05",
+   "age_days": 0,
+   "new_since": "2026-10-07",
    "history": [
-    {
-     "date": "2024-09-30",
-     "value": 21.66763512730149
-    },
     {
      "date": "2024-10-31",
      "value": 22.114582375670295
@@ -5792,13 +5788,17 @@
     {
      "date": "2026-08-31",
      "value": 22.78688161458802
+    },
+    {
+     "date": "2026-09-30",
+     "value": 22.37332086308832
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "占比 22.8%，超出 TBAC 建議的 15–20% 區間；創近 24 期新高",
+   "note": "占比 22.4%，超出 TBAC 建議的 15–20% 區間；位於近 24 期的第 88 百分位",
    "source_label": "FiscalData MSPD",
    "unit": "%",
    "display": "pct",
@@ -6041,18 +6041,14 @@
    "bond_dir": null
   },
   "sofr_minus_iorb": {
-   "value": -2.0000000000000018,
-   "value_fmt": "-2.0bp",
+   "value": -0.9999999999999787,
+   "value_fmt": "-1.0bp",
    "value_label": "",
-   "asof": "2026-10-02",
+   "asof": "2026-10-05",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-08-31",
-     "value": 3.000000000000025
-    },
     {
      "date": "2026-09-01",
      "value": 1.000000000000023
@@ -6144,34 +6140,34 @@
     {
      "date": "2026-10-02",
      "value": -2.0000000000000018
+    },
+    {
+     "date": "2026-10-05",
+     "value": -0.9999999999999787
     }
    ],
    "extras": {
-    "SOFR": 3.88,
+    "SOFR": 3.89,
     "IORB": 3.9
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "利差 -2.0bp，SOFR 低於 IORB；位於近 24 期的第 54 百分位",
+   "note": "利差 -1.0bp，SOFR 低於 IORB；位於近 24 期的第 71 百分位",
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
    "display": "level",
    "bond_dir": null
   },
   "overnight_reverse_repo_facility": {
-   "value": 1.004,
-   "value_fmt": "1十億美元",
+   "value": 0.414,
+   "value_fmt": "0十億美元",
    "value_label": "",
-   "asof": "2026-10-05",
+   "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 0,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-01",
-     "value": 0.725
-    },
     {
      "date": "2026-09-02",
      "value": 0.525
@@ -6263,13 +6259,17 @@
     {
      "date": "2026-10-05",
      "value": 1.004
+    },
+    {
+     "date": "2026-10-06",
+     "value": 0.414
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 71 百分位",
+   "note": "位於近 24 期的第 12 百分位",
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
    "display": "level",
@@ -6392,18 +6392,14 @@
    "bond_dir": null
   },
   "ice_bofa_credit_oas": {
-   "value": 0.85,
-   "value_fmt": "0.85%",
+   "value": 0.84,
+   "value_fmt": "0.84%",
    "value_label": "",
-   "asof": "2026-10-02",
+   "asof": "2026-10-05",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-01",
-     "value": 0.81
-    },
     {
      "date": "2026-09-02",
      "value": 0.81
@@ -6495,17 +6491,21 @@
     {
      "date": "2026-10-02",
      "value": 0.85
+    },
+    {
+     "date": "2026-10-05",
+     "value": 0.84
     }
    ],
    "extras": {
-    "HY": 3.1
+    "HY": 3.12
    },
    "also": {
-    "HY/IG 比": 3.647058823529412
+    "HY/IG 比": 3.7142857142857144
    },
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 96 百分位",
+   "note": "位於近 24 期的第 92 百分位",
    "source_label": "FRED BAMLC0A0CM",
    "unit": "%",
    "display": "level",
