@@ -1,8 +1,8 @@
 {
- "build_time": "2026-10-17 08:47",
+ "build_time": "2026-10-18 05:45",
  "summary": {
-  "green": 52,
-  "yellow": 6,
+  "green": 45,
+  "yellow": 13,
   "gray": 0
  },
  "cards": {
@@ -4680,10 +4680,10 @@
   "auction_2y": {
    "value": 2.63,
    "value_fmt": "2.63",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-09-22",
    "asof_label": "",
-   "age_days": 25,
+   "age_days": null,
    "new_since": "2026-09-23",
    "history": [
     {
@@ -4787,8 +4787,11 @@
     "標售規模(十億美元)": 69.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 2-Year 標售紀錄",
+    "本次未取得，沿用 2026-09-22 的前值"
+   ],
    "note": "位於近 23 期的第 57 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -4798,10 +4801,10 @@
   "auction_3y": {
    "value": 2.62,
    "value_fmt": "2.62",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 11,
+   "age_days": null,
    "new_since": "2026-10-07",
    "history": [
     {
@@ -4909,8 +4912,11 @@
     "標售規模(十億美元)": 58.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 3-Year 標售紀錄",
+    "本次未取得，沿用 2026-10-06 的前值"
+   ],
    "note": "位於近 24 期的第 54 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -4920,10 +4926,10 @@
   "auction_5y": {
    "value": 2.21,
    "value_fmt": "2.21",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-09-23",
    "asof_label": "",
-   "age_days": 24,
+   "age_days": null,
    "new_since": "2026-09-24",
    "history": [
     {
@@ -5031,8 +5037,11 @@
     "標售規模(十億美元)": 70.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 5-Year 標售紀錄",
+    "本次未取得，沿用 2026-09-23 的前值"
+   ],
    "note": "創近 24 期新低",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -5042,10 +5051,10 @@
   "auction_7y": {
    "value": 2.42,
    "value_fmt": "2.42",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-09-24",
    "asof_label": "",
-   "age_days": 23,
+   "age_days": null,
    "new_since": "2026-09-25",
    "history": [
     {
@@ -5153,8 +5162,11 @@
     "標售規模(十億美元)": 44.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 7-Year 標售紀錄",
+    "本次未取得，沿用 2026-09-24 的前值"
+   ],
    "note": "位於近 24 期的第 12 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -5164,10 +5176,10 @@
   "auction_10y": {
    "value": 2.77,
    "value_fmt": "2.77",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-10-07",
    "asof_label": "",
-   "age_days": 10,
+   "age_days": null,
    "new_since": "2026-10-08",
    "history": [
     {
@@ -5275,8 +5287,11 @@
     "標售規模(十億美元)": 39.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 10-Year 標售紀錄",
+    "本次未取得，沿用 2026-10-07 的前值"
+   ],
    "note": "創近 24 期新高",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -5286,10 +5301,10 @@
   "auction_20y": {
    "value": 2.57,
    "value_fmt": "2.57",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-09-15",
    "asof_label": "",
-   "age_days": 32,
+   "age_days": null,
    "new_since": "2026-09-16",
    "history": [
     {
@@ -5398,8 +5413,11 @@
     "規模變動(十億美元)": -3.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 20-Year 標售紀錄",
+    "本次未取得，沿用 2026-09-15 的前值"
+   ],
    "note": "標售規模較上次減額 3.0十億美元；位於近 24 期的第 42 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
@@ -5409,10 +5427,10 @@
   "auction_30y": {
    "value": 2.54,
    "value_fmt": "2.54",
-   "value_label": "bid-to-cover",
+   "value_label": "",
    "asof": "2026-10-08",
    "asof_label": "",
-   "age_days": 9,
+   "age_days": null,
    "new_since": "2026-10-09",
    "history": [
     {
@@ -5520,8 +5538,11 @@
     "標售規模(十億美元)": 22.0
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "TreasuryDirect 無 30-Year 標售紀錄",
+    "本次未取得，沿用 2026-10-08 的前值"
+   ],
    "note": "位於近 24 期的第 88 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
