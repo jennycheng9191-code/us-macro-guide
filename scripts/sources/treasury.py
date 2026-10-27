@@ -107,6 +107,12 @@ def _auctioned(sec_type: str) -> list[dict]:
     return _AUCTION_CACHE[sec_type]
 
 
+def _auction_date(r: dict) -> str:
+    """拍賣日。2026-10 起 API 拿掉了 auctionDate 欄位，改用競標截止日——
+    兩者同一天（截止當天下午開標），對過 10/7 十年、9/22 二年等舊場次逐筆一致。"""
+    return r.get("auctionDate") or r.get("competitiveAuctionCloseDate") or ""
+
+
 def auctions(m: dict) -> dict:
     """指定年期的最新標售結果（mapping 的 term，如 '7-Year'）。
 
@@ -123,10 +129,10 @@ def auctions(m: dict) -> dict:
     coupons = [r for r in rows
                if (r.get("originalSecurityTerm") or r.get("securityTerm")) == term
                and r.get("tips") != "Yes"
-               and r.get("auctionDate") and (r.get("highYield") or "").strip()]
+               and _auction_date(r) and (r.get("highYield") or "").strip()]
     if not coupons:
         return {"ok": False, "reason": f"TreasuryDirect 無 {term} 標售紀錄"}
-    coupons.sort(key=lambda r: r["auctionDate"], reverse=True)
+    coupons.sort(key=_auction_date, reverse=True)
     latest = coupons[0]
 
     def num(x):
@@ -139,7 +145,7 @@ def auctions(m: dict) -> dict:
     for r in reversed(coupons[:24]):
         btc = num(r.get("bidToCoverRatio"))
         if btc is not None:
-            hist.append({"date": r["auctionDate"][:10], "value": btc})
+            hist.append({"date": _auction_date(r)[:10], "value": btc})
 
     # indirectBidderAccepted 是「得標金額」不是占比（API 回的是美元）。
     # 市場慣用的間接投標占比＝間接得標 ÷ 總得標，要自己算，直接拿原欄位會
@@ -173,7 +179,7 @@ def auctions(m: dict) -> dict:
 
     return {"ok": True,
             "value": num(latest.get("bidToCoverRatio")),
-            "asof": latest["auctionDate"][:10],
+            "asof": _auction_date(latest)[:10],
             "history": hist,
             "raw_latest": num(latest.get("bidToCoverRatio")),
             "freq": "D",
