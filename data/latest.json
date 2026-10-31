@@ -1,5 +1,5 @@
 {
- "build_time": "2026-10-31 09:50",
+ "build_time": "2026-11-01 06:50",
  "summary": {
   "green": 58,
   "yellow": 0,
@@ -4703,10 +4703,6 @@
    "new_since": "2026-10-27",
    "history": [
     {
-     "date": "2024-10-28",
-     "value": 2.5
-    },
-    {
      "date": "2024-11-25",
      "value": 2.77
     },
@@ -4807,7 +4803,7 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 42 百分位",
+   "note": "位於近 23 期的第 39 百分位",
    "source_label": "TreasuryDirect 拍賣查詢",
    "unit": "",
    "display": "table",
