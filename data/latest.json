@@ -1,5 +1,5 @@
 {
- "build_time": "2026-11-04 10:44",
+ "build_time": "2026-11-05 08:32",
  "summary": {
   "green": 58,
   "yellow": 0,
@@ -12,7 +12,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-15",
    "history": [
     {
@@ -131,7 +131,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-15",
    "history": [
     {
@@ -250,7 +250,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-15",
    "history": [
     {
@@ -368,7 +368,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-15",
    "history": [
     {
@@ -486,7 +486,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -606,7 +606,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -724,7 +724,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-16",
    "history": [
     {
@@ -840,7 +840,7 @@
    "value": 0.211437433436468,
    "value_fmt": "0.21%",
    "value_label": "2026 年 10 月 預估",
-   "asof": "2026-11-03",
+   "asof": "2026-11-04",
    "asof_label": "",
    "age_days": 1,
    "new_since": "",
@@ -935,6 +935,10 @@
     },
     {
      "date": "2026-11-03",
+     "value": 0.211437433436468
+    },
+    {
+     "date": "2026-11-04",
      "value": 0.211437433436468
     }
    ],
@@ -946,7 +950,7 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "上期（2026-09）預估 +0.20%、實際 +0.33%，低估 0.13pp；創近 23 期新高",
+   "note": "上期（2026-09）預估 +0.20%、實際 +0.33%，低估 0.13pp；創近 24 期新高",
    "source_label": "Cleveland Fed 官方 JSON",
    "unit": "%",
    "display": "level",
@@ -956,7 +960,7 @@
    "value": 0.256482490833176,
    "value_fmt": "0.26%",
    "value_label": "2026 年 10 月 預估",
-   "asof": "2026-11-03",
+   "asof": "2026-11-04",
    "asof_label": "",
    "age_days": 1,
    "new_since": "",
@@ -1052,6 +1056,10 @@
     {
      "date": "2026-11-03",
      "value": 0.256482490833176
+    },
+    {
+     "date": "2026-11-04",
+     "value": 0.256482490833176
     }
    ],
    "extras": {
@@ -1062,25 +1070,21 @@
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "上期（2026-09）預估 +0.28%、實際 +0.32%，誤差在 0.1pp 內；創近 23 期新高",
+   "note": "上期（2026-09）預估 +0.28%、實際 +0.32%，誤差在 0.1pp 內；創近 24 期新高",
    "source_label": "Cleveland Fed 官方 JSON",
    "unit": "%",
    "display": "level",
    "bond_dir": 1
   },
   "5_year_5_year_forward_inflation_expectat": {
-   "value": 2.21,
-   "value_fmt": "2.21%",
+   "value": 2.22,
+   "value_fmt": "2.22%",
    "value_label": "",
-   "asof": "2026-11-03",
+   "asof": "2026-11-04",
    "asof_label": "",
    "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-30",
-     "value": 2.36
-    },
     {
      "date": "2026-10-01",
      "value": 2.36
@@ -1172,13 +1176,17 @@
     {
      "date": "2026-11-03",
      "value": 2.21
+    },
+    {
+     "date": "2026-11-04",
+     "value": 2.22
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "距 2.5% 去錨警戒線尚有 0.29pp；位於近 24 期的第 21 百分位",
+   "note": "距 2.5% 去錨警戒線尚有 0.28pp；位於近 24 期的第 29 百分位",
    "source_label": "FRED T5YIFR",
    "unit": "%",
    "display": "level",
@@ -1190,7 +1198,7 @@
    "value_label": "3年期中位數",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-08",
    "history": [
     {
@@ -1308,7 +1316,7 @@
    "value_label": "1年期中位數",
    "asof": "2026-10-01",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-10-27",
    "history": [
     {
@@ -1426,7 +1434,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-03",
    "history": [
     {
@@ -1542,7 +1550,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-03",
    "history": [
     {
@@ -1658,7 +1666,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-03",
    "history": [
     {
@@ -1776,7 +1784,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-03",
    "history": [
     {
@@ -1894,7 +1902,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-11-04",
    "history": [
     {
@@ -2013,7 +2021,7 @@
    "value_label": "",
    "asof": "2026-10-24",
    "asof_label": "",
-   "age_days": 5,
+   "age_days": 6,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -2128,18 +2136,14 @@
    "bond_dir": -1
   },
   "adp_national_employment_report": {
-   "value": 90.0,
-   "value_fmt": "90千人",
+   "value": 86.0,
+   "value_fmt": "86千人",
    "value_label": "",
-   "asof": "2026-09-01",
+   "asof": "2026-10-01",
    "asof_label": "",
-   "age_days": 34,
-   "new_since": "2026-10-01",
+   "age_days": 5,
+   "new_since": "2026-11-05",
    "history": [
-    {
-     "date": "2024-10-01",
-     "value": -12.0
-    },
     {
      "date": "2024-11-01",
      "value": 102.0
@@ -2230,14 +2234,18 @@
     },
     {
      "date": "2026-09-01",
-     "value": 90.0
+     "value": 86.0
+    },
+    {
+     "date": "2026-10-01",
+     "value": 86.0
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 75 百分位",
+   "note": "位於近 24 期的第 71 百分位",
    "source_label": "FRED ADPMNUSNERSA",
    "unit": "千人",
    "display": "mom_diff",
@@ -2249,7 +2257,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "2026 October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2360,18 +2368,14 @@
    "bond_dir": 1
   },
   "ism_services_employment": {
-   "value": 50.1,
-   "value_fmt": "50.1",
+   "value": 51.4,
+   "value_fmt": "51.4",
    "value_label": "",
-   "asof": "2026-09-01",
-   "asof_label": "2026 September",
-   "age_days": 34,
-   "new_since": "2026-10-06",
+   "asof": "2026-10-01",
+   "asof_label": "2026 October",
+   "age_days": 5,
+   "new_since": "2026-11-05",
    "history": [
-    {
-     "date": "2024-10-01",
-     "value": 53.0
-    },
     {
      "date": "2024-11-01",
      "value": 51.5
@@ -2463,13 +2467,17 @@
     {
      "date": "2026-09-01",
      "value": 50.1
+    },
+    {
+     "date": "2026-10-01",
+     "value": 51.4
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "高於 50 榮枯線；位於近 24 期的第 58 百分位",
+   "note": "高於 50 榮枯線；連續 3 期走升、位於近 24 期的第 79 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
@@ -2481,7 +2489,7 @@
    "value_label": "",
    "asof": "2026-07-01",
    "asof_label": "",
-   "age_days": 35,
+   "age_days": 36,
    "new_since": "2026-10-31",
    "history": [
     {
@@ -2599,7 +2607,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-10",
    "history": [
     {
@@ -2715,7 +2723,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "2026 October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2831,7 +2839,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "2026 October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2947,7 +2955,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "2026 October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -3058,18 +3066,14 @@
    "bond_dir": 1
   },
   "ism_services_pmi": {
-   "value": 54.9,
-   "value_fmt": "54.9",
+   "value": 54.5,
+   "value_fmt": "54.5",
    "value_label": "",
-   "asof": "2026-09-01",
-   "asof_label": "2026 September",
-   "age_days": 34,
-   "new_since": "2026-10-06",
+   "asof": "2026-10-01",
+   "asof_label": "2026 October",
+   "age_days": 5,
+   "new_since": "2026-11-05",
    "history": [
-    {
-     "date": "2024-10-01",
-     "value": 56.0
-    },
     {
      "date": "2024-11-01",
      "value": 52.1
@@ -3161,6 +3165,10 @@
     {
      "date": "2026-09-01",
      "value": 54.9
+    },
+    {
+     "date": "2026-10-01",
+     "value": 54.5
     }
    ],
    "extras": {},
@@ -3174,18 +3182,14 @@
    "bond_dir": 1
   },
   "ism_services_prices_paid": {
-   "value": 74.0,
-   "value_fmt": "74.0",
+   "value": 73.0,
+   "value_fmt": "73.0",
    "value_label": "",
-   "asof": "2026-09-01",
-   "asof_label": "2026 September",
-   "age_days": 34,
-   "new_since": "2026-10-06",
+   "asof": "2026-10-01",
+   "asof_label": "2026 October",
+   "age_days": 5,
+   "new_since": "2026-11-05",
    "history": [
-    {
-     "date": "2024-10-01",
-     "value": 58.1
-    },
     {
      "date": "2024-11-01",
      "value": 58.2
@@ -3277,13 +3281,17 @@
     {
      "date": "2026-09-01",
      "value": 74.0
+    },
+    {
+     "date": "2026-10-01",
+     "value": 73.0
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "高於 50 榮枯線；連續 3 期走升、創近 24 期新高",
+   "note": "高於 50 榮枯線；位於近 24 期的第 96 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
    "display": "level",
@@ -3295,7 +3303,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-16",
    "history": [
     {
@@ -3415,7 +3423,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-16",
    "history": [
     {
@@ -3533,7 +3541,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-17",
    "history": [
     {
@@ -3648,8 +3656,8 @@
    "bond_dir": 1
   },
   "atlanta_fed_gdpnow": {
-   "value": 3.7383,
-   "value_fmt": "3.7%",
+   "value": 3.4408,
+   "value_fmt": "3.4%",
    "value_label": "2026 Q4 預測值",
    "asof": "2026-10-01",
    "asof_label": "",
@@ -3750,14 +3758,14 @@
     },
     {
      "date": "2026-10-01",
-     "value": 3.7383
+     "value": 3.4408
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "連續 3 期走升、位於近 24 期的第 79 百分位",
+   "note": "連續 3 期走升、位於近 24 期的第 71 百分位",
    "source_label": "FRED GDPNOW",
    "unit": "%",
    "display": "level",
@@ -3769,7 +3777,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-28",
    "history": [
     {
@@ -3889,7 +3897,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-10-27",
    "history": [
     {
@@ -4005,7 +4013,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-10-28",
    "history": [
     {
@@ -4124,7 +4132,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "2026 October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-10-20",
    "history": [],
    "extras": {},
@@ -4143,7 +4151,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-21",
    "history": [
     {
@@ -4262,7 +4270,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-14",
    "history": [
     {
@@ -4334,7 +4342,7 @@
    "value_label": "",
    "asof": "2026-09-01",
    "asof_label": "",
-   "age_days": 34,
+   "age_days": 35,
    "new_since": "2026-10-28",
    "history": [
     {
@@ -4450,7 +4458,7 @@
    "value_label": "",
    "asof": "2026-08-01",
    "asof_label": "",
-   "age_days": 65,
+   "age_days": 66,
    "new_since": "2026-10-28",
    "history": [
     {
@@ -4568,7 +4576,7 @@
    "value_label": "",
    "asof": "2026-10-29",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": 1,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -4669,10 +4677,10 @@
     }
    ],
    "extras": {
-    "10Y公債": 4.91
+    "10Y公債": 4.95
    },
    "also": {
-    "利差 vs DGS10": 2.33
+    "利差 vs DGS10": 2.29
    },
    "status": "green",
    "notes": [],
@@ -4715,7 +4723,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-26",
    "asof_label": "",
-   "age_days": 9,
+   "age_days": 10,
    "new_since": "2026-10-27",
    "history": [
     {
@@ -4831,7 +4839,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-06",
    "asof_label": "",
-   "age_days": 29,
+   "age_days": 30,
    "new_since": "2026-10-07",
    "history": [
     {
@@ -4951,7 +4959,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-27",
    "asof_label": "",
-   "age_days": 8,
+   "age_days": 9,
    "new_since": "2026-10-28",
    "history": [
     {
@@ -5071,7 +5079,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-29",
    "asof_label": "",
-   "age_days": 6,
+   "age_days": 7,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -5191,7 +5199,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-07",
    "asof_label": "",
-   "age_days": 28,
+   "age_days": 29,
    "new_since": "2026-10-08",
    "history": [
     {
@@ -5311,7 +5319,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-21",
    "asof_label": "",
-   "age_days": 14,
+   "age_days": 15,
    "new_since": "2026-10-27",
    "history": [
     {
@@ -5431,7 +5439,7 @@
    "value_label": "bid-to-cover",
    "asof": "2026-10-08",
    "asof_label": "",
-   "age_days": 27,
+   "age_days": 28,
    "new_since": "2026-10-09",
    "history": [
     {
@@ -5546,18 +5554,14 @@
    "bond_dir": null
   },
   "treasury_general_account": {
-   "value": 951.593,
-   "value_fmt": "952十億美元",
+   "value": 930.757,
+   "value_fmt": "931十億美元",
    "value_label": "",
-   "asof": "2026-11-02",
+   "asof": "2026-11-03",
    "asof_label": "",
    "age_days": 2,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-29",
-     "value": 959.572
-    },
     {
      "date": "2026-09-30",
      "value": 936.6
@@ -5649,13 +5653,17 @@
     {
      "date": "2026-11-02",
      "value": 951.593
+    },
+    {
+     "date": "2026-11-03",
+     "value": 930.757
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 58 百分位",
+   "note": "位於近 24 期的第 42 百分位",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
    "display": "level",
@@ -5667,7 +5675,7 @@
    "value_label": "",
    "asof": "2026-09-30",
    "asof_label": "",
-   "age_days": 5,
+   "age_days": 6,
    "new_since": "2026-10-07",
    "history": [
     {
@@ -5783,7 +5791,7 @@
    "value_label": "",
    "asof": "2026-09-30",
    "asof_label": "",
-   "age_days": 5,
+   "age_days": 6,
    "new_since": "2026-10-17",
    "history": [
     {
@@ -5896,136 +5904,132 @@
    "bond_dir": -1
   },
   "chicago_fed_national_financial_condition": {
-   "value": -0.487,
-   "value_fmt": "-0.49",
+   "value": -0.459,
+   "value_fmt": "-0.46",
    "value_label": "",
-   "asof": "2026-10-23",
+   "asof": "2026-10-30",
    "asof_label": "",
-   "age_days": 6,
-   "new_since": "2026-10-29",
+   "age_days": 0,
+   "new_since": "2026-11-05",
    "history": [
     {
-     "date": "2026-05-15",
-     "value": -0.511
-    },
-    {
      "date": "2026-05-22",
-     "value": -0.511
+     "value": -0.507
     },
     {
      "date": "2026-05-29",
-     "value": -0.509
+     "value": -0.506
     },
     {
      "date": "2026-06-05",
-     "value": -0.509
+     "value": -0.505
     },
     {
      "date": "2026-06-12",
-     "value": -0.508
+     "value": -0.504
     },
     {
      "date": "2026-06-19",
-     "value": -0.51
+     "value": -0.506
     },
     {
      "date": "2026-06-26",
-     "value": -0.514
+     "value": -0.509
     },
     {
      "date": "2026-07-03",
-     "value": -0.519
+     "value": -0.515
     },
     {
      "date": "2026-07-10",
-     "value": -0.526
+     "value": -0.521
     },
     {
      "date": "2026-07-17",
-     "value": -0.531
+     "value": -0.527
     },
     {
      "date": "2026-07-24",
-     "value": -0.538
+     "value": -0.533
     },
     {
      "date": "2026-07-31",
-     "value": -0.542
+     "value": -0.538
     },
     {
      "date": "2026-08-07",
-     "value": -0.547
+     "value": -0.542
     },
     {
      "date": "2026-08-14",
-     "value": -0.55
+     "value": -0.546
     },
     {
      "date": "2026-08-21",
-     "value": -0.551
+     "value": -0.547
     },
     {
      "date": "2026-08-28",
-     "value": -0.549
-    },
-    {
-     "date": "2026-09-04",
      "value": -0.545
     },
     {
+     "date": "2026-09-04",
+     "value": -0.54
+    },
+    {
      "date": "2026-09-11",
-     "value": -0.537
+     "value": -0.532
     },
     {
      "date": "2026-09-18",
-     "value": -0.528
+     "value": -0.522
     },
     {
      "date": "2026-09-25",
-     "value": -0.518
+     "value": -0.51
     },
     {
      "date": "2026-10-02",
-     "value": -0.508
+     "value": -0.498
     },
     {
      "date": "2026-10-09",
-     "value": -0.501
+     "value": -0.487
     },
     {
      "date": "2026-10-16",
-     "value": -0.494
+     "value": -0.477
     },
     {
      "date": "2026-10-23",
-     "value": -0.487
+     "value": -0.467
+    },
+    {
+     "date": "2026-10-30",
+     "value": -0.459
     }
    ],
    "extras": {
-    "調整版": -0.501
+    "調整版": -0.435
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "低於 0（歷史均值），金融條件偏寬鬆；連續 9 期走升、創近 24 期新高",
+   "note": "低於 0（歷史均值），金融條件偏寬鬆；連續 10 期走升、創近 24 期新高",
    "source_label": "FRED NFCI",
    "unit": "",
    "display": "level",
    "bond_dir": null
   },
   "sofr_minus_iorb": {
-   "value": 5.000000000000027,
-   "value_fmt": "5.0bp",
+   "value": 7.000000000000028,
+   "value_fmt": "7.0bp",
    "value_label": "",
-   "asof": "2026-11-02",
+   "asof": "2026-11-03",
    "asof_label": "",
    "age_days": 2,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-29",
-     "value": -2.0000000000000018
-    },
     {
      "date": "2026-09-30",
      "value": 0.0
@@ -6117,34 +6121,34 @@
     {
      "date": "2026-11-02",
      "value": 5.000000000000027
+    },
+    {
+     "date": "2026-11-03",
+     "value": 7.000000000000028
     }
    ],
    "extras": {
-    "SOFR": 3.95,
+    "SOFR": 3.97,
     "IORB": 3.9
    },
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "利差 5.0bp，近 5 個交易日有 5 日 SOFR 升穿 IORB；創近 24 期新高",
+   "note": "利差 7.0bp，近 5 個交易日有 5 日 SOFR 升穿 IORB；創近 24 期新高",
    "source_label": "FRED SOFR − IORB",
    "unit": "bp",
    "display": "level",
    "bond_dir": null
   },
   "overnight_reverse_repo_facility": {
-   "value": 0.427,
+   "value": 0.225,
    "value_fmt": "0十億美元",
    "value_label": "",
-   "asof": "2026-11-03",
+   "asof": "2026-11-04",
    "asof_label": "",
    "age_days": 1,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-30",
-     "value": 11.539
-    },
     {
      "date": "2026-10-01",
      "value": 0.35
@@ -6236,13 +6240,17 @@
     {
      "date": "2026-11-03",
      "value": 0.427
+    },
+    {
+     "date": "2026-11-04",
+     "value": 0.225
     }
    ],
    "extras": {},
    "also": {},
    "status": "green",
    "notes": [],
-   "note": "位於近 24 期的第 71 百分位",
+   "note": "位於近 24 期的第 25 百分位",
    "source_label": "FRED RRPONTSYD",
    "unit": "十億美元",
    "display": "level",
@@ -6254,7 +6262,7 @@
    "value_label": "",
    "asof": "2026-10-28",
    "asof_label": "",
-   "age_days": 1,
+   "age_days": 2,
    "new_since": "2026-10-30",
    "history": [
     {
@@ -6365,18 +6373,14 @@
    "bond_dir": null
   },
   "ice_bofa_credit_oas": {
-   "value": 0.94,
-   "value_fmt": "0.94%",
+   "value": 0.93,
+   "value_fmt": "0.93%",
    "value_label": "",
-   "asof": "2026-11-02",
+   "asof": "2026-11-03",
    "asof_label": "",
    "age_days": 2,
    "new_since": "",
    "history": [
-    {
-     "date": "2026-09-30",
-     "value": 0.84
-    },
     {
      "date": "2026-10-01",
      "value": 0.86
@@ -6468,17 +6472,21 @@
     {
      "date": "2026-11-02",
      "value": 0.94
+    },
+    {
+     "date": "2026-11-03",
+     "value": 0.93
     }
    ],
    "extras": {
-    "HY": 3.43
+    "HY": 3.4
    },
    "also": {
-    "HY/IG 比": 3.6489361702127665
+    "HY/IG 比": 3.6559139784946235
    },
    "status": "green",
    "notes": [],
-   "note": "創近 24 期新高",
+   "note": "位於近 24 期的第 92 百分位",
    "source_label": "FRED BAMLC0A0CM",
    "unit": "%",
    "display": "level",
@@ -6490,7 +6498,7 @@
    "value_label": "",
    "asof": "2026-10-01",
    "asof_label": "October",
-   "age_days": 4,
+   "age_days": 5,
    "new_since": "2026-10-28",
    "history": [
     {
