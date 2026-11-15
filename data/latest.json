@@ -1,8 +1,8 @@
 {
- "build_time": "2026-11-15 10:08",
+ "build_time": "2026-11-16 07:36",
  "summary": {
-  "green": 58,
-  "yellow": 0,
+  "green": 55,
+  "yellow": 3,
   "gray": 0
  },
  "cards": {
@@ -5501,7 +5501,7 @@
    "value_label": "",
    "asof": "2026-11-12",
    "asof_label": "",
-   "age_days": 3,
+   "age_days": null,
    "new_since": "",
    "history": [
     {
@@ -5603,8 +5603,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance: HTTPSConnectionPool(host='api.fiscaldata.treasury.gov', port=443): Read timed out. (read timeout=30)",
+    "本次未取得，沿用 2026-11-12 的前值"
+   ],
    "note": "位於近 24 期的第 25 百分位",
    "source_label": "FiscalData DTS",
    "unit": "十億美元",
@@ -5617,7 +5620,7 @@
    "value_label": "",
    "asof": "2026-10-31",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": null,
    "new_since": "2026-11-06",
    "history": [
     {
@@ -5719,8 +5722,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/debt/mspd/mspd_table_1: HTTPSConnectionPool(host='api.fiscaldata.treasury.gov', port=443): Read timed out. (read timeout=30)",
+    "本次未取得，沿用 2026-10-31 的前值"
+   ],
    "note": "占比 23.0%，超出 TBAC 建議的 15–20% 區間；創近 24 期新高",
    "source_label": "FiscalData MSPD",
    "unit": "%",
@@ -5733,7 +5739,7 @@
    "value_label": "",
    "asof": "2026-10-31",
    "asof_label": "",
-   "age_days": 0,
+   "age_days": null,
    "new_since": "2026-11-13",
    "history": [
     {
@@ -5837,8 +5843,11 @@
     "滾動12個月": -3914.4935614997603
    },
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "抓取例外：取得 JSON 失敗 https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_1: HTTPSConnectionPool(host='api.fiscaldata.treasury.gov', port=443): Read timed out. (read timeout=30)",
+    "本次未取得，沿用 2026-10-31 的前值"
+   ],
    "note": "位於近 24 期的第 12 百分位",
    "source_label": "FiscalData MTS",
    "unit": "十億美元",
