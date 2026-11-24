@@ -1,8 +1,8 @@
 {
- "build_time": "2026-11-24 12:27",
+ "build_time": "2026-11-24 14:27",
  "summary": {
-  "green": 53,
-  "yellow": 5,
+  "green": 46,
+  "yellow": 12,
   "gray": 0
  },
  "cards": {
@@ -2228,8 +2228,8 @@
    "value_fmt": "52.4",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2331,8 +2331,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；位於近 24 期的第 92 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -2344,8 +2347,8 @@
    "value_fmt": "51.4",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-05",
    "history": [
     {
@@ -2447,8 +2450,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；連續 3 期走升、位於近 24 期的第 79 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -2696,8 +2702,8 @@
    "value_fmt": "55.5",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2799,8 +2805,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；未跌破對應整體衰退的 45 門檻；位於近 24 期的第 96 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -2812,8 +2821,8 @@
    "value_fmt": "55.5",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -2915,8 +2924,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；位於近 24 期的第 79 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -2928,8 +2940,8 @@
    "value_fmt": "75.2",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-03",
    "history": [
     {
@@ -3031,8 +3043,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；位於近 24 期的第 83 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -3044,8 +3059,8 @@
    "value_fmt": "54.5",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-05",
    "history": [
     {
@@ -3147,8 +3162,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；位於近 24 期的第 88 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
@@ -3160,8 +3178,8 @@
    "value_fmt": "73.0",
    "value_label": "",
    "asof": "2026-10-01",
-   "asof_label": "2026 October",
-   "age_days": 24,
+   "asof_label": "",
+   "age_days": null,
    "new_since": "2026-11-05",
    "history": [
     {
@@ -3263,8 +3281,11 @@
    ],
    "extras": {},
    "also": {},
-   "status": "green",
-   "notes": [],
+   "status": "yellow",
+   "notes": [
+    "PR Newswire 的 ISM 發布索引未取得任何報告",
+    "本次未取得，沿用 2026-10-01 的前值"
+   ],
    "note": "高於 50 榮枯線；位於近 24 期的第 96 百分位",
    "source_label": "ISM 官方新聞稿（PR Newswire）",
    "unit": "",
